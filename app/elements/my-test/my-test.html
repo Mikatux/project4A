@@ -1,10 +1,10 @@
-<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../../bower_components/polymer/polymer.html">
 
-<polymer-element name="my-element">
-
+<dom-module id="my-test">
   <template>
-    <style>    
-    :host {
+    <style include="shared-styles"></style>
+    <style>
+      :host {
         display: block;
       }
       
@@ -23,11 +23,17 @@
   </template>
 
   <script>
-
-    Polymer({
+    (function() {
+      'use strict';
       
-    });
+      Polymer({
+        is: 'my-test',
 
+        properties: {
+          
+        }
+      });
+    })();
   </script>
 
-</polymer-element>
+</dom-module>
