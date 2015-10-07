@@ -17,13 +17,11 @@
       last-response="{{response}}"></iron-ajax>
 
       <template is="dom-repeat" items="{{response}}">
-        <div>{{item}}</div>
         <div>
           <!--<a href="{{item.html_url}}">{{item.author.name}}</a>
           <span>{{item.author.name}}</span>-->
-          <span>{{item.html_url}}</span>
-          <a href="{{item.html_url}}">{{item.title}}</a>
-          <span>a</span>
+          <span>{{item.title}}</span>
+          <span>{{item.user.login}}</span>
           <br>
         </div>
       </template>
