@@ -21,6 +21,7 @@
           <!--<a href="{{item.html_url}}">{{item.author.name}}</a>
           <span>{{item.author.name}}</span>-->
           <span>{{item.content}}</span>
+          <span>a</span>
           <br>
         </div>
       </template>
@@ -32,34 +33,12 @@
   Polymer({
     is: 'post-list',
     properties: {
-      owner: {
-        value: 'polymer',
-        notify: true
-      },
-      repo: {
-        value: 'polymer',
-        notify: true
-      },
-      state: {
-        value: 'open',
-        notify: true
-      },
-      page: {
-        value: 1,
-        notify: true
-      },
       url: {
         computed: 'computeUrl()'
-      },
-      options: {
-        computed: 'computeOptions(state, page)'
       }
     },
     computeUrl: function() {
       return 'http://back.oversimplified.io/messages';
-    },
-    computeOptions: function(state, page) {
-      return {state: state, page: page};
     }
   });
 </script>
