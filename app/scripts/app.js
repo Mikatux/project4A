@@ -66,6 +66,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     }
   };
   
+  function onRefresh() {
+    write("hello");
+  }
+  
   app.onRefresh = function() {
     var refreshButton = document.querySelector('#refreshButton');
     refreshButton.style.transform = 'rotate(90)';
