@@ -64,10 +64,8 @@
       }
       
       paper-icon-button.small {
-        margin: 0px;
-        padding: 0px;
-        height:12px;
-        width:12px;
+        width: 18px;
+        height: 18px;
         color: #EAEAEA;
         
         -webkit-transition: 0.3s;
@@ -75,15 +73,11 @@
       }
       
       paper-icon-button.small::shadow #icon {
-        width: 12px;
-        height: 12px;
+        width: 18px;
+        height: 18px;
       }
       
       paper-icon-button.small:hover {
-        margin: 0px;
-        padding: 0px;
-        height:12px;
-        width:12px;
         color: #DADADA;
         
         -webkit-transition: 0.3s;
@@ -114,7 +108,7 @@
               <span class="username">{{item.author.name}}</span>
               <span class="timestamp">{{item.date}}</span>
             </div>
-            <div class="horizontal end-justified layout">
+            <div class="horizontal end-justified layout" flex>
               <paper-icon-button icon="report" class="small"></paper-icon-button>
               <paper-icon-button icon="favorite" class="small"></paper-icon-button>
               <paper-icon-button icon="delete" class="small"></paper-icon-button>
