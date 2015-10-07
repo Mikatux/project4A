@@ -11,8 +11,6 @@
       }
       
       #head {
-        width: 100%;
-        height: 64px;
         background-color: var(--accent-color);
       }
       
@@ -32,6 +30,7 @@
         <paper-material elevation="1" flex>
           <div class="head">
             <span>{{item.author.name}}</span>
+            <img src="{{item.img}}" alt="profile image" style="width:64px;height:64px;">
           </div>
           
           <div class="content">
@@ -40,6 +39,7 @@
         </paper-material>
 
       </template>
+      <br>
   </template>
 
 </dom-module>
