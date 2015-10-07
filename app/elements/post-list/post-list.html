@@ -27,13 +27,23 @@
     	.username {
     		text-transform: capitalize;
     		font-weight: 500;
-    		color: #919191;
+    		color: (--accent-color);
     		line-height: 1.3em;
     		max-width: 90%;
     		text-overflow: ellipsis;
     		overflow: hidden;
     		white-space: nowrap;
     	}
+      
+      .timestamp {
+    		font-weight: 300;
+    		color: #b5a896;
+    		line-height: 1.3em;
+    		max-width: 90%;
+    		text-overflow: ellipsis;
+    		overflow: hidden;
+    		white-space: nowrap;
+      }
       
       #head {
         margin: 4px 4px 4px 4px;
@@ -58,8 +68,8 @@
               <img src="{{item.author.img}}" alt="profile image" style="width:64px;height:64px;border-radius: 2px;">
             </div>
             <div class="vertical layout">
-              <span>{{item.author.name}}</span>
-              <span>{{item.date}}</span>
+              <span class="username">{{item.author.name}}</span>
+              <span class="timestamp">{{item.date}}</span>
             </div>
           </div>
           
