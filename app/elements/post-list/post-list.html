@@ -63,10 +63,16 @@
         padding: 8px 8px 8px 8px;
       }
       
-      .small-icon {
+      paper-icon-button.small {
         height:50px;
         width:50px;
-        color: #ECECEC;
+        color: #EAEAEA;
+      }
+      
+      paper-icon-button.small:hover {
+        height:50px;
+        width:50px;
+        color: #DADADA;
       }
       
       #separator {
@@ -93,10 +99,10 @@
               <span class="username">{{item.author.name}}</span>
               <span class="timestamp">{{item.date}}</span>
             </div>
-            <div>
-              <paper-icon-button icon="report" class="small-icon"></paper-icon-button>
-              <paper-icon-button icon="favorite" class="small-icon"></paper-icon-button>
-              <paper-icon-button icon="delete" class="small-icon"></paper-icon-button>
+            <div class="horizontal end-justified layout">
+              <paper-icon-button icon="report" class="small"></paper-icon-button>
+              <paper-icon-button icon="favorite" class="small"></paper-icon-button>
+              <paper-icon-button icon="delete" class="small"></paper-icon-button>
             </div>
           </div>
           <div id="separator"></div>
