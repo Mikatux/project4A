@@ -8,12 +8,15 @@
       :host {
         display: block;
         box-sizing: border-box;
+      }
+      
+      #card-message {
         background-color: #FFFFFF;
       }
       
       #head {
         background-color: var(--accent-color);
-        margin: 4px 4px;
+        margin: 4px 4px 4px 4px;
       }
       
       #content {
@@ -29,7 +32,7 @@
 
       <template is="dom-repeat" items="{{response}}">
 
-        <paper-material elevation="1" flex>
+        <paper-material elevation="1" flex id="card-message">
           <div id="head">
             <img src="{{item.author.img}}" alt="profile image" style="width:64px;height:64px;border-radius: 2px;">
             <span>{{item.author.name}}</span>
