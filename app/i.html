@@ -1,3 +1,22 @@
 <!doctype html>
 
-hello
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+    <title>gh-issues Demo</title>
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="elements/post-list/post-list.html">
+  </head>
+  <body unresolved>
+    <template is="dom-bind">
+      <gh-issues owner="{{owner}}" repo="{{repo}}"
+                 state="{{state}}" page="{{page}}"></gh-issues>
+
+      <input type="text" value="{{owner::change}}">
+      <input type="text" value="{{repo::change}}">
+      <input type="text" value="{{state::change}}">
+      <input type="text" value="{{page::change}}">
+    </template>
+  </body>
+</html>
