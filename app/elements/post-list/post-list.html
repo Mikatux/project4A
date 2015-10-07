@@ -16,10 +16,8 @@
       handle-as="json"
       last-response="{{response}}"></iron-ajax>
 
-      <div>{{response}}</div>
-
       <template is="dom-repeat" items="{{response}}">
-        <div>{{response}}</div>
+        <div>{{item}}</div>
         <div>
           <!--<a href="{{item.html_url}}">{{item.author.name}}</a>
           <span>{{item.author.name}}</span>-->
