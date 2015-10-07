@@ -27,7 +27,7 @@
         <paper-input name="content" label="Send a message"></paper-input>
         <paper-input name="type" value="text" hidden></paper-input>
         <paper-input name="userId" value="56154da0d32c233e52f30815" hidden></paper-input>
-        <paper-button type="submit">Send</paper-button>
+        <paper-button raised onclick="submitForm()">Send</paper-button>
       </form>
     </paper-material>
 
@@ -42,6 +42,10 @@
       
     }
   });
+  
+  function submitForm() {
+    document.getElementById('form').submit();
+  }
 </script>
 
 <!--
