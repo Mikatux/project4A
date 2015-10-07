@@ -14,7 +14,6 @@
       auto
       url="{{url}}"
       handle-as="json"
-      params="{{options}}"
       last-response="{{response}}"></iron-ajax>
 
       <template is="dom-repeat" items="{{response}}">
@@ -50,14 +49,14 @@
         notify: true
       },
       url: {
-        computed: 'computeUrl(owner, repo)'
+        computed: 'computeUrl()'
       },
       options: {
         computed: 'computeOptions(state, page)'
       }
     },
-    computeUrl: function(owner, repo) {
-      return ['http://back.oversimplified.io/messages'].join('/');
+    computeUrl: function() {
+      return 'http://back.oversimplified.io/messages';
     },
     computeOptions: function(state, page) {
       return {state: state, page: page};
