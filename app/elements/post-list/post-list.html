@@ -1,5 +1,7 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
 
 <dom-module id="post-list">
 
@@ -83,7 +85,12 @@
             </div>
             <div class="vertical layout" id="name-zone">
               <span class="username">{{item.author.name}}</span>
-              <span class="timestamp">{{date}}</span>
+              <span class="timestamp">{{item.date}}</span>
+            </div>
+            <div>
+              <paper-icon-button icon="report"></paper-icon-button>
+              <paper-icon-button icon="favorite"></paper-icon-button>
+              <paper-icon-button icon="delete"></paper-icon-button>
             </div>
           </div>
           <div id="separator"></div>
