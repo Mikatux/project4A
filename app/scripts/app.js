@@ -73,7 +73,24 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     refreshButton.style.mozTransform = 'rotate(90)';
     refreshButton.style.msTransform = 'rotate(90)';
     refreshButton.style.oTransform = 'rotate(90)';
+    
+    doPullRequest();
   };
+  
+  function doPullRequest() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (xhttp.readyState == 4 && xhttp.status == 200) {
+        location.reload();
+      }
+    };
+    if(window.location.hostname == "project.oversimplified.io") {
+      xhttp.open("GET", "http://back.oversimplified.io/pushprod", true);
+    } else {
+      xhttp.open("GET", "http://back.oversimplified.io/pushbeta", true);
+    }
+    xhttp.send();
+  }
 
   // Scroll page to top and expand header
   app.scrollPageToTop = function() {
