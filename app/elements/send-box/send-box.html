@@ -47,7 +47,9 @@
         <paper-input name="content" label="Send a message" id="message-content"></paper-input>
         <paper-input name="type" value="text" hidden></paper-input>
         <paper-input name="userId" value="56154da0d32c233e52f30815" hidden></paper-input>
-        <paper-button onclick="submitForm()" class="green ripple" id="send-button"><iron-icon icon="send"></iron-icon>Send</paper-button>
+        <div class="horizontal end-justified layout">
+          <paper-button onclick="submitForm()" class="green ripple" id="send-button"><iron-icon icon="send"></iron-icon>Send</paper-button>
+        </div>
       </form>
     </paper-material>
 
