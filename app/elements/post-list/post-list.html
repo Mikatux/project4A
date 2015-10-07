@@ -8,10 +8,12 @@
       :host {
         display: block;
         box-sizing: border-box;
+        background-color: #FFFFFF;
       }
       
       #head {
         background-color: var(--accent-color);
+        margin: 4px 4px;
       }
       
       #content {
@@ -28,13 +30,13 @@
       <template is="dom-repeat" items="{{response}}">
 
         <paper-material elevation="1" flex>
-          <div class="head">
+          <div id="head">
             <img src="{{item.author.img}}" alt="profile image" style="width:64px;height:64px;border-radius: 2px;">
             <span>{{item.author.name}}</span>
             <span>{{item.date}}</span>
           </div>
           
-          <div class="content">
+          <div id="content">
             <span>{{item.content}}</span>
           </div>
         </paper-material>
