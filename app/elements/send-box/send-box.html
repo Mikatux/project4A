@@ -21,7 +21,12 @@
     <template is="dom-repeat" items="{{response}}">
 
       <paper-material elevation="1" flex id="card-message">
-        Send a message
+        <form is="iron-form" id="form" method="post" action="http://back.oversimplified.io/message">
+          <paper-input name="content" label="content"></paper-input>
+          <input name="type" value="text" hidden>
+          <input name="userId" value="56154da0d32c233e52f30815" hidden>
+          <paper-button raised onclick="submitForm()">Send</paper-button>
+        </form>
       </paper-material>
 
     </template>
@@ -38,3 +43,19 @@
     }
   });
 </script>
+
+<!--
+
+<form is="iron-form" id="form" method="post" action="http://back.oversimplified.io/message">
+ <paper-input name="content" label="content"></paper-input>
+ <input name="type" value="text" hidden>
+ <input name="userId" value="56154da0d32c233e52f30815" hidden>
+<paper-button raised onclick="submitForm()">Send</paper-button>
+</form>
+
+<script>
+function submitForm() {
+ document.getElementById('form').submit();
+}
+
+-->
