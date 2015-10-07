@@ -1,5 +1,9 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../bower_components/paper-styles/color.html">
+<link rel="import" href="../../bower_components/paper-styles/demo-pages.html">
+<link rel="import" href="../bower_components/paper-icon-button.html">
 
 <dom-module id="post-list">
 
@@ -55,7 +59,7 @@
       }
       
       #content {
-        min-height: 128px;
+        min-height: 64px;
       }
       
       #separator {
@@ -82,6 +86,7 @@
               <span class="username">{{item.author.name}}</span>
               <span class="timestamp">{{item.date}}</span>
             </div>
+            <paper-icon-button icon="favorite" alt="heart" class="red end"></paper-icon-button>
           </div>
           <div id="separator"></div>
           
