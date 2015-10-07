@@ -23,7 +23,7 @@
         <div>
           <!--<a href="{{item.html_url}}">{{item.author.name}}</a>
           <span>{{item.author.name}}</span>-->
-          <span>{{item.content}}</span>
+          <span>{{item.url}}</span>
           <span>a</span>
           <br>
         </div>
@@ -42,7 +42,7 @@
     },
     computeUrl: function() {
       //return 'http://back.oversimplified.io/messages';
-      return 'https://api.github.com/repos/polymer/polymer/issues';
+      return 'https://api.github.com/repos/polymer/polymer/issues/';
     }
   });
 </script>
