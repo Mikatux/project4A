@@ -23,22 +23,22 @@
     </style>
     <iron-ajax
       auto
-      url="{{url}}"
+      url="http://back.oversimplified.io/messages"
       handle-as="json"
       last-response="{{response}}"></iron-ajax>
 
       <template is="dom-repeat" items="{{response}}">
-        <div>
-          <paper-material elevation="1" flex>
-            <div class="head">
-              <span>{{item.author.name}}</span>
-            </div>
-            
-            <div class="content">
-              <span>{{item.content}}</span>
-            </div>
-          </paper-material>
-        </div>
+
+        <paper-material elevation="1" flex>
+          <div class="head">
+            <span>{{item.author.name}}</span>
+          </div>
+          
+          <div class="content">
+            <span>{{item.content}}</span>
+          </div>
+        </paper-material>
+
       </template>
   </template>
 
