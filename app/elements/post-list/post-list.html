@@ -53,11 +53,11 @@
       <template is="dom-repeat" items="{{response}}">
 
         <paper-material elevation="1" flex id="card-message">
-          <div id="head" layout vertical>
+          <div id="head" class="vertical layout">
             <div>
               <img src="{{item.author.img}}" alt="profile image" style="width:64px;height:64px;border-radius: 2px;">
             </div>
-            <div layout horizontal>
+            <div class="layout horizontal">
               <span>{{item.author.name}}</span>
               <span>{{item.date}}</span>
             </div>
