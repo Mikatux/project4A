@@ -19,6 +19,7 @@
       <div>{{response}}</div>
 
       <template is="dom-repeat" items="{{response}}">
+        <div>{{response}}</div>
         <div>
           <!--<a href="{{item.html_url}}">{{item.author.name}}</a>
           <span>{{item.author.name}}</span>-->
@@ -40,7 +41,8 @@
       }
     },
     computeUrl: function() {
-      return 'http://back.oversimplified.io/messages';
+      //return 'http://back.oversimplified.io/messages';
+      return 'https://api.github.com/repos/polymer/polymer/issues';
     }
   });
 </script>
