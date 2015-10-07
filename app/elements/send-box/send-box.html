@@ -15,15 +15,16 @@
         background-color: #FFFFFF;
         margin: 12px;
         min-height: 64px;
+        padding: 8px;
       }
       
     </style>
 
     <paper-material elevation="1" flex id="card-message">
       <form is="iron-form" id="form" method="post" action="http://back.oversimplified.io/message">
-        <paper-input name="content" label="content"></paper-input>
-        <input name="type" value="text" hidden>
-        <input name="userId" value="56154da0d32c233e52f30815" hidden>
+        <paper-input name="content" label="Send a message"></paper-input>
+        <paper-input name="type" value="text" hidden></paper-input>
+        <paper-input name="userId" value="56154da0d32c233e52f30815" hidden></paper-input>
         <paper-button type="submit">Send</paper-button>
       </form>
     </paper-material>
