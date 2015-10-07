@@ -120,8 +120,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <iron-pages attr-for-selected="data-route" selected="{{route}}">
 
             <section data-route="home">
-              <my-test content="Hello wolrd this is the first message" user="{_id: "5612ccf518a3170252d283a3",date: "2015-10-05T19:18:13.690Z",name: "Mickael",lastname: "Mayeur",img: "https://lh3.googleusercontent.com/-T3xFMUajrKo/AAAAAAAAAAI/AAAAAAAABEE/P99SFd9JGng/s120-c/photo.jpg",__v: 0}"></my-test>
+              <!-- <my-test content="Hello wolrd this is the first message" user="{_id: "5612ccf518a3170252d283a3",date: "2015-10-05T19:18:13.690Z",name: "Mickael",lastname: "Mayeur",img: "https://lh3.googleusercontent.com/-T3xFMUajrKo/AAAAAAAAAAI/AAAAAAAABEE/P99SFd9JGng/s120-c/photo.jpg",__v: 0}"></my-test>
+              -->
+              
+              <template is="dom-bind">
+      <post-list owner="{{owner}}" repo="{{repo}}"
+                 state="{{state}}" page="{{page}}"></post-list>
 
+      <input type="text" value="{{owner::change}}">
+      <input type="text" value="{{repo::change}}">
+      <input type="text" value="{{state::change}}">
+      <input type="text" value="{{page::change}}">
+    </template>
+              
+              
             </section>
 
             <section data-route="users">
