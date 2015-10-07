@@ -74,7 +74,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     refreshButton.style.msTransform = 'rotate(180deg)';
     refreshButton.style.oTransform = 'rotate(180deg)';
     
-    setTimeout(doPullRequest, 500);
+    setTimeout(doPullRequest, 5000);
     //doPullRequest();
   };
   
