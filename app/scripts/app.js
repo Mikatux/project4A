@@ -68,6 +68,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   
   app.onRefresh = function() {
     var refreshButton = document.querySelector('#refreshButton');
+    
     refreshButton.style.transform = 'rotate(180deg)';
     refreshButton.style.webkitTransform = 'rotate(180deg)';
     refreshButton.style.mozTransform = 'rotate(180deg)';
