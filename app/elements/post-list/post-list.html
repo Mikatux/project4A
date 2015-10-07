@@ -9,25 +9,35 @@
         display: block;
         box-sizing: border-box;
       }
+      
+      #head {
+        width: 100%;
+        height: 64px;
+        background-color: var(--accent-color);
+      }
+      
+      #content {
+        
+      }
+      
     </style>
     <iron-ajax
       auto
-      url="http://back.oversimplified.io/messages"
+      url="{{url}}"
       handle-as="json"
       last-response="{{response}}"></iron-ajax>
 
       <template is="dom-repeat" items="{{response}}">
         <div>
-          <!--<a href="{{item.html_url}}">{{item.author.name}}</a>
-          <span>{{item.author.name}}</span>-->
-          <!--<span>{{item.title}}</span> -
-          <span>{{item.user.login}}</span>
-          -->
-          <span>{{item.content}}</span>
-          <br>&nbsp;
-          <span>{{item.author.name}}</span>
-          <br>
-          <br>
+          <paper-material elevation="1" flex>
+            <div class="head">
+              <span>{{item.author.name}}</span>
+            </div>
+            
+            <div class="content">
+              <span>{{item.content}}</span>
+            </div>
+          </paper-material>
         </div>
       </template>
   </template>
@@ -43,8 +53,7 @@
       }
     },
     computeUrl: function() {
-      //return 'http://back.oversimplified.io/messages';
-      return 'https://api.github.com/repos/polymer/polymer/issues/';
+      return 'http://back.oversimplified.io/messages';
     }
   });
 </script>
