@@ -53,6 +53,7 @@
       
       #name-zone {
         padding-left: 16px;
+        width: 60%;
       }
       
       #content {
@@ -82,7 +83,7 @@
             </div>
             <div class="vertical layout" id="name-zone">
               <span class="username">{{item.author.name}}</span>
-              <span class="timestamp">{{item.date}}</span>
+              <span class="timestamp">{{date}}</span>
             </div>
           </div>
           <div id="separator"></div>
@@ -104,10 +105,16 @@
     properties: {
       url: {
         computed: 'computeUrl()'
+      },
+      date: {
+        computed: 'computeDate()'
       }
     },
     computeUrl: function() {
       return 'http://back.oversimplified.io/messages';
+    },
+    computeDate: function() {
+      return "Aujourd'hui";
     }
   });
 </script>
