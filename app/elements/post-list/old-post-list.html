@@ -19,10 +19,7 @@
 
       <template is="dom-repeat" items="{{response}}">
         <div>
-          <!--<a href="{{item.html_url}}">{{item.author.name}}</a>-->
-          <span>{{item.author.name}}</span>
-          <span>{{item.content}}</span>
-          <br>
+          <a href="{{item.html_url}}">{{item.title}}</a>
         </div>
       </template>
   </template>
@@ -57,7 +54,7 @@
       }
     },
     computeUrl: function(owner, repo) {
-      return ['http://back.oversimplified.io/messages'].join('/');
+      return ['https://api.github.com/repos', owner, repo, 'issues'].join('/');
     },
     computeOptions: function(state, page) {
       return {state: state, page: page};
