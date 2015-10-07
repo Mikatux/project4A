@@ -1,0 +1,97 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
+
+<dom-module id="user-list">
+
+  <template>
+    <style>
+      :host {
+        display: block;
+        box-sizing: border-box;
+        max-width: 512px;
+      }
+      
+      #card-message {
+        background-color: #FFFFFF;
+        margin: 12px;
+      }
+      
+      .avatar {
+    		border-radius: 2px;
+    		width: 40px;
+    		height: 40px;
+    		position: relative;
+    	}
+    	
+    	.username {
+    	  font-size: 18px;
+    		text-transform: capitalize;
+    		font-weight: 500;
+    		color: var(--accent-color);
+    		line-height: 1.3em;
+    		max-width: 90%;
+    		text-overflow: ellipsis;
+    		overflow: hidden;
+    		white-space: nowrap;
+    	}
+      
+      .timestamp {
+        font-size: 14px;
+    		font-weight: 300;
+    		color: #b5a896;
+    		line-height: 1.3em;
+    		max-width: 90%;
+    		text-overflow: ellipsis;
+    		overflow: hidden;
+    		white-space: nowrap;
+      }
+      
+      #head {
+        padding: 4px;
+        background-color:#FDFDFD;
+      }
+      
+      #name-zone {
+        padding-left: 16px;
+      }
+      
+    </style>
+    <iron-ajax
+      auto
+      url="http://back.oversimplified.io/messages"
+      handle-as="json"
+      last-response="{{response}}"></iron-ajax>
+
+      <template is="dom-repeat" items="{{response}}">
+
+        <paper-material elevation="1" flex id="card-message">
+          <div id="head" class="horizontal layout flex">
+            <div>
+              <img src="{{item.img}}" alt="avatar" class="avatar">
+            </div>
+            <div class="vertical layout" id="name-zone">
+              <span class="username">{{item.name}}</span><span class="username">{{item.lastname}}</span>
+              <span class="timestamp">{{item.date}}</span>
+            </div>
+          </div>
+        </paper-material>
+
+      </template>
+      <br>
+  </template>
+
+</dom-module>
+
+<script>
+  Polymer({
+    is: 'user-list',
+    properties: {
+      url: {
+        computed: 'computeUrl()'
+      }
+    },
+    computeUrl: function() {
+      return 'http://back.oversimplified.io/users';
+    }
+  });
+</script>
