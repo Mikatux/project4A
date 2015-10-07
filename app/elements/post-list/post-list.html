@@ -58,6 +58,12 @@
         
       }
       
+      #separator {
+        height: 1px;
+        width: 100%;
+        background-color: var(--primary-background-color);
+      }
+      
     </style>
     <iron-ajax
       auto
@@ -76,6 +82,7 @@
               <span class="username">{{item.author.name}}</span>
               <span class="timestamp">{{item.date}}</span>
             </div>
+            <div id="separator"></div>
           </div>
           
           <div id="content">
