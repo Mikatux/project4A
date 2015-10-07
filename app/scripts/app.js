@@ -69,13 +69,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   app.onRefresh = function() {
     var refreshButton = document.querySelector('#refreshButton');
     
-    refreshButton.style.transform = 'rotate(180deg)';
-    refreshButton.style.webkitTransform = 'rotate(180deg)';
-    refreshButton.style.mozTransform = 'rotate(180deg)';
-    refreshButton.style.msTransform = 'rotate(180deg)';
-    refreshButton.style.oTransform = 'rotate(180deg)';
+    refreshButton.style.transform = 'rotate(360deg)';
+    refreshButton.style.webkitTransform = 'rotate(360deg)';
+    refreshButton.style.mozTransform = 'rotate(360deg)';
+    refreshButton.style.msTransform = 'rotate(360deg)';
+    refreshButton.style.oTransform = 'rotate(360deg)';
     
-    setTimeout(doPullRequest, 750);
+    setTimeout(doPullRequest, 550);
     //doPullRequest();
   };
   
