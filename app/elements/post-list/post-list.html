@@ -12,7 +12,7 @@
     </style>
     <iron-ajax
       auto
-      url="{{url}}"
+      url="https://api.github.com/repos/robdodson/chart-elements/issues"
       handle-as="json"
       last-response="{{response}}"></iron-ajax>
 
@@ -23,7 +23,8 @@
         <div>
           <!--<a href="{{item.html_url}}">{{item.author.name}}</a>
           <span>{{item.author.name}}</span>-->
-          <span>{{item.url}}</span>
+          <span>{{item.html_url}}</span>
+          <a href="{{item.html_url}}">{{item.title}}</a>
           <span>a</span>
           <br>
         </div>
