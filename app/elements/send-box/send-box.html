@@ -24,7 +24,7 @@
         <paper-input name="content" label="content"></paper-input>
         <input name="type" value="text" hidden>
         <input name="userId" value="56154da0d32c233e52f30815" hidden>
-        <paper-button raised onclick="sendMessage()">Send</paper-button>
+        <paper-button type="submit">Send</paper-button>
       </form>
     </paper-material>
 
@@ -37,9 +37,6 @@
     is: 'send-box',
     properties: {
       
-    },
-    function sendMessage() {
-      document.getElementById('form').submit();
     }
   });
 </script>
