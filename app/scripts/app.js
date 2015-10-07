@@ -65,6 +65,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       drawerPanel.closeDrawer();
     }
   };
+  
+  app.refresh = function() {
+    var refreshButton = document.querySelector('#refreshButton');
+    refreshButton.style.transform = 'rotate(90)';
+    refreshButton.style.webkitTransform = 'rotate(90)';
+    refreshButton.style.mozTransform = 'rotate(90)';
+    refreshButton.style.msTransform = 'rotate(90)';
+    refreshButton.style.oTransform = 'rotate(90)';
+  }
 
   // Scroll page to top and expand header
   app.scrollPageToTop = function() {

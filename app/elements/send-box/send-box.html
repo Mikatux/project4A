@@ -1,0 +1,35 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="send-box">
+
+  <template>
+    <style>
+      :host {
+        display: block;
+        box-sizing: border-box;
+        max-width: 512px;
+        min-height: 64px;
+      }
+      
+    </style>
+    
+    <template is="dom-repeat" items="{{response}}">
+
+      <paper-material elevation="1" flex id="card-message">
+        
+      </paper-material>
+
+    </template>
+    <br>
+  </template>
+
+</dom-module>
+
+<script>
+  Polymer({
+    is: 'send-box',
+    properties: {
+      
+    }
+  });
+</script>
