@@ -66,9 +66,17 @@
       paper-icon-button.small {
         margin: 0px;
         padding: 0px;
-        height:50px;
-        width:50px;
+        height:12px;
+        width:12px;
         color: #EAEAEA;
+        
+        -webkit-transition: 0.3s;
+        transition: 0.3s;
+      }
+      
+      paper-icon-button.small::shadow #icon {
+        width: 12px;
+        height: 12px;
       }
       
       paper-icon-button.small:hover {
@@ -77,6 +85,9 @@
         height:12px;
         width:12px;
         color: #DADADA;
+        
+        -webkit-transition: 0.3s;
+        transition: 0.3s;
       }
       
       #separator {
