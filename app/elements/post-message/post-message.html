@@ -145,13 +145,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         console.log("delete message");
         var ajax = document.getElementById('deleteMessage');
         ajax.url = "http://back.oversimplified.io/message/" + this.item._id;
-        this.removePost();
         ajax.generateRequest();
+        this.removePost();
       },
       
       removePost: function() {
         console.log("Animation -");
         this.$.head.style.backgroundColor = "#e74c3c";
+        this.$.style.maxWidth = "0px";
         this.$.style.maxHeight = "0px";
       }
     });
