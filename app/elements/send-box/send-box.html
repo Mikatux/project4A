@@ -83,16 +83,7 @@
     ion.sound({
       sounds: [
           {
-              name: "my_cool_sound"
-          },
-          {
-              name: "notify_sound",
-              volume: 0.2
-          },
-          {
-              name: "alert_sound",
-              volume: 0.3,
-              preload: false
+              name: "button_tiny"
           }
       ],
       volume: 0.5,
@@ -100,7 +91,7 @@
       preload: true
     });
 
-    
+    ion.sound.play("button_tiny");
   }
 </script>
 
