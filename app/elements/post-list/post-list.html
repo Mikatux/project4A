@@ -99,6 +99,15 @@
 
       <template is="dom-repeat" items="{{response}}">
 
+        <iron-ajax
+          id="deleteMessage"
+          auto
+          url="http://api.oversimplified.io/message/56163141f93752930136b398"
+          method="DELETE"
+          on-response="handleResponse"
+          debounce-duration="300"></iron-ajax>
+        </paper-icon-button>
+
         <paper-material elevation="1" flex id="card-message">
           <div id="head" class="horizontal layout flex">
             <div>
@@ -111,16 +120,7 @@
             <div class="horizontal end-justified layout" flex>
               <paper-icon-button icon="report" class="small"></paper-icon-button>
               <paper-icon-button icon="favorite" class="small"></paper-icon-button>
-              <paper-icon-button icon="delete" class="small" onclick="deletePost()">
-                <iron-ajax
-                  id="deleteMessage"
-                  auto
-                  url="http://api.oversimplified.io/message"
-                  method="DELETE"
-                  param="56163141f93752930136b398"
-                  on-response="handleResponse"
-                  debounce-duration="300"></iron-ajax>
-              </paper-icon-button>
+              <paper-icon-button icon="delete" class="small" onclick="deletePost()"></paper-icon-button>
             </div>
           </div>
           <div id="separator"></div>
