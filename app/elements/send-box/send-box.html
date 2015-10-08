@@ -3,6 +3,7 @@
 <link rel="import" href="../../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../../bower_components/iron-form/iron-form.html">
 <link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../bower_components/ion-sound/ion.sound.min.js">
 
 <dom-module id="send-box">
 
@@ -72,8 +73,34 @@
   });
   
   function submitForm() {
-    document.getElementById('form').submit();
-    document.getElementById('message-content').value = "";
+    if (document.getElementById('message-content').value != "") {
+      document.getElementById('form').submit();
+      document.getElementById('message-content').value = "";
+    }
+  }
+  
+  function send() {
+    ion.sound({
+      sounds: [
+          {
+              name: "my_cool_sound"
+          },
+          {
+              name: "notify_sound",
+              volume: 0.2
+          },
+          {
+              name: "alert_sound",
+              volume: 0.3,
+              preload: false
+          }
+      ],
+      volume: 0.5,
+      path: "sounds/",
+      preload: true
+    });
+
+    
   }
 </script>
 
