@@ -17,14 +17,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         display: block;
         box-sizing: border-box;
         max-width: 512px;
-        
-        -webkit-transition: 0.6s;
-        transition: 0.6s;
       }
       
       #card-message {
         background-color: #FFFFFF;
         margin: 12px;
+        
+        -webkit-transition: 0.6s;
+        transition: 0.6s;
       }
       
       .avatar {
@@ -152,8 +152,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       removePost: function() {
         console.log("Animation -");
         this.$.head.style.backgroundColor = "#e74c3c";
-        this.$.head.style.maxWidth = "0px";
-        this.$.style.maxHeight = "0px";
+        this.$.card-message.style.maxHeight = "0px";
       }
     });
   </script>
