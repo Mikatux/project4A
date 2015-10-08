@@ -2,6 +2,7 @@
 <link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
 <link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
 <link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../post-message/post-message.html">
 
 <dom-module id="post-list">
 
@@ -98,11 +99,16 @@
       last-response="{{response}}"></iron-ajax>
 
       <template is="dom-repeat" items="{{response}}">
+        <post-message item={{item}}></post-message>
+      </template>
+
+      <!--
+      <template is="dom-repeat" items="{{response}}">
 
         <iron-ajax
           id="deleteMessage"
           auto
-          url="http://api.oversimplified.io/message/56163141f93752930136b398"
+          url="{{url}}"
           method="DELETE"
           on-response="handleResponse"
           debounce-duration="300"></iron-ajax>
@@ -131,12 +137,14 @@
         </paper-material>
 
       </template>
+      -->
       <br>
   </template>
 
 </dom-module>
 
 <script>
+//http://api.oversimplified.io/message/"
   Polymer({
     is: 'post-list',
     properties: {
