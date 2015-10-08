@@ -74,6 +74,7 @@
   
   function submitForm() {
     if (document.getElementById('message-content').value != "") {
+      send();
       document.getElementById('form').submit();
       document.getElementById('message-content').value = "";
     }
