@@ -113,10 +113,11 @@
               <paper-icon-button icon="favorite" class="small"></paper-icon-button>
               <paper-icon-button icon="delete" class="small" onclick="deletePost()">
                 <iron-ajax
+                  id="deleteMessage"
                   auto
                   url="http://api.oversimplified.io/messages/"
-                  params='{"alt":"json", "q":"chrome"}'
-                  handle-as="json"
+                  method="DELETE"
+                  param="56163141f93752930136b398"
                   on-response="handleResponse"
                   debounce-duration="300"></iron-ajax>
               </paper-icon-button>
@@ -156,16 +157,10 @@
   
   function deletePost() {
     console.log("delete");
+    document.getElementById('deleteMessage').generateRequest();
   }
   
   function removePost() {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-      if (xhttp.readyState == 4 && xhttp.status == 200) {
-       document.getElementById("demo").innerHTML = xhttp.responseText;
-      }
-    }
-    xhttp.open("DELETE", "ajax_info.txt", true);
-    xhttp.send();
+    
   }
 </script>
