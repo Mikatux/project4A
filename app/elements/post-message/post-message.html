@@ -99,10 +99,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     
     <iron-ajax
       id="deleteMessage"
-      
       url=""
       method="DELETE"
-      on-response="handleResponse"
       debounce-duration="300">
     </iron-ajax>
     
@@ -143,6 +141,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         ajax.url = "http://back.oversimplified.io/message/" + this.item._id;
         console.log(ajax.url);
         ajax.generateRequest();
+      },
+      
+      removePost: function() {
+        document.getElementById('deleteMessage').style.backgroundColor = "#e74c3c";
       }
     });
   </script>
