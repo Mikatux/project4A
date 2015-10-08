@@ -79,6 +79,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         height: 18px;
         color: #EAEAEA;
         
+        margin: 2px;
+        
         -webkit-transition: 0.3s;
         transition: 0.3s;
       }
@@ -120,7 +122,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </div>
         <div class="horizontal end-justified layout" flex>
           <paper-icon-button icon="report" class="small"></paper-icon-button>
-          <paper-icon-button icon="favorite" class="small"></paper-icon-button>
+          <paper-icon-button icon="favorite" class="small" on-click="like" id="fav"></paper-icon-button>
           <paper-icon-button icon="delete" class="small" on-click="deletePost"></paper-icon-button>
         </div>
       </div>
@@ -139,6 +141,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       properties: {
         item: Object
       },
+      
+      like: function() {
+        this.$.fav.style.color = "#e74c3c";
+      }
       
       deletePost: function() {
         console.log("delete message");
