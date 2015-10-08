@@ -19,7 +19,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         max-width: 512px;
       }
       
-      #card-message {
+      #cardMessage {
         background-color: #FFFFFF;
         margin: 12px;
         
@@ -110,7 +110,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       debounce-duration="300">
     </iron-ajax>
     
-    <paper-material elevation="1" flex id="card-message">
+    <paper-material elevation="1" flex id="cardMessage">
       <div id="head" class="horizontal layout flex">
         <div>
           <img src="{{item.author.img}}" alt="avatar" class="avatar">
@@ -152,7 +152,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       removePost: function() {
         console.log("Animation -");
         this.$.head.style.backgroundColor = "#e74c3c";
-        this.$.card-message.style.maxHeight = "0px";
+        this.$.cardMessage.style.maxHeight = "0px";
       }
     });
   </script>
