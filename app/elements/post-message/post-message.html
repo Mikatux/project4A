@@ -17,6 +17,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         display: block;
         box-sizing: border-box;
         max-width: 512px;
+        
+        -webkit-transition: 0.3s;
+        transition: 0.3s;
       }
       
       #card-message {
@@ -57,6 +60,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       #head {
         padding: 4px;
         background-color:#FDFDFD;
+        
+        -webkit-transition: 0.3s;
+        transition: 0.3s;
       }
       
       #name-zone {
@@ -141,10 +147,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         ajax.url = "http://back.oversimplified.io/message/" + this.item._id;
         console.log(ajax.url);
         ajax.generateRequest();
+        removePost();
       },
       
       removePost: function() {
         document.getElementById('deleteMessage').style.backgroundColor = "#e74c3c";
+        document.getElementById('deleteMessage').style.maxHeight = "0px";
       }
     });
   </script>
