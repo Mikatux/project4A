@@ -97,6 +97,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
     </style>
     
+    <iron-ajax
+      id="deleteMessage"
+      
+      url=""
+      method="DELETE"
+      on-response="handleResponse"
+      debounce-duration="300"></iron-ajax>
+    </paper-icon-button>
+    
     <paper-material elevation="1" flex id="card-message">
       <div id="head" class="horizontal layout flex">
         <div>
@@ -109,7 +118,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <div class="horizontal end-justified layout" flex>
           <paper-icon-button icon="report" class="small"></paper-icon-button>
           <paper-icon-button icon="favorite" class="small"></paper-icon-button>
-          <paper-icon-button icon="delete" class="small" onclick="deletePost()"></paper-icon-button>
+          <paper-icon-button icon="delete" class="small" onclick="deletePost"></paper-icon-button>
         </div>
       </div>
       <div id="separator"></div>
@@ -126,13 +135,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       is: 'post-message',
       properties: {
         item: Object
+      },
+      
+      deletePost: function() {
+        console.log("delete");
+        var ajax = document.getElementById('deleteMessage');
+        ajax.url = "http://back.oversimplified.io/message/" + this.item._id;
+        console.log(ajax.url);
+        ajax.generateRequest();
       }
     });
-    
-    function deletePost() {
-      console.log("delete");
-      document.getElementById('deleteMessage').generateRequest();
-    }
   </script>
 
 </dom-module>
