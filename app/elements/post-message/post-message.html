@@ -139,11 +139,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     Polymer({
       is: 'post-message',
       properties: {
-        item: Object
+        item: Object,
+        liked: Boolean
       },
       
       like: function() {
-        this.$.fav.style.color = "#e74c3c";
+        if (this.liked) {
+          this.$.fav.style.color = "#EAEAEA";
+          this.liked = false;
+        } else {
+          this.$.fav.style.color = "#e74c3c";
+          this.liked = true;
+        }
       },
       
       deletePost: function() {
@@ -157,7 +164,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       removePost: function() {
         console.log("Animation -");
         this.$.head.style.backgroundColor = "#e74c3c";
-        this.$.cardMessage.style.maxHeight = "0px";
+        this.$.cardMessage.style.height = "0px";
         this.$.cardMessage.style.opacity = "0.0";
         this.$.cardMessage.style.margin = "0px";
       }
