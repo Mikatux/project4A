@@ -60,7 +60,7 @@
           <iron-a11y-keys
             id="keys"
             keys="shift+enter"
-            target="{{}}"
+            target="[[target]]"
             on-keys-pressed="_updatePressed">
           </iron-a11y-keys>
         </div>
@@ -75,7 +75,12 @@
   Polymer({
     is: 'send-box',
     properties: {
-      
+      target: {
+        type: Object,
+        value: function() {
+          return document.body;
+        }
+      }
     },
     
     submitForm: function() {
