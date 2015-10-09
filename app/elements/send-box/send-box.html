@@ -51,11 +51,11 @@
 
     <paper-material elevation="1" flex id="card-message">
       <form is="iron-form" id="form" method="post" action="http://api.oversimplified.io/message">
-        <paper-input name="content" label="Send a message" id="message-content"></paper-input>
+        <paper-textarea name="content" label="Send a message" id="message-content"></paper-textarea>
         <paper-input name="type" value="text" hidden></paper-input>
         <paper-input name="userId" value="56154da0d32c233e52f30815" hidden></paper-input>
         <div class="horizontal end-justified layout">
-          <paper-button onclick="submitForm()" class="green ripple" id="send-button"><iron-icon icon="send"></iron-icon>Send</paper-button>
+          <paper-button on-click="submitForm" class="green ripple" id="send-button"><iron-icon icon="send"></iron-icon>Send</paper-button>
         </div>
       </form>
     </paper-material>
@@ -69,31 +69,16 @@
     is: 'send-box',
     properties: {
       
+    },
+    
+    submitForm: function() {
+      if (document.getElementById('message-content').value != "") {
+        //send();
+        document.getElementById('form').submit();
+        document.getElementById('message-content').value = "";
+      }
     }
   });
-  
-  function submitForm() {
-    if (document.getElementById('message-content').value != "") {
-      //send();
-      document.getElementById('form').submit();
-      document.getElementById('message-content').value = "";
-    }
-  }
-  
-  function send() {
-    ion.sound({
-      sounds: [
-          {
-              name: "button_tiny"
-          }
-      ],
-      volume: 0.5,
-      path: "sounds/",
-      preload: true
-    });
-
-    ion.sound.play("button_tiny");
-  }
 </script>
 
 <!--
