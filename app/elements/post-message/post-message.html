@@ -143,6 +143,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         liked: Boolean
       },
       
+      report: function() {
+        alert('Ce message ');
+      }
+      
       like: function() {
         if (this.liked) {
           this.$.fav.style.color = "#EAEAEA";
