@@ -155,7 +155,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       is: 'post-message',
       properties: {
         item: Object,
-        date: {
+        cdate: {
           computed: 'computeDate(date)'
         },
         liked: Boolean
@@ -164,7 +164,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       computeDate: function(date) {
         
         return '';
-      }
+      },
       
       report: function() {
         var dialog = this.$.reportDialog.open();
