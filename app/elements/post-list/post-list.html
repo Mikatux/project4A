@@ -19,6 +19,7 @@
       
     </style>
     <iron-ajax
+      id="ajaxRequest"
       auto
       url="http://api.oversimplified.io/messages"
       handle-as="json"
@@ -74,27 +75,11 @@
   Polymer({
     is: 'post-list',
     properties: {
-      url: {
-        computed: 'computeUrl()'
-      },
-      date: {
-        computed: 'computeDate()'
-      }
+
     },
-    computeUrl: function() {
-      return 'http://back.oversimplified.io/messages';
-    },
-    computeDate: function() {
-      return "Aujourd'hui";
+    
+    refresh: function() {
+      this.$.ajaxRequest.generateRequest();
     }
   });
-  
-  function deletePost() {
-    console.log("delete");
-    document.getElementById('deleteMessage').generateRequest();
-  }
-  
-  function removePost() {
-    
-  }
 </script>
