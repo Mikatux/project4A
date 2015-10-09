@@ -1,5 +1,6 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../../paper-textarea/paper-textarea.html">
 <link rel="import" href="../../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../../bower_components/iron-form/iron-form.html">
 <link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
@@ -22,7 +23,7 @@
         padding: 8px;
       }
       
-      #message-content {
+      #messageContent {
         
       }
       
@@ -51,11 +52,17 @@
 
     <paper-material elevation="1" flex id="card-message">
       <form is="iron-form" id="form" method="post" action="http://api.oversimplified.io/message">
-        <paper-input name="content" label="Send a message" id="message-content"></paper-input>
+        <paper-textarea name="content" label="Send a message" id="messageContent"></paper-textarea>
         <paper-input name="type" value="text" hidden></paper-input>
         <paper-input name="userId" value="56154da0d32c233e52f30815" hidden></paper-input>
         <div class="horizontal end-justified layout">
           <paper-button on-click="submitForm" class="green ripple" id="send-button"><iron-icon icon="send"></iron-icon>Send</paper-button>
+          <iron-a11y-keys
+            id="keys"
+            keys="shift+enter"
+            target="{{}}"
+            on-keys-pressed="_updatePressed">
+          </iron-a11y-keys>
         </div>
       </form>
     </paper-material>
@@ -72,11 +79,15 @@
     },
     
     submitForm: function() {
-      if (document.getElementById('message-content').value != "") {
-        //send();
-        document.getElementById('form').submit();
-        document.getElementById('message-content').value = "";
+      if (this.$.messageContent.value != "") {
+        
+        this.$.form.submit();
+        this.$.messageContent.value = "";
       }
+    },
+    
+    _updatePressed: function(event) {
+      console.log(event.detail);
     }
   });
 </script>
