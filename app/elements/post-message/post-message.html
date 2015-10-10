@@ -162,9 +162,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       },
       
       computeDate: function(date) {
-        var d = Date.parse(date);
-        var parsedDate = d.toDateString();
-        return parsedDate;
+        var d = date.split("T")[0];
+        var h = date.split("T")[1].substring(0, 5);
+        
+        var dt = new Date(d.split(':'));
+        
+        return dt + " : " + h;
       },
       
       report: function() {
