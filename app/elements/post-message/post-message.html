@@ -165,9 +165,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         var d = date.split("T")[0];
         var h = date.split("T")[1].substring(0, 5);
         
-        var dt = new Date(d.split(':')).toString().substring(0, 15);
+        d = new Date(d.split(':')).toString().substring(4, 15);
         
-        return dt + " : " + h;
+        return d + ", " + h;
       },
       
       report: function() {
