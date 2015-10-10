@@ -10,6 +10,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/paper-dialog/paper-dialog.html">
 <link rel="import" href="../../bower_components/neon-animation/neon-animations.html">
+<link rel="import" href="../../bower_components/iron-icons/image-icons.html">
 
 <dom-module id="post-message">
   <template>
@@ -217,6 +218,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         this.$.cardMessage.style.height = "0px";
         this.$.cardMessage.style.opacity = "0.0";
         this.$.cardMessage.style.margin = "0px";
+      },
+      
+      addEmo: function(content) {
+        var newContent = content.replace(":(", "<iron-icon icon="tag-faces"></iron-icon>");
+        
+        return newContent;
       }
     });
   </script>
