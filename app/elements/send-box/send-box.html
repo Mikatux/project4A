@@ -6,6 +6,8 @@
 <link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
 <link rel="import" href="../../bower_components/iron-a11y-keys/iron-a11y-keys.html">
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/buzz/1.1.10/buzz.min.js"></script>
+
 <dom-module id="send-box">
 
   <template>
@@ -52,14 +54,14 @@
 
     <paper-material elevation="1" flex id="card-message">
       <form is="iron-form" id="form" method="post" action="http://api.oversimplified.io/message">
-        <paper-textarea name="content" label="Send a message" id="messageContent"></paper-textarea>
+        <paper-input name="content" label="Send a message" id="messageContent"></paper-input>
         <paper-input name="type" value="text" hidden></paper-input>
         <paper-input name="userId" value="56154da0d32c233e52f30815" hidden></paper-input>
         <div class="horizontal end-justified layout">
           <paper-button on-click="submitForm" class="green ripple" id="send-button"><iron-icon icon="send"></iron-icon>Send</paper-button>
           <iron-a11y-keys
             id="keys"
-            keys="shift+enter"
+            keys="shift+enter || enter"
             target="[[target]]"
             on-keys-pressed="_updatePressed">
           </iron-a11y-keys>
@@ -93,6 +95,15 @@
     
     _updatePressed: function(event) {
       this.submitForm();
+    },
+    
+    snd: function() {
+      var mySound = new buzz.sound( "../../sounds/load", {
+          formats: [ "wav"],
+          preload: true
+      });
+      
+      mySound.play();
     }
   });
 </script>
