@@ -4,12 +4,12 @@
 <link rel="import" href="../../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../../bower_components/iron-form/iron-form.html">
 <link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../bower_components/iron-icons/image-icons.html">
 <link rel="import" href="../../bower_components/iron-a11y-keys/iron-a11y-keys.html">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/buzz/1.1.10/buzz.min.js"></script>
 
 <dom-module id="send-box">
-
   <template>
     <style>
       :host {
@@ -57,6 +57,17 @@
         <paper-input name="content" label="Send a message" id="messageContent"></paper-input>
         <paper-input name="type" value="text" hidden></paper-input>
         <paper-input name="userId" value="56154da0d32c233e52f30815" hidden></paper-input>
+        
+        <div class="container">
+          <div>
+            <paper-button class="green ripple" id="hello"><iron-icon icon="mood"></iron-icon></paper-button>
+          </div>
+          <div class="flexchild"></div>
+          <div>
+            <paper-button on-click="submitForm" class="green ripple" id="send-button"><iron-icon icon="send"></iron-icon>Send</paper-button>
+          </div>
+        </div>
+        <!--
         <div class="horizontal end-justified layout">
           <paper-button on-click="submitForm" class="green ripple" id="send-button"><iron-icon icon="send"></iron-icon>Send</paper-button>
           <iron-a11y-keys
@@ -66,6 +77,7 @@
             on-keys-pressed="_updatePressed">
           </iron-a11y-keys>
         </div>
+        -->
       </form>
     </paper-material>
 
@@ -89,6 +101,7 @@
       if (this.$.messageContent.value != "") {
         
         this.$.form.submit();
+        this.snd();
         this.$.messageContent.value = "";
       }
     },
