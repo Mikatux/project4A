@@ -66,6 +66,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         transition: 0.3s;
       }
       
+      #foot {
+        padding: 4px;
+        background-color: #FDFDFD;
+        
+        -webkit-transition: 0.3s;
+        transition: 0.3s;
+      }
+      
       #name-zone {
         padding-left: 16px;
         width: 60%;
@@ -99,7 +107,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         transition: 0.3s;
       }
       
-      #separator {
+      .separator {
         height: 1px;
         width: 100%;
         background-color: var(--primary-background-color);
@@ -141,10 +149,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <paper-icon-button icon="delete" class="small" on-click="deletePost"></paper-icon-button>
         </div>
       </div>
-      <div id="separator"></div>
+      <div class="separator"></div>
       
       <div id="content">
         <span>{{item.content}}</span>
+      </div>
+      
+      <div class="separator"></div>
+      
+      <div id="foot">
+        <br>
       </div>
     </paper-material>
 
