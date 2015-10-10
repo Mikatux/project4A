@@ -60,6 +60,13 @@
       
     </style>
 
+    <iron-a11y-keys
+      id="keys"
+      keys="shift+enter || enter"
+      target="[[target]]"
+      on-keys-pressed="_updatePressed">
+    </iron-a11y-keys>
+
     <paper-material elevation="1" flex id="cardMessage">
       <form is="iron-form" id="form" method="post" action="http://api.oversimplified.io/message">
         <paper-input name="content" label="Send a message" id="messageContent"></paper-input>
