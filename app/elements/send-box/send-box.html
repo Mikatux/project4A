@@ -70,6 +70,12 @@
         --paper-button-ink-color: var(--paper-green-a200);
       }
       
+      .separator {
+        height: 1px;
+        width: 100%;
+        background-color: var(--primary-background-color);
+      }
+      
     </style>
 
     <iron-a11y-keys
@@ -98,18 +104,9 @@
             <paper-button on-click="submitForm" class="green ripple" id="sendButton"><iron-icon icon="send"></iron-icon> Send</paper-button>
           </div>
         </div>
-        <!--
-        <div class="horizontal end-justified layout">
-          <paper-button on-click="submitForm" class="green ripple" id="send-button"><iron-icon icon="send"></iron-icon>Send</paper-button>
-          <iron-a11y-keys
-            id="keys"
-            keys="shift+enter || enter"
-            target="[[target]]"
-            on-keys-pressed="_updatePressed">
-          </iron-a11y-keys>
-        </div>
-        -->
       </form>
+      
+      <div class="separator"></div>
     </paper-material>
 
   </template>
