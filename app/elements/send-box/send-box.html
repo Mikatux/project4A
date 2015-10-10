@@ -50,16 +50,18 @@
         
       }
       
-      #emojiButton {
-        
-      }
-      
       paper-icon-button.smal {
+        color: #727272;
         
+        -webkit-transition: 0.2s;
+        transition: 0.2s;
       }
       
       paper-icon-button.smal:hover {
-        color: var(--paper-light-green-500);
+        color: #333333;
+        
+        -webkit-transition: 0.2s;
+        transition: 0.2s;
       }
       
     </style>
@@ -79,11 +81,11 @@
         
         <div class="horizontal layout">
           <div>
-            <paper-icon-button icon="editor:insert-emoticon" class="small" id="emojiButton"></paper-icon-button>
-            <paper-icon-button icon="editor:insert-photo" class="small" id="emojiButton"></paper-icon-button>
-            <paper-icon-button icon="editor:insert-chart" class="small" id="emojiButton"></paper-icon-button>
-            <paper-icon-button icon="editor:insert-drive-file" class="small" id="emojiButton"></paper-icon-button>
-            <paper-icon-button icon="room" class="small" id="emojiButton"></paper-icon-button>
+            <paper-icon-button icon="editor:insert-emoticon" class="small" id="emoticonButton"></paper-icon-button>
+            <paper-icon-button icon="editor:insert-photo" class="small" id="photoButton"></paper-icon-button>
+            <paper-icon-button icon="editor:insert-drive-file" class="small" id="fileButton"></paper-icon-button>
+            <paper-icon-button icon="editor:insert-chart" class="small" id="chartButton"></paper-icon-button>
+            <paper-icon-button icon="room" class="small" id="roomButton"></paper-icon-button>
           </div>
           <div class="flex"> </div>
           <div>
