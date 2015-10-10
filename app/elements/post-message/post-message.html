@@ -162,8 +162,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       },
       
       computeDate: function(date) {
-        var d = Date.parse(date);
-        var parsedDate = d.toUTCString();
+        var d = new Date();//Date.parse(date);
+        var parsedDate = d.toDateString();
         return 'parsedDate';
       },
       
