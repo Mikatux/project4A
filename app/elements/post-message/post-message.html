@@ -221,7 +221,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       },
       
       addEmo: function(content) {
-        var newContent = content.replace(":(", "&#128512; + U+1F600 + 😀");//<iron-icon icon='tag-faces'></iron-icon>");
+        var newContent = content.replace(":D", "😀");
+        newContent = content.replace(";p", "😜");
+        newContent = content.replace(":)", "😃");
+        newContent = content.replace(";)", "😉");
+        newContent = content.replace("-_-", "😑");
+        newContent = content.replace(":O", "😮");
+        newContent = content.replace(":p", "😛");
+        newContent = content.replace(":'(", "😢");
+        newContent = content.replace("<3", "❤️�");
         
         return newContent;
       }
