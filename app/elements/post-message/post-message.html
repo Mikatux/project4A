@@ -133,7 +133,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </div>
         <div class="vertical layout" id="name-zone">
           <span class="username">{{item.author.name}}</span>
-          <span class="timestamp">{{item.date}}</span>
+          <span class="timestamp">{{computeDate(item.date)}}</span>
         </div>
         <div class="horizontal end-justified layout" flex>
           <paper-icon-button icon="report" class="small" on-click="report"></paper-icon-button>
@@ -144,7 +144,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <div id="separator"></div>
       
       <div id="content">
-        <p>{{item.content}}</p>
+        <span>{{item.content}}</span>
       </div>
     </paper-material>
 
@@ -162,8 +162,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       },
       
       computeDate: function(date) {
-        
-        return '';
+        var d = Date.parse(date);
+        var parsedDate = d.toDateString();
+        return parsedDate;
       },
       
       report: function() {
