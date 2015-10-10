@@ -158,7 +158,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <div class="separator"></div>
       
       <div id="foot">
-        <br>
+        <div class="horizontal end-justified layout" flex>
+          <paper-icon-button icon="report" class="small" on-click="report"></paper-icon-button>
+          <paper-icon-button icon="favorite" class="small" on-click="like" id="fav"></paper-icon-button>
+          <paper-icon-button icon="delete" class="small" on-click="deletePost"></paper-icon-button>
+        </div>
       </div>
     </paper-material>
 
