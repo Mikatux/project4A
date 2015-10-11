@@ -224,20 +224,21 @@
       
       moodGoodToogle: function() {
         if (this.moodGood) {
-          this.$.moodGood.className = this.$.fav.className + "selected";
+          this.$.moodGood.classList.add('selected');
           this.moodGood = false;
         } else {
-          this.$.moodGood.className.replace(/\bselected\b/,'');
+          this.$.moodGood.classList.remove('selected');
           this.moodGood = true;
         }
       },
       
       moodBadToogle: function() {
         if (this.moodBad) {
-          this.$.moodBad.className = this.$.fav.className + "selected";
+          this.$.moodBad.classList.add('selected');
           this.moodBad = false;
         } else {
-          this.$.moodBad.className.replace(/\bselected\b/,'');
+          //this.$.moodBad.className.replace(/\bselected\b/,'');
+          this.$.moodBad.classList.remove('selected');
           this.moodBad = true;
         }
       },
