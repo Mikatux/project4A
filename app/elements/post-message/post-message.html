@@ -133,6 +133,13 @@
         -webkit-transition: 0.3s;
         transition: 0.3s;
       }
+      
+      paper-icon-button.selected {
+        color: var(--default-primary-color);
+        
+        -webkit-transition: 0.3s;
+        transition: 0.3s;
+      }
     </style>
     
     <iron-ajax
@@ -177,10 +184,10 @@
         <div class="horizontal layout" flex>
           <!--<paper-icon-button icon="report" class="small" on-click="report"></paper-icon-button>
           <paper-icon-button icon="favorite" class="small" on-click="like" id="fav"></paper-icon-button>-->
-          <paper-icon-button icon="social:mood" class="replyButton" on-click="like" id="fav"></paper-icon-button>
-          <paper-icon-button icon="social:mood-bad" class="replyButton" on-click="like" id="moodBad"></paper-icon-button>
-          <paper-icon-button icon="star" class="replyButton" on-click="like" id="favorite"></paper-icon-button>
-          <paper-icon-button icon="reply" class="replyButton" on-click="like" id="reply"></paper-icon-button>
+          <paper-icon-button icon="social:mood" class="replyButton" on-click="moodGoodToogle" id="moodGood"></paper-icon-button>
+          <paper-icon-button icon="social:mood-bad" class="replyButton" on-click="moodBadToogle" id="moodBad"></paper-icon-button>
+          <paper-icon-button icon="star" class="replyButton" on-click="" id="favorite"></paper-icon-button>
+          <paper-icon-button icon="reply" class="replyButton" on-click="" id="reply"></paper-icon-button>
           <!--<paper-icon-button icon="delete" class="small" on-click="deletePost"></paper-icon-button>-->
         </div>
       </div>
@@ -198,7 +205,8 @@
         cdate: {
           computed: 'computeDate(date)'
         },
-        liked: Boolean
+        moodGood: Boolean,
+        moodBad: Boolean
       },
       
       computeDate: function(date) {
@@ -214,13 +222,23 @@
         var dialog = this.$.reportDialog.open();
       },
       
-      like: function() {
-        if (this.liked) {
-          this.$.fav.style.color = "#EAEAEA";
-          this.liked = false;
+      moodGoodToogle: function() {
+        if (this.moodGood) {
+          this.$.moodGood.className = this.$.fav.className + "selected";
+          this.moodGood = false;
         } else {
-          this.$.fav.style.color = "#e74c3c";
-          this.liked = true;
+          this.$.moodGood.className.replace(/\bselected\b/,'');
+          this.moodGood = true;
+        }
+      },
+      
+      moodBadToogle: function() {
+        if (this.moodBad) {
+          this.$.moodBad.className = this.$.fav.className + "selected";
+          this.moodBad = false;
+        } else {
+          this.$.moodBad.className.replace(/\bselected\b/,'');
+          this.moodBad = true;
         }
       },
       
