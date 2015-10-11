@@ -4,6 +4,8 @@
 <link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../post-message/post-message.html">
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/buzz/1.1.10/buzz.min.js"></script>
+
 <dom-module id="post-list">
 
   <template>
@@ -28,50 +30,12 @@
       <template is="dom-repeat" items="{{response}}">
         <post-message item={{item}}></post-message>
       </template>
-
-      <!--
-      <template is="dom-repeat" items="{{response}}">
-
-        <iron-ajax
-          id="deleteMessage"
-          auto
-          url="{{url}}"
-          method="DELETE"
-          on-response="handleResponse"
-          debounce-duration="300"></iron-ajax>
-        </paper-icon-button>
-
-        <paper-material elevation="1" flex id="card-message">
-          <div id="head" class="horizontal layout flex">
-            <div>
-              <img src="{{item.author.img}}" alt="avatar" class="avatar">
-            </div>
-            <div class="vertical layout" id="name-zone">
-              <span class="username">{{item.author.name}}</span>
-              <span class="timestamp">{{item.date}}</span>
-            </div>
-            <div class="horizontal end-justified layout" flex>
-              <paper-icon-button icon="report" class="small"></paper-icon-button>
-              <paper-icon-button icon="favorite" class="small"></paper-icon-button>
-              <paper-icon-button icon="delete" class="small" onclick="deletePost()"></paper-icon-button>
-            </div>
-          </div>
-          <div id="separator"></div>
-          
-          <div id="content">
-            <span>{{item.content}}</span>
-          </div>
-        </paper-material>
-
-      </template>
-      -->
       <br>
   </template>
 
 </dom-module>
 
 <script>
-//http://api.oversimplified.io/message/"
   Polymer({
     is: 'post-list',
     properties: {
@@ -80,6 +44,24 @@
     
     refresh: function() {
       this.$.ajaxRequest.generateRequest();
+    },
+    
+    newMessage: function() {
+      this.playSound("refresh");
+      this.$.ajaxRequest.generateRequest();
+    },
+    
+    deleteMessage: function() {
+      this.$.ajaxRequest.generateRequest();
+    },
+    
+    playSound: function(sound) {
+      var soundToPlay = new buzz.sound( "../../sounds/" + sound, {
+          formats: ["wav"],
+          preload: true
+      });
+      
+      soundToPlay.play();
     }
   });
 </script>

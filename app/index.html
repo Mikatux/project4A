@@ -176,7 +176,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
    var socket = io.connect("http://api.oversimplified.io:3000");
    socket.on('message', function(message) {
                   var postList = document.querySelector('#postList');
-                  postList.refresh();
+                  postList.newMessage();
                });
   </script>
   <!-- endbuild-->
