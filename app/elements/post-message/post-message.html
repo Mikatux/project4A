@@ -1,6 +1,8 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/paper-dialog/paper-dialog.html">
 <link rel="import" href="../../bower_components/neon-animation/neon-animations.html">
+<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../bower_components/iron-icons/social-icons.html">
 
 <dom-module id="post-message">
   <template>
@@ -136,7 +138,7 @@
         </div>
         <div class="horizontal end-justified layout" flex>
           <paper-icon-button icon="report" class="small" on-click="report"></paper-icon-button>
-          <paper-icon-button icon="delete" class="small" on-click="deletePost"></paper-icon-button>
+          <paper-icon-button icon="settings" class="small" on-click="deletePost"></paper-icon-button>
         </div>
       </div>
       <div class="separator"></div>
@@ -148,10 +150,14 @@
       <div class="separator"></div>
       
       <div id="foot">
-        <div class="horizontal end-justified layout" flex>
-          <paper-icon-button icon="report" class="small" on-click="report"></paper-icon-button>
-          <paper-icon-button icon="favorite" class="small" on-click="like" id="fav"></paper-icon-button>
-          <paper-icon-button icon="delete" class="small" on-click="deletePost"></paper-icon-button>
+        <div class="horizontal layout" flex>
+          <!--<paper-icon-button icon="report" class="small" on-click="report"></paper-icon-button>
+          <paper-icon-button icon="favorite" class="small" on-click="like" id="fav"></paper-icon-button>-->
+          <paper-icon-button icon="social:mood" class="small" on-click="like" id="fav"></paper-icon-button>
+          <paper-icon-button icon="social:mood-bad" class="small" on-click="like" id="moodBad"></paper-icon-button>
+          <paper-icon-button icon="star" class="small" on-click="like" id="favorite"></paper-icon-button>
+          <paper-icon-button icon="reply" class="small" on-click="like" id="reply"></paper-icon-button>
+          <!--<paper-icon-button icon="delete" class="small" on-click="deletePost"></paper-icon-button>-->
         </div>
       </div>
       
