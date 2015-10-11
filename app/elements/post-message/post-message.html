@@ -109,6 +109,30 @@
       #reportDialog {
         background-color: #FDFDFD;
       }
+      
+      paper-icon-button.replyButton {
+        color: #727272;
+        width: 18px;
+        height: 18px;
+        
+        margin: 0px 2px 0px 2px;
+        padding: 0px;
+        
+        -webkit-transition: 0.3s;
+        transition: 0.3s;
+      }
+      
+      paper-icon-button.replyButton::shadow #icon {
+        width: 18px;
+        height: 18px;
+      }
+      
+      paper-icon-button.replyButton:hover {
+        color: var(--default-primary-color);
+        
+        -webkit-transition: 0.3s;
+        transition: 0.3s;
+      }
     </style>
     
     <iron-ajax
@@ -153,10 +177,10 @@
         <div class="horizontal layout" flex>
           <!--<paper-icon-button icon="report" class="small" on-click="report"></paper-icon-button>
           <paper-icon-button icon="favorite" class="small" on-click="like" id="fav"></paper-icon-button>-->
-          <paper-icon-button icon="social:mood" class="small" on-click="like" id="fav"></paper-icon-button>
-          <paper-icon-button icon="social:mood-bad" class="small" on-click="like" id="moodBad"></paper-icon-button>
-          <paper-icon-button icon="star" class="small" on-click="like" id="favorite"></paper-icon-button>
-          <paper-icon-button icon="reply" class="small" on-click="like" id="reply"></paper-icon-button>
+          <paper-icon-button icon="social:mood" class="replyButton" on-click="like" id="fav"></paper-icon-button>
+          <paper-icon-button icon="social:mood-bad" class="replyButton" on-click="like" id="moodBad"></paper-icon-button>
+          <paper-icon-button icon="star" class="replyButton" on-click="like" id="favorite"></paper-icon-button>
+          <paper-icon-button icon="reply" class="replyButton" on-click="like" id="reply"></paper-icon-button>
           <!--<paper-icon-button icon="delete" class="small" on-click="deletePost"></paper-icon-button>-->
         </div>
       </div>
