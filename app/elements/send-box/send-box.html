@@ -101,7 +101,7 @@
 
     <paper-material elevation="1" flex id="cardMessage">
       <form is="iron-form" id="form" method="post" action="http://api.oversimplified.io/message">
-        <paper-input name="content" required auto-validate error-message="No message to send" label="Send a message" id="messageContent">
+        <paper-input name="content" auto-validate error-message="No message to send" label="Send a message" id="messageContent">
           <paper-icon-button suffix on-click="submitForm"
             icon="send" alt="send" title="send" tabindex="0" id="sendBtn">
           </paper-icon-button>
@@ -119,7 +119,7 @@
           </div>
           <div class="flex"> </div>
           <div>
-            <paper-button on-click="submitForm" class="green ripple" id="sendButton"><iron-icon icon="send"></iron-icon> Send</paper-button>
+            <!--<paper-button on-click="submitForm" class="green ripple" id="sendButton"><iron-icon icon="send"></iron-icon> Send</paper-button>-->
           </div>
         </div>
       </form>
