@@ -101,11 +101,12 @@
 
     <paper-material elevation="1" flex id="cardMessage">
       <form is="iron-form" id="form" method="post" action="http://api.oversimplified.io/message">
-        <paper-input name="content" auto-validate error-message="No message to send" label="Send a message" id="messageContent">
+        <paper-textarea name="content" auto-validate error-message="No message to send" label="Send a message" id="messageContent">
           <paper-icon-button suffix on-click="submitForm"
             icon="send" alt="send" title="send" tabindex="0" id="sendBtn">
           </paper-icon-button>
-        </paper-input>
+        </paper-textarea>
+        
         <paper-input name="type" value="text" hidden></paper-input>
         <paper-input name="userId" value="56154da0d32c233e52f30815" hidden></paper-input>
         
