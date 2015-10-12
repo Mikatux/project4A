@@ -144,6 +144,11 @@
         -webkit-transition: 0.3s;
         transition: 0.3s;
       }
+      
+      .catImage {
+        width: 512px;
+        max-height: 512px;
+      }
     </style>
     
     <iron-ajax
@@ -199,7 +204,7 @@
       <div class="separator"></div>
       
       <div>
-        <img src="http://thecatapi.com/api/images/get"/>
+        <img src="http://thecatapi.com/api/images/get" class="catImage"/>
       </div>
     </paper-material>
 
