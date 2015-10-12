@@ -152,7 +152,7 @@
       
       if (this.$.messageContent.value != "") {
         
-        //this.$.userId = app.getUserId();
+        this.$.userId.value = app.getUserId();
         this.$.form.submit();
         this.sendSound();
         this.$.messageContent.value = "";
