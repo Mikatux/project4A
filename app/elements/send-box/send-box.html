@@ -108,7 +108,7 @@
         </paper-input>
         
         <paper-input name="type" value="text" hidden></paper-input>
-        <paper-input name="userId" value="56154da0d32c233e52f30815" hidden></paper-input>
+        <paper-input name="userId" value="{{getUser()}}" hidden></paper-input>
         
         <div class="horizontal layout">
           <div>
@@ -180,6 +180,10 @@
       });
       
       sendSound.play();
+    },
+    
+    getUser: function() {
+      return app.getUserId();
     }
   });
 </script>
