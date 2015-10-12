@@ -153,9 +153,13 @@
       if (this.$.messageContent.value != "") {
         
         this.$.userId.value = app.getUserId();
-        this.$.form.submit();
-        this.sendSound();
-        this.$.messageContent.value = "";
+        if (this.$.userId.value != "") {
+          this.$.form.submit();
+          this.sendSound();
+          this.$.messageContent.value = "";
+        } else {
+          alert("Vous n'êtes pas connecté.");
+        }
       }
     },
     

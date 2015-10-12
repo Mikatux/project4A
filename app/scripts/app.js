@@ -112,7 +112,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   //User Managment
   app.getUserId = function() {
     var cookie = document.querySelector('#cookie');
-    console.log("Mon id est : " + cookie.value);
+    //console.log("Mon id est : " + cookie.value);
     return cookie.value;
   };
 
