@@ -36,6 +36,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     if (cookie.value === "") {
       cookie.value = '5612ccf518a3170252d283a3'; //Id de Mickael
       cookie.expires = 'Fri, 31 Dec 9999 23:59:59 GMT';
+      app.getUserId();
     } else {
       app.getUserId();
     }
