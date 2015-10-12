@@ -152,7 +152,7 @@
       
       if (this.$.messageContent.value != "") {
         
-        this.$.userId = getUser();
+        this.$.userId = app.getUserId();
         this.$.form.submit();
         this.sendSound();
         this.$.messageContent.value = "";
@@ -181,10 +181,6 @@
       });
       
       sendSound.play();
-    },
-    
-    getUser: function() {
-      return app.getUserId();
     }
   });
 </script>
