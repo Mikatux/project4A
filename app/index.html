@@ -94,8 +94,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <span>Users</span>
           </a>
 
-          <a data-route="contact" href="/contact" on-click="onDataRouteClick">
-            <iron-icon icon="mail"></iron-icon>
+          <a data-route="login" href="/login" on-click="onDataRouteClick">
+            <iron-icon icon="login"></iron-icon>
             <span>Contact</span>
           </a>
         </paper-menu>
@@ -131,18 +131,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <iron-pages attr-for-selected="data-route" selected="{{route}}">
 
             <section data-route="login">
+              
               <span>Hellogin</span>
+              
             </section>
+
 
             <section data-route="home">
 
-              
               <template is="dom-bind">
                 <polymer-cookie name="oversimplifiedcookie" id="cookie"></polymer-cookie>
                 <send-box></send-box>
                 <post-list id="postList"></post-list>
               </template>
-              
               
             </section>
 
