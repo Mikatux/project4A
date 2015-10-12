@@ -33,7 +33,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     // imports are loaded and elements have been registered
     var cookie = document.querySelector('#cookie');
     
-    if (cookie.value === null) {
+    if (cookie.value == null) {
       console.log("Creation du cookie");
       cookie.value = '5612ccf518a3170252d283a3'; //Id de Mickael
       cookie.expires = 'Fri, 31 Dec 9999 23:59:59 GMT';
