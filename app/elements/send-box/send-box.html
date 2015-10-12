@@ -108,7 +108,7 @@
         </paper-input>
         
         <paper-input name="type" value="text" hidden></paper-input>
-        <paper-input name="userId" value="{{getUser()}}" hidden></paper-input>
+        <paper-input name="userId" value="" hidden></paper-input>
         
         <div class="horizontal layout">
           <div>
@@ -152,6 +152,7 @@
       
       if (this.$.messageContent.value != "") {
         
+        this.$.userId = getUser();
         this.$.form.submit();
         this.sendSound();
         this.$.messageContent.value = "";
