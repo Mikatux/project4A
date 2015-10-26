@@ -56,7 +56,13 @@
         },
 
         response: function(event) {
-            console.log(event);
+            var userInfo = event.detail;
+
+            if (userInfo.error) {
+                alert("il y a une erreur");
+            } else {
+                alert("il n'y a pas d'erreur");
+            }
         },
 
         submitForm: function() {
