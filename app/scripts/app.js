@@ -43,7 +43,7 @@
         }
     });
 
-    function login(user) {
+    app.login = function(user) {
         var cookie = document.querySelector('#cookie');
 
         cookie.value = user._id; //Id de Mickael
