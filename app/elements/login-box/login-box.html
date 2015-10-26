@@ -50,17 +50,13 @@
 </dom-module>
 
 <script>
-    function response_() {
-
-    }
-
     Polymer({
         is: 'login-box',
         properties: {
         },
 
-        response: function() {
-            alert("Bimmm, ca fonctionne mieux !!");
+        response: function(event) {
+            console.log(event);
         },
 
         submitForm: function() {
