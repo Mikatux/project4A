@@ -59,7 +59,12 @@
             this.$.username.validate();
             this.$.password.validate();
 
+            this.$.form.addEventListener('iron-form-response', response);
             this.$.form.submit();
+        },
+
+        response: function() {
+            alert("Ca fonctionne");
         }
     });
 </script>
