@@ -50,8 +50,8 @@
 </dom-module>
 
 <script>
-    function response() {
-        alert("Ca fonctionne");
+    function response_() {
+
     }
 
     Polymer({
@@ -59,11 +59,15 @@
         properties: {
         },
 
+        response: function() {
+            alert("Bimmm, ca fonctionne mieux !!");
+        },
+
         submitForm: function() {
             this.$.username.validate();
             this.$.password.validate();
 
-            this.$.form.addEventListener('iron-form-response', response);
+            this.$.form.addEventListener('iron-form-response', this.response);
             this.$.form.submit();
         }
     });
