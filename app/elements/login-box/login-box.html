@@ -7,6 +7,8 @@
 <link rel="import" href="../../bower_components/iron-icons/editor-icons.html">
 <link rel="import" href="../../bower_components/iron-a11y-keys/iron-a11y-keys.html">
 
+<link type="text/css" href="http://csshake.surge.sh/csshake-slow.min.css">
+
 <dom-module id="login-box">
     <template>
         <style>
@@ -41,7 +43,7 @@
                 on-keys-pressed="_updatePressed">
         </iron-a11y-keys>
 
-        <paper-material elevation="1" flex id="cardLogin">
+        <paper-material elevation="1" flex id="cardLogin" class="shake-horizontal">
             <form is="iron-form" id="form" method="post" action="http://api.oversimplified.io/login">
                 <paper-input label="Username" name="login" required value="" id="username"></paper-input>
                 <paper-input label="Password" name="password" required value="" type="password" id="password"></paper-input>

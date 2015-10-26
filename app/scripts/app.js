@@ -34,12 +34,9 @@
         var cookie = document.querySelector('#cookie');
 
         if (cookie.value == null) {
-            console.log("Creation du cookie");
-            cookie.value = '5612ccf518a3170252d283a3'; //Id de Mickael
-            cookie.expires = 'Fri, 31 Dec 9999 23:59:59 GMT';
-            app.getUserId();
+            //TODO rediriger vers la page Login
         } else {
-            app.getUserId();
+            //TODO transformer le bouton Login en Unlog
         }
     });
 
@@ -48,6 +45,12 @@
 
         cookie.value = user._id; //Id de Mickael
         cookie.expires = new Date() + 2;
+    }
+
+    app.unlog = function() {
+        var cookie = document.querySelector('#cookie');
+
+        cookie.deleteCookie();
     }
 
     // Main area's paper-scroll-header-panel custom condensing transformation of
