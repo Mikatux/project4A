@@ -1,0 +1,61 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../../bower_components/paper-input/paper-textarea.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../bower_components/iron-form/iron-form.html">
+<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../bower_components/iron-icons/editor-icons.html">
+<link rel="import" href="../../bower_components/iron-a11y-keys/iron-a11y-keys.html">
+
+<dom-module id="login-box">
+    <template>
+        <style>
+
+
+        </style>
+
+        <paper-material elevation="1" flex id="cardMessage">
+            <form is="iron-form" id="form" method="post" action="http://api.oversimplified.io/login">
+                <paper-input name="content" auto-validate error-message="No message to send" label="Send a message" id="messageContent">
+                    <paper-icon-button suffix on-click="submitForm"
+                                       icon="send" alt="send" title="send" tabindex="0" id="sendBtn">
+                    </paper-icon-button>
+                </paper-input>
+
+                <paper-input name="Username" value=""></paper-input>
+                <paper-input name="Password" value="" type="password"></paper-input>
+
+                <div class="horizontal layout">
+                    <div>
+                        <paper-icon-button icon="editor:insert-emoticon" class="small" id="emoticonButton"></paper-icon-button>
+                        <paper-icon-button icon="editor:insert-photo" class="small" id="photoButton"></paper-icon-button>
+                        <paper-icon-button icon="editor:insert-drive-file" class="small" id="fileButton"></paper-icon-button>
+                        <paper-icon-button icon="editor:insert-chart" class="small" id="chartButton"></paper-icon-button>
+                        <paper-icon-button icon="room" class="small" id="roomButton"></paper-icon-button>
+                    </div>
+                </div>
+            </form>
+
+            <div class="separator"></div>
+
+            <div class="editor">
+            </div>
+        </paper-material>
+
+    </template>
+
+</dom-module>
+
+<script>
+    Polymer({
+        is: 'login-box',
+        properties: {
+            target: {
+                type: Object,
+                value: function() {
+                    return document.body;
+                }
+            }
+        }
+    });
+</script>
