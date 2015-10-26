@@ -50,6 +50,10 @@
 </dom-module>
 
 <script>
+    response: function() {
+        alert("Ca fonctionne");
+    }
+
     Polymer({
         is: 'login-box',
         properties: {
@@ -61,10 +65,6 @@
 
             this.$.form.addEventListener('iron-form-response', response);
             this.$.form.submit();
-        },
-
-        response: function() {
-            alert("Ca fonctionne");
         }
     });
 </script>
