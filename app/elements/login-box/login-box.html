@@ -10,10 +10,21 @@
 <dom-module id="login-box">
     <template>
         <style>
+            :host {
+                display: block;
+                box-sizing: border-box;
+            }
 
-        .loginButton {
+            #cardLogin {
+                background-color: #FFFFFF;
+                margin: 12px;
+                min-height: 64px;
+                padding: 8px 0px 8px 0px;
+            }
 
-        }
+            .loginButton {
+                color: var(--default-primary-color);
+            }
         </style>
 
         <paper-material elevation="1" flex id="cardLogin">
