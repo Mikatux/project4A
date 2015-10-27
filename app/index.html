@@ -54,6 +54,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <link rel="import" href="elements/elements.html">
     <link rel="import" href="elements/post-list/post-list.html">
     <link rel="import" href="elements/user-list/user-list.html">
+    <link rel="import" href="elements/user-list/group-list.html">
     <link rel="import" href="elements/send-box/send-box.html">
     <link rel="import" href="elements/login-box/login-box.html">
 
@@ -93,6 +94,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <a data-route="users" href="/users" on-click="onDataRouteClick">
                     <iron-icon icon="social:group"></iron-icon>
                     <span>Users</span>
+                </a>
+
+                <a data-route="groups" href="/groups" on-click="onDataRouteClick">
+                    <iron-icon icon="social:group"></iron-icon>
+                    <span>Groups</span>
                 </a>
 
                 <a id="logInOutMenuButton" data-route="login" href="/login" on-click="logoutDataRouteClick">
@@ -150,6 +156,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
                     <section data-route="users">
                         <user-list></user-list>
+                    </section>
+
+                    <section data-route="groups">
+                        <group-list></group-list>
                     </section>
 
                     <section data-route="user-info">
