@@ -43,12 +43,12 @@
                 on-keys-pressed="_updatePressed">
         </iron-a11y-keys>
 
-        <paper-material elevation="1" flex id="cardLogin">
+        <paper-material elevation="1" flex id="cardLogin" class="shake-horizontal">
             <form is="iron-form" id="form" method="post" action="http://api.oversimplified.io/login">
                 <paper-input label="Username" name="login" required value="" id="username"></paper-input>
                 <paper-input label="Password" name="password" required value="" type="password" id="password"></paper-input>
-                <div class="horizontal layout shake-horizontal">
-                    <div flex> </div>
+                <div class="horizontal layout">
+                    <div flex></div>
                     <paper-button on-click="submitForm" class="loginButton" id="loginButton"><iron-icon icon="lock"></iron-icon> Login</paper-button>
                 </div>
             </form>
