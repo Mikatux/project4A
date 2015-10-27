@@ -36,10 +36,10 @@
         if (cookie.value == null) {
             //TODO rediriger vers la page Login
             window.location.href = window.location.origin + "/#!/login";
-            document.querySelector("#logoutButton").innerHTML = "";
+            document.querySelector("#logoutMenuButton").innerHTML = "";
         } else {
             //TODO transformer le bouton Login en Logout
-            document.querySelector("#loginButton").innerHTML = "";
+            document.querySelector("#loginMenuButton").innerHTML = "";
         }
     });
 
