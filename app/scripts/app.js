@@ -53,6 +53,11 @@
 
     }
 
+    app.isLoggedIn = function() {
+        var cookie = document.querySelector('#cookie');
+       return cookie.value != null;
+    }
+
     app.login = function(user) {
         var cookie = document.querySelector('#cookie');
 
