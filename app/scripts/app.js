@@ -40,7 +40,6 @@
         } else {
             //TODO transformer le bouton Login en Logout
             document.querySelector("#loginButton").innerHTML = "";
-            alert(window.location.origin);
         }
     });
 

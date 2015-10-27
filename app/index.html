@@ -90,17 +90,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                     <span>Home</span>
                 </a>
 
-                <a id="loginButton" data-route="users" href="/users" on-click="onDataRouteClick">
+                <a data-route="users" href="/users" on-click="onDataRouteClick">
                     <iron-icon icon="social:group"></iron-icon>
                     <span>Users</span>
                 </a>
 
-                <a id="logoutButton" on-click="logout">
+                <a id="logoutButton" data-route="login" href="/login" on-click="logout; onDataRouteClick">
                     <iron-icon icon="lock"></iron-icon>
                     <span>Log Out</span>
                 </a>
 
-                <a data-route="login" href="/login" on-click="onDataRouteClick">
+                <a id="login" data-route="login" href="/login" on-click="onDataRouteClick">
                     <iron-icon icon="lock"></iron-icon>
                     <span>Login</span>
                 </a>
