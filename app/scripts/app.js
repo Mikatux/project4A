@@ -38,7 +38,7 @@
             //window.location.href = "http://example.com/new_url";
         } else {
             //TODO transformer le bouton Login en Unlog
-            alert(window.location);
+            alert(window.location.origin);
         }
     });
 
