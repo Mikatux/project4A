@@ -36,8 +36,10 @@
         if (cookie.value == null) {
             //TODO rediriger vers la page Login
             window.location.href = window.location.origin + "/#!/login";
+            document.querySelector("#logoutButton").innerHTML = "";
         } else {
-            //TODO transformer le bouton Login en Unlog
+            //TODO transformer le bouton Login en Logout
+            document.querySelector("#loginButton").innerHTML = "";
             alert(window.location.origin);
         }
     });
@@ -49,7 +51,7 @@
         cookie.expires = new Date() + 2;
     }
 
-    app.unlog = function() {
+    app.logout = function() {
         var cookie = document.querySelector('#cookie');
 
         cookie.deleteCookie();
