@@ -36,16 +36,21 @@
         if (cookie.value == null) {
             //TODO rediriger vers la page Login
             window.location.href = window.location.origin + "/#!/login";
-            document.querySelector("#logoutMenuButton").innerHTML = "";
+            document.querySelector("#logInOutMenuButtonText").innerHTML = "Login";
         } else {
             //TODO transformer le bouton Login en Logout
-            document.querySelector("#loginMenuButton").innerHTML = "";
+            document.querySelector("#logInOutMenuButtonText").innerHTML = "Logout";
         }
     });
 
     app.logoutDataRouteClick = function() {
+        app.updateMenuBar();
         app.onDataRouteClick();
         app.logout();
+    }
+
+    app.updateMenuBar = function() {
+
     }
 
     app.login = function(user) {
