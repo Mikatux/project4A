@@ -43,6 +43,11 @@
         }
     });
 
+    app.logoutDataRouteClick = function() {
+        app.onDataRouteClick();
+        app.logout();
+    }
+
     app.login = function(user) {
         var cookie = document.querySelector('#cookie');
 
