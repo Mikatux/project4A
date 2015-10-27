@@ -16,11 +16,15 @@
                 margin: 12px;
             }
 
+            .crop {
+                max-height: 128px;
+                overflow: hidden;
+            }
+
             .cover {
                 border-radius: 2px;
                 padding: 0;
-                margin: 0;
-                max-height: 128px;
+                margin: auto;
                 background-size: cover;
             }
 
@@ -67,7 +71,9 @@
 
             <paper-material elevation="1" flex id="card-message">
                 <div id="head" class="vertical layout flex">
-                    <img src="{{item.img}}" alt="cover" class="cover">
+                    <div class="crop">
+                        <img src="{{item.img}}" alt="cover" class="cover">
+                    </div>
                     <div class="vertical layout" id="name-zone">
                         <span class="username">{{item.name}}</span><span class="username">{{item.lastname}}</span>
                         <span class="timestamp">{{item.date}}</span>
