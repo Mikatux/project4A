@@ -13,6 +13,7 @@
             #cardMessage {
                 background-color: #FFFFFF;
                 margin: 0;
+                padding: 0;
                 width: 300px;
             }
 
@@ -72,7 +73,7 @@
                 <span class="username">{{item.name}}</span>
                 <span class="username">{{item.lastname}}</span>
                 <br>
-                <span class="timestamp">{{item.date}}</span>
+                <span class="timestamp">{{computeDate(item.date)}}</span>
             </div>
         </paper-material>
     </template>
@@ -82,6 +83,14 @@
         is: 'user-card',
         properties: {
             item: Object
+        },
+        computeDate: function(date) {
+            var d = date.split("T")[0];
+            var h = date.split("T")[1].substring(0, 5);
+
+            d = new Date(d.split(':')).toString().substring(4, 15);
+
+            return d + ", " + h;
         },
         mouseOver: function() {
             this.$.cardMessage.elevation = 3;

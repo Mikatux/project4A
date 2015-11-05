@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4a0b82b3-bd6c-49e8-b00f-1ca000401742" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/elements/user-card/user-card.html" afterPath="$PROJECT_DIR$/app/elements/user-card/user-card.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/elements/user-list/user-list.html" afterPath="$PROJECT_DIR$/app/elements/user-list/user-list.html" />
     </list>
     <ignored path="Polymer4A.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -67,8 +66,8 @@
       <file leaf-file-name="user-card.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/elements/user-card/user-card.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.14966741">
-              <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+            <state vertical-scroll-proportion="0.24944568">
+              <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -87,8 +86,8 @@
       <file leaf-file-name="post-message.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/elements/post-message/post-message.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-124.375">
-              <caret line="199" column="21" selection-start-line="199" selection-start-column="21" selection-end-line="199" selection-end-column="21" />
+            <state vertical-scroll-proportion="-11.958333">
+              <caret line="175" column="59" selection-start-line="175" selection-start-column="59" selection-end-line="175" selection-end-column="59" />
               <folding />
             </state>
           </provider>
@@ -778,8 +777,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/elements/post-message/post-message.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-124.375">
-          <caret line="199" column="21" selection-start-line="199" selection-start-column="21" selection-end-line="199" selection-end-column="21" />
+        <state vertical-scroll-proportion="-11.958333">
+          <caret line="175" column="59" selection-start-line="175" selection-start-column="59" selection-end-line="175" selection-end-column="59" />
           <folding />
         </state>
       </provider>
@@ -794,8 +793,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/elements/user-card/user-card.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14966741">
-          <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.24944568">
+          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
           <folding />
         </state>
       </provider>
