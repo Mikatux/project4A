@@ -54,7 +54,7 @@
 
             //
 
-            #card-message {
+            #cardMessage {
                 background-color: #FFFFFF;
                 margin: 0;
                 width: 300px;
@@ -115,7 +115,7 @@
         <template is="dom-repeat" items="{{response}}">
 
             <div class="container" id="">
-                <paper-material elevation="1" id="card-message" on-mouseover="mouseOver" on-mouseout="mouseOut">
+                <paper-material elevation="1" id="cardMessage" on-mouseover="mouseOver" on-mouseout="mouseOut">
 
                     <div>
                         <img src="{{item.img}}" alt="avatar" class="avatar">
@@ -159,10 +159,10 @@
             return 'http://api.oversimplified.io/users';
         },
         mouseOver: function() {
-            this.$.card-message.elevation = 3;
+            this.$.cardMessage.elevation = 3;
         },
         mouseOut: function() {
-            this.$.card-message.elevation = 1;
+            this.$.cardMessage.elevation = 1;
         }
     });
 </script>
