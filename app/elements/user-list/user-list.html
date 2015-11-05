@@ -16,6 +16,10 @@
                 margin: 12px;
             }
 
+            .avatarDiv {
+                
+            }
+
             .avatar {
                 border-radius: 2px;
                 width: 40px;
@@ -66,8 +70,8 @@
 
             <paper-material elevation="1" flex id="card-message">
                 <div id="head" class="horizontal layout flex">
-                    <div class="avatar" style="background: url({{item.img}}) no-repeat;">
-                        <!--<img src="{{item.img}}" alt="avatar" class="avatar">-->
+                    <div class="avatarDiv">
+                        <img src="{{item.img}}" alt="avatar" class="avatar">
                     </div>
                     <div class="vertical layout" id="name-zone">
                         <span class="username">{{item.name}}</span><span class="username">{{item.lastname}}</span>
