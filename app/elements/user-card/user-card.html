@@ -1,58 +1,15 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
 
-<dom-module id="user-list">
+<dom-module id="user-card">
 
     <template>
         <style>
             :host {
                 display: block;
-                @apply(--layout-horizontal);
-                @apply(--layout-wrap);
-                max-width: 1264px;
-                margin: 0 auto;
-                padding: 8px;
+                position: relative;
+                @apply(--shadow-elevation-2dp);
             }
-
-            :host > ::content > * {
-                @apply(--layout-flex-none);
-                width: 300px;
-                margin: 8px;
-                box-sizing: border-box;
-            }
-
-            @media (max-width: 1299px) {
-                :host {
-                    max-width: 948px;
-                }
-            }
-            @media (max-width: 983px) {
-                :host {
-                    max-width: 632px;
-                }
-            }
-            @media (max-width: 667px) {
-                :host {
-                    max-width: 616px;
-                    padding: 4px;
-                }
-                :host > ::content > * {
-                    margin: 4px;
-                }
-            }
-            @media (max-width: 643px) {
-                :host {
-                    max-width: none;
-                    padding: 0;
-                    margin: 0;
-                }
-                :host > ::content > * {
-                    width: 100%;
-                    margin: 0;
-                }
-            }
-
-            //
 
             #cardMessage {
                 background-color: #FFFFFF;
@@ -106,31 +63,28 @@
             }
 
         </style>
-        <iron-ajax
-                auto
-                url="http://back.oversimplified.io/users"
-                handle-as="json"
-                last-response="{{response}}"></iron-ajax>
+        <paper-material elevation="1" id="cardMessage" on-mouseover="mouseOver" on-mouseout="mouseOut">
 
-        <template is="dom-repeat" items="{{response}}">
-
-            <div class="container" id="">
-                <user-card item={{item}}></user-card>
+            <div>
+                <img src="{{item.img}}" alt="avatar" class="avatar">
             </div>
 
-        </template>
-        <br>
-    </template>
-
-</dom-module>
+            <div id="nameContainer">
+                <span class="username">{{item.name}}</span>
+                <span class="username">{{item.lastname}}</span>
+                <br>
+                <span class="timestamp">{{item.date}}</span>
+            </div>
+        </paper-material>
 
 <script>
     Polymer({
-        is: 'user-list',
+        is: 'user-card',
         properties: {
             url: {
                 computed: 'computeUrl()'
-            }
+            },
+            item: Object
         },
         computeUrl: function () {
             return 'http://api.oversimplified.io/users';
