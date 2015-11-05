@@ -84,10 +84,10 @@
     Polymer({
         is: 'user-card',
         properties: {
+            item: Object,
             url: {
                 computed: 'computeUrl()'
-            },
-            item: Object
+            }
         },
         computeUrl: function () {
             return 'http://api.oversimplified.io/users';
