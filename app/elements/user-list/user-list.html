@@ -109,17 +109,16 @@
         </style>
         <iron-ajax
                 auto
-                url="http://back.oversimplified.io/users"
+                url="http://api.oversimplified.io/users"
                 handle-as="json"
                 last-response="{{response}}"></iron-ajax>
 
         <template is="dom-repeat" items="{{response}}">
 
             <user-card item={{item}}></user-card>
+            [[item.img]]
             <!--
-            <div class="container" id="">
-                <user-card item={{item}}></user-card>
-            </div>
+            alexis
             -->
 
         </template>
