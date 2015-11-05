@@ -198,7 +198,7 @@
       
       deletePost: function() {
         console.log("delete message");
-        var ajax = document.getElementById('deleteMessage');
+        var ajax = this.$.deleteMessage;
         ajax.url = "http://back.oversimplified.io/message/" + this.item._id;
         ajax.generateRequest();
         this.removePost();

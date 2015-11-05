@@ -115,7 +115,7 @@
         <template is="dom-repeat" items="{{response}}">
 
             <div class="container" id="">
-                <paper-material elevation="1" id="card-message" on-mouseover="mouseOver">
+                <paper-material elevation="1" id="card-message" on-mouseover="mouseOver" on-mouseout="mouseOut">
 
                     <div>
                         <img src="{{item.img}}" alt="avatar" class="avatar">
@@ -159,7 +159,10 @@
             return 'http://api.oversimplified.io/users';
         },
         mouseOver: function() {
-            document.getElementById('card-message').elevation = 2;
+            this.$.card-message.elevation = 3;
+        },
+        mouseOut: function() {
+            this.$.card-message.elevation = 1;
         }
     });
 </script>
