@@ -69,6 +69,10 @@
                 margin: 0;
             }
 
+            #nameContainer {
+                margin: 16;
+            }
+
             .username {
                 font-size: 18px;
                 text-transform: capitalize;
@@ -111,13 +115,13 @@
         <template is="dom-repeat" items="{{response}}">
 
             <div class="container" id="">
-                <paper-material elevation="1" flex id="card-message">
+                <paper-material elevation="1" id="card-message">
 
                     <div>
                         <img src="{{item.img}}" alt="avatar" class="avatar">
                     </div>
 
-                    <div>
+                    <div id="nameContainer">
                         <span class="username">{{item.name}}</span>
                         <span class="username">{{item.lastname}}</span>
                     </div>
