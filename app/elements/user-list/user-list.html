@@ -13,11 +13,6 @@
 
             #card-message {
                 background-color: #FFFFFF;
-                margin: 12px;
-            }
-
-            .avatarDiv {
-                padding: 0;
                 margin: 0;
             }
 
@@ -72,6 +67,16 @@
         <template is="dom-repeat" items="{{response}}">
 
             <paper-material elevation="1" flex id="card-message">
+
+                <div>
+                    <img src="{{item.img}}" alt="avatar" class="avatar">
+                </div>
+
+                <div>
+                    <span class="username">{{item.name}}</span>
+                    <span class="username">{{item.lastname}}</span>
+                </div>
+                <!--
                 <div id="head" class="horizontal layout flex">
                     <div class="avatarDiv">
                         <img src="{{item.img}}" alt="avatar" class="avatar">
@@ -81,6 +86,7 @@
                         <span class="timestamp">{{item.date}}</span>
                     </div>
                 </div>
+                -->
             </paper-material>
 
         </template>
