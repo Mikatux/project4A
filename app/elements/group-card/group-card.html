@@ -74,13 +74,13 @@
         <paper-material elevation="1" id="cardMessage" on-mouseover="mouseOver" on-mouseout="mouseOut">
 
             <div>
-                <img src="{{item.img}}" alt="cover" class="cover">
+                <img src="{{group.img}}" alt="cover" class="cover">
             </div>
 
             <div id="nameContainer">
-                <span class="username">{{item.name}}</span>
+                <span class="username">{{group.name}}</span>
                 <br>
-                <span class="timestamp">{{computeDate(item.date)}}</span>
+                <span class="timestamp">{{computeDate(group.date)}}</span>
                 <br>
             </div>
 
@@ -100,7 +100,7 @@
     Polymer({
         is: 'group-card',
         properties: {
-            item: Object
+            group: Object
         },
         computeDate: function (date) {
             var d = date.split("T")[0];
