@@ -16,14 +16,17 @@
                 padding: 0;
                 width: 300px;
 
-                height: 450px;
+                height: 400px;
             }
 
-
+            #addButton {
+                color: #ffffff;
+                text-height: 50px;
+            }
 
         </style>
         <paper-material elevation="1" id="cardMessage" on-mouseover="mouseOver" on-mouseout="mouseOut">
-            <div>
+            <div id="addButton">
                 +
             </div>
         </paper-material>
@@ -34,14 +37,6 @@
     Polymer({
         is: 'new-group-card',
         properties: {
-        },
-        computeDate: function (date) {
-            var d = date.split("T")[0];
-            var h = date.split("T")[1].substring(0, 5);
-
-            d = new Date(d.split(':')).toString().substring(4, 15);
-
-            return d + ", " + h;
         },
         mouseOver: function () {
             this.$.cardMessage.elevation = 3;
