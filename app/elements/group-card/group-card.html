@@ -1,7 +1,7 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
 
-<dom-module id="user-card">
+<dom-module id="group-card">
 
     <template>
         <style>
@@ -17,7 +17,7 @@
                 width: 300px;
             }
 
-            .avatar {
+            .cover {
                 border-radius: 2px 2px 0px 0px;
                 width: 300px;
                 height: 300px;
@@ -66,12 +66,11 @@
         <paper-material elevation="1" id="cardMessage" on-mouseover="mouseOver" on-mouseout="mouseOut">
 
             <div>
-                <img src="{{item.img}}" alt="avatar" class="avatar">
+                <img src="{{item.img}}" alt="cover" class="cover">
             </div>
 
             <div id="nameContainer">
                 <span class="username">{{item.name}}</span>
-                <span class="username">{{item.lastname}}</span>
                 <br>
                 <span class="timestamp">{{computeDate(item.date)}}</span>
                 <br>
@@ -86,11 +85,11 @@
 
 <script>
     Polymer({
-        is: 'user-card',
+        is: 'group-card',
         properties: {
             item: Object
         },
-        computeDate: function(date) {
+        computeDate: function (date) {
             var d = date.split("T")[0];
             var h = date.split("T")[1].substring(0, 5);
 
@@ -98,10 +97,10 @@
 
             return d + ", " + h;
         },
-        mouseOver: function() {
+        mouseOver: function () {
             this.$.cardMessage.elevation = 3;
         },
-        mouseOut: function() {
+        mouseOut: function () {
             this.$.cardMessage.elevation = 1;
         }
     });

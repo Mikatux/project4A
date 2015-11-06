@@ -7,60 +7,50 @@
         <style>
             :host {
                 display: block;
+                @apply(--layout-horizontal);
+                @apply(--layout-wrap);
+                max-width: 1264px;
+                margin: 0 auto;
+                padding: 8px;
+            }
+
+            :host > ::content > * {
+                @apply(--layout-flex-none);
+                width: 300px;
+                margin: 8px;
                 box-sizing: border-box;
-                max-width: 512px;
             }
 
-            #card-message {
-                background-color: #FFFFFF;
-                margin: 12px;
+            @media (max-width: 1299px) {
+                :host {
+                    max-width: 948px;
+                }
             }
-
-            .crop {
-                max-height: 128px;
-                overflow: hidden;
+            @media (max-width: 983px) {
+                :host {
+                    max-width: 632px;
+                }
             }
-
-            .cover {
-                border-radius: 2px;
-                max-width: 512px;
-                padding: 0;
-                margin: auto;
-                background-size: cover;
+            @media (max-width: 667px) {
+                :host {
+                    max-width: 616px;
+                    padding: 4px;
+                }
+                :host > ::content > * {
+                    margin: 4px;
+                }
             }
-
-            .username {
-                font-size: 18px;
-                text-transform: capitalize;
-                font-weight: 500;
-                color: var(--accent-color);
-                line-height: 1.3em;
-                max-width: 90%;
-                text-overflow: ellipsis;
-                overflow: hidden;
-                white-space: nowrap;
+            @media (max-width: 643px) {
+                :host {
+                    max-width: none;
+                    padding: 0;
+                    margin: 0;
+                }
+                :host > ::content > * {
+                    width: 100%;
+                    margin: 0;
+                }
             }
-
-            .timestamp {
-                font-size: 14px;
-                font-weight: 300;
-                color: #b5a896;
-                line-height: 1.3em;
-                max-width: 90%;
-                text-overflow: ellipsis;
-                overflow: hidden;
-                white-space: nowrap;
-            }
-
-            #head {
-                padding: 4px;
-                background-color:#FDFDFD;
-            }
-
-            #name-zone {
-                padding-left: 16px;
-            }
-
         </style>
         <iron-ajax
                 auto
@@ -69,23 +59,9 @@
                 last-response="{{response}}"></iron-ajax>
 
         <template is="dom-repeat" items="{{response}}">
-
-            <paper-material elevation="1" flex id="card-message">
-                <div id="head" class="vertical layout flex">
-                    <div class="crop">
-                        <img src="{{item.img}}" alt="cover" class="cover">
-                    </div>
-                    <div class="vertical layout" id="name-zone">
-                        <span class="username">{{item.name}}</span><span class="username">{{item.lastname}}</span>
-                        <span class="timestamp">{{item.date}}</span>
-                    </div>
-                </div>
-            </paper-material>
-
+            <group-card item={{item}}></group-card>
         </template>
-        <br>
     </template>
-
 </dom-module>
 
 <script>
@@ -97,7 +73,7 @@
             }
         },
         computeUrl: function() {
-            return 'http://api.oversimplified.io/group';
+            return 'http://api.oversimplified.io/groups';
         }
     });
 </script>
