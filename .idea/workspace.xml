@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a0b82b3-bd6c-49e8-b00f-1ca000401742" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/elements/group-card/group-card.html" afterPath="$PROJECT_DIR$/app/elements/group-card/group-card.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/elements/group-list/group-list.html" afterPath="$PROJECT_DIR$/app/elements/group-list/group-list.html" />
     </list>
@@ -44,21 +45,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="group-list.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="group-list.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/elements/group-list/group-list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-21.333334">
-              <caret line="63" column="29" selection-start-line="63" selection-start-column="29" selection-end-line="63" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.6674058">
+              <caret line="69" column="13" selection-start-line="69" selection-start-column="13" selection-end-line="69" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="group-card.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="group-card.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/elements/group-card/group-card.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.51773834">
-              <caret line="90" column="41" selection-start-line="90" selection-start-column="41" selection-end-line="90" selection-end-column="41" />
+            <state vertical-scroll-proportion="-18.208334">
+              <caret line="94" column="25" selection-start-line="94" selection-start-column="25" selection-end-line="94" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -918,18 +919,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/elements/group-list/group-list.html">
+    <entry file="file://$PROJECT_DIR$/app/elements/group-card/group-card.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.333334">
-          <caret line="63" column="29" selection-start-line="63" selection-start-column="29" selection-end-line="63" selection-end-column="29" />
+        <state vertical-scroll-proportion="-18.208334">
+          <caret line="94" column="25" selection-start-line="94" selection-start-column="25" selection-end-line="94" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/elements/group-card/group-card.html">
+    <entry file="file://$PROJECT_DIR$/app/elements/group-list/group-list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.51773834">
-          <caret line="90" column="41" selection-start-line="90" selection-start-column="41" selection-end-line="90" selection-end-column="41" />
+        <state vertical-scroll-proportion="0.6674058">
+          <caret line="69" column="13" selection-start-line="69" selection-start-column="13" selection-end-line="69" selection-end-column="13" />
           <folding />
         </state>
       </provider>
