@@ -55,6 +55,12 @@
                 white-space: nowrap;
             }
 
+            .separator {
+                height: 1px;
+                width: 100%;
+                background-color: var(--primary-background-color);
+            }
+
             #head {
                 padding: 4px;
                 background-color: #FDFDFD;
@@ -78,8 +84,13 @@
                 <br>
             </div>
 
+            <div class="separator"></div>
+
             <div>
-                <br>
+                <template is="dom-repeat" items="{{item.members}}">
+                    <span>{{item}}</span>
+                    <br>
+                </template>
             </div>
         </paper-material>
     </template>
