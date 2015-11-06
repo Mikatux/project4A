@@ -52,6 +52,20 @@
                     margin: 0;
                 }
             }
+
+            .newGroup {
+                background-color: var(--default-primary-color);
+                margin: 0;
+                padding: 0;
+                width: 300px;
+            }
+
+            #cardMessage {
+                background-color: #FFFFFF;
+                margin: 0;
+                padding: 0;
+                width: 300px;
+            }
         </style>
         <iron-ajax
                 auto
@@ -62,6 +76,11 @@
         <template is="dom-repeat" items="{{response}}">
             <group-card item={{item}}></group-card>
         </template>
+
+        <div class="newGroup">
+
+        </div>
+
     </template>
 </dom-module>
 
