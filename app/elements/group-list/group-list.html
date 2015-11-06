@@ -1,6 +1,7 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
 <link rel="import" href="../group-card/group-card.html">
+<link rel="import" href="../group-card/new-group-card.html">
 
 <dom-module id="group-list">
 
@@ -52,20 +53,6 @@
                     margin: 0;
                 }
             }
-
-            .newGroup {
-                background-color: var(--default-primary-color);
-                margin: 0;
-                padding: 0;
-                width: 300px;
-            }
-
-            #cardMessage {
-                background-color: #FFFFFF;
-                margin: 0;
-                padding: 0;
-                width: 300px;
-            }
         </style>
         <iron-ajax
                 auto
@@ -77,9 +64,7 @@
             <group-card item={{item}}></group-card>
         </template>
 
-        <div class="newGroup">
-            <span>+</span>
-        </div>
+        <new-group-card></new-group-card>
 
     </template>
 </dom-module>

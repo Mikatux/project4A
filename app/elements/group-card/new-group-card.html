@@ -1,0 +1,51 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
+
+<dom-module id="new-group-card">
+
+    <template>
+        <style>
+            :host {
+                display: block;
+                position: relative;
+            }
+
+            #cardMessage {
+                background-color: var(--default-primary-color);
+                margin: 0;
+                padding: 0;
+                width: 300px;
+            }
+
+
+
+        </style>
+        <paper-material elevation="1" id="cardMessage" on-mouseover="mouseOver" on-mouseout="mouseOut">
+            <div>
+                +
+            </div>
+        </paper-material>
+    </template>
+</dom-module>
+
+<script>
+    Polymer({
+        is: 'new-group-card',
+        properties: {
+        },
+        computeDate: function (date) {
+            var d = date.split("T")[0];
+            var h = date.split("T")[1].substring(0, 5);
+
+            d = new Date(d.split(':')).toString().substring(4, 15);
+
+            return d + ", " + h;
+        },
+        mouseOver: function () {
+            this.$.cardMessage.elevation = 3;
+        },
+        mouseOut: function () {
+            this.$.cardMessage.elevation = 1;
+        }
+    });
+</script>
