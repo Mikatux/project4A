@@ -67,7 +67,7 @@
         <entry file="file://$PROJECT_DIR$/app/elements/group-card/new-group-card.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.24944568">
-              <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+              <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -906,7 +906,7 @@
     <entry file="file://$PROJECT_DIR$/app/elements/group-card/new-group-card.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.24944568">
-          <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
           <folding />
         </state>
       </provider>
