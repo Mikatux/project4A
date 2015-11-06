@@ -61,7 +61,7 @@
                 last-response="{{response}}"></iron-ajax>
 
         <template is="dom-repeat" items="{{response}}">
-            <group-card group=[[item]]></group-card>
+            <group-card item={{item}} group=[[item]]></group-card>
         </template>
 
         <new-group-card></new-group-card>
