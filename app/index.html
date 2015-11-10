@@ -87,25 +87,33 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
             <!-- Drawer Content -->
             <paper-menu class="list" attr-for-selected="data-route" selected="[[route]]">
-                <a data-route="home" href="/" on-click="onDataRouteClick">
-                    <iron-icon icon="home"></iron-icon>
-                    <span>Home</span>
-                </a>
+                <paper-item>
+                    <a data-route="home" href="/" on-click="onDataRouteClick">
+                        <iron-icon icon="home"></iron-icon>
+                        <span>Home</span>
+                    </a>
+                </paper-item>
 
-                <a data-route="users" href="/users" on-click="onDataRouteClick">
-                    <iron-icon icon="social:group"></iron-icon>
-                    <span>Users</span>
-                </a>
+                <paper-item>
+                    <a data-route="users" href="/users" on-click="onDataRouteClick">
+                        <iron-icon icon="social:group"></iron-icon>
+                        <span>Users</span>
+                    </a>
+                </paper-item>
 
-                <a data-route="groups" href="/groups" on-click="onDataRouteClick">
-                    <iron-icon icon="social:group"></iron-icon>
-                    <span>Groups</span>
-                </a>
+                <paper-item>
+                    <a data-route="groups" href="/groups" on-click="onDataRouteClick">
+                        <iron-icon icon="social:group"></iron-icon>
+                        <span>Groups</span>
+                    </a>
+                </paper-item>
 
-                <a id="logInOutMenuButton" data-route="login" href="/login" on-click="logoutDataRouteClick">
-                    <iron-icon icon="lock"></iron-icon>
-                    <span id="logInOutMenuButtonText">Login</span>
-                </a>
+                <paper-item>
+                    <a id="logInOutMenuButton" data-route="login" href="/login" on-click="logoutDataRouteClick">
+                        <iron-icon icon="lock"></iron-icon>
+                        <span id="logInOutMenuButtonText">Login</span>
+                    </a>
+                </paper-item>
             </paper-menu>
         </paper-scroll-header-panel>
 
@@ -139,9 +147,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <iron-pages attr-for-selected="data-route" selected="{{route}}">
 
                     <section data-route="login">
-
                         <login-box></login-box>
-
                     </section>
 
 
@@ -163,20 +169,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                         <group-list></group-list>
                     </section>
 
-                    <section data-route="user-info">
-                        <paper-material elevation="1">
-                            <h2 class="page-title">
-                                User:<span>{{params.name}}</span>
-                            </h2>
-                            <div>This is <span>{{params.name}}</span>'s section</div>
-                        </paper-material>
-                    </section>
-
                 </iron-pages>
             </div>
         </paper-scroll-header-panel>
     </paper-drawer-panel>
-
 
 </template>
 
