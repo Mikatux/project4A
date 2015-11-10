@@ -76,35 +76,51 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <span id="browser-sync-binding"></span>
 <template is="dom-bind" id="app">
 
+    <paper-scroll-header-panel fixed>
+        <paper-toolbar>
+            <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
+            <span class="flex"></span>
 
-    <div class="content">
-        <iron-pages attr-for-selected="data-route" selected="{{route}}">
+            <!-- Toolbar icons -->
+            <paper-icon-button icon="refresh" on-click="onRefresh" id="refreshButton"></paper-icon-button>
+            <paper-icon-button icon="search"></paper-icon-button>
+            <paper-icon-button icon="settings"></paper-icon-button>
 
-            <section data-route="login">
-                <login-box></login-box>
-            </section>
+            <!-- Application name -->
+            <div class="middle middle-container center horizontal layout">
+                <div class="app-name">Oversimplified</div>
+            </div>
+        </paper-toolbar>
+
+        <div class="content">
+            <iron-pages attr-for-selected="data-route" selected="{{route}}">
+
+                <section data-route="login">
+                    <login-box></login-box>
+                </section>
 
 
-            <section data-route="home">
+                <section data-route="home">
 
-                <template is="dom-bind">
-                    <polymer-cookie name="oversimplifiedcookie" id="cookie"></polymer-cookie>
-                    <send-box></send-box>
-                    <post-list id="postList"></post-list>
-                </template>
+                    <template is="dom-bind">
+                        <polymer-cookie name="oversimplifiedcookie" id="cookie"></polymer-cookie>
+                        <send-box></send-box>
+                        <post-list id="postList"></post-list>
+                    </template>
 
-            </section>
+                </section>
 
-            <section data-route="users">
-                <user-list></user-list>
-            </section>
+                <section data-route="users">
+                    <user-list></user-list>
+                </section>
 
-            <section data-route="groups">
-                <group-list></group-list>
-            </section>
+                <section data-route="groups">
+                    <group-list></group-list>
+                </section>
 
-        </iron-pages>
-    </div>
+            </iron-pages>
+        </div>
+    </paper-scroll-header-panel>
 </template>
 
 <script src="scripts/app.js"></script>
