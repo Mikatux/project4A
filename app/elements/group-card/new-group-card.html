@@ -16,8 +16,10 @@
                 margin: 0;
                 padding: 0;
                 width: 300px;
-
                 height: 400px;
+
+                transition: 0.2s;
+                -webkit-transition: 0.2s;
             }
 
             #addButton {
@@ -61,10 +63,12 @@
         properties: {
         },
         mouseOver: function () {
-            this.$.cardMessage.elevation = 3;
+            this.$.cardMessage.elevation = 4;
+            this.$.cardMessage.style.marginTop = "-4px";
         },
         mouseOut: function () {
             this.$.cardMessage.elevation = 1;
+            this.$.cardMessage.style.marginTop = "0px";
         },
         mouseClick: function () {
             this.$.form.submit();
