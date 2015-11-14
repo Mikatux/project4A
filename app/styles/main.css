@@ -12,12 +12,3 @@ body {
   font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #333;
 }
-
-paper-scroll-header-panel {
-  background: #ececec;
-  border-right: none;
-}
-
-paper-drawer-panel {
-    border-right: none;
-}
