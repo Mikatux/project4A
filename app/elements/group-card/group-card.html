@@ -8,6 +8,8 @@
             :host {
                 display: block;
                 position: relative;
+
+                transition: 0.6s;
             }
 
             #cardMessage {
@@ -114,9 +116,11 @@
         },
         mouseOver: function () {
             this.$.cardMessage.elevation = 3;
+            this.$.cardMessage.style.marginTop = -5px;
         },
         mouseOut: function () {
             this.$.cardMessage.elevation = 1;
+            this.$.cardMessage.style.marginTop = 0px;
         }
     });
 </script>
