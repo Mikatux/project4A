@@ -83,6 +83,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <span class="paper-font-title">Menu</span>
             </paper-toolbar>-->
             <paper-toolbar id="drawerToolbar"></paper-toolbar>
+
+            <paper-menu class="list" attr-for-selected="data-route" selected="[[route]]">
+                <a data-route="home" href="/" on-click="onDataRouteClick">
+                    <iron-icon icon="home"></iron-icon>
+                    <span>Home</span>
+                </a>
+
+                <a data-route="users" href="/users" on-click="onDataRouteClick">
+                    <iron-icon icon="social:group"></iron-icon>
+                    <span>Users</span>
+                </a>
+            </paper-menu>
         </paper-scroll-header-panel>
 
         <paper-scroll-header-panel fixed main condenses>
