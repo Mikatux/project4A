@@ -91,13 +91,9 @@
 
             <div>
                 <template is="dom-repeat" items="{{item.members}}">
-                    <iron-ajax
-                            auto
-                            url="http://api.oversimplified.io/users/"[[item]]
-                            handle-as="json"
-                            last-response="{{response}}"></iron-ajax>
+
                     <span>[[item]]</span>
-                    <span>[[response.name]]</span>
+                    <span>http://api.oversimplified.io/users/[[item.]</span>
                     <br>
                 </template>
             </div>
