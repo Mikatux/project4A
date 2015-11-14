@@ -74,8 +74,13 @@
 
         </style>
 
-        <paper-material elevation="1" id="cardMessage" on-mouseover="mouseOver" on-mouseout="mouseOut">
+        <iron-ajax
+                id="request"
+                auto=false
+                url="http://api.oversimplified.io/groups/[[group.id]]"
+                type="DELETE"></iron-ajax>
 
+        <paper-material elevation="1" id="cardMessage" on-mouseover="mouseOver" on-mouseout="mouseOut" on-click="onClick">
             <div>
                 <img src="{{group.img}}" alt="[[group.img]]" class="cover">
             </div>
@@ -122,6 +127,9 @@
         mouseOut: function () {
             this.$.cardMessage.elevation = 1;
             this.$.cardMessage.style.marginTop = "0px";
+        },
+        onClick: function () {
+            this.$.request.generateRequest();
         }
     });
 </script>
