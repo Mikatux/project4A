@@ -13,7 +13,7 @@ body {
   color: #333;
 }
 
-paper-drawer-panel {
+paper-scroll-header-panel {
   background: #ececec;
   border-right: none;
 }
