@@ -17,3 +17,7 @@ paper-scroll-header-panel {
   background: #ececec;
   border-right: none;
 }
+
+paper-drawer-panel {
+    border-right: none;
+}
