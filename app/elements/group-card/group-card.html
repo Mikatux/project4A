@@ -74,15 +74,6 @@
 
         </style>
 
-<!--
-        <iron-ajax
-                id="request"
-                url="[[computeURL(group._id)]]"
-                type="DELETE"
-                on-response="handleResponse"
-        ></iron-ajax>
--->
-
         <iron-request id="request"></iron-request>
 
         <paper-material elevation="1" id="cardMessage" on-mouseover="mouseOver" on-mouseout="mouseOut" on-click="onClick">
@@ -140,19 +131,13 @@
         onClick: function () {
             this.$.request.send({url: this.computeURL(), method: "DELETE"});
             console.log("DELETE " + this.group._id);
+
+            this.$.innerHTML = "";
             /*
             console.log("DELETE " + this.group._id);
             var r = this.$.request.generateRequest();
             console.log(r);
             */
-        },
-        handleResponse: function (response) {
-            console.log("Response : " + response.detail.response.error);
-            console.log("Response : " + response.detail.response.data);
-            console.log("Response : " + response.detail.response);
-            console.log("Response : " + response.data);
-            console.log("Response : " + response);
-            console.log("--------------");
         }
     });
 </script>
