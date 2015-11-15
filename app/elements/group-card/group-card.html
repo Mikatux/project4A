@@ -99,7 +99,7 @@
             <div id="membersContainer">
                 <template is="dom-repeat" items="{{group.members}}">
 
-                    <span>Hello</span>
+                    <user-badge userID="[[item]]"></user-badge>
                     <span>[[item]]</span>
                     <!--<span>http://api.oversimplified.io/users/[[item.]</span>-->
                     <br>

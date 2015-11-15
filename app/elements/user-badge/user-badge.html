@@ -1,0 +1,41 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
+
+<dom-module id="user-badge">
+
+    <template>
+        <style>
+            :host {
+                display: block;
+                position: relative;
+            }
+
+            #avatar {
+                border-radius: 50%;
+            }
+        </style>
+
+        <iron-ajax
+                auto
+                url="computeURL()"
+                last-response="{{user}}"></iron-ajax>
+        <div>
+            <img id="avatar" src="[[user.img]]">
+            <span>[[userID]]</span>
+        </div>
+
+    </template>
+</dom-module>
+
+<script>
+    Polymer({
+        is: 'user-badge',
+        properties: {
+            userID: String,
+            user: Object
+        },
+        computeURL: function() {
+            return "http://api.oversimplified.io/users/" + this.userID;
+        }
+    });
+</script>
