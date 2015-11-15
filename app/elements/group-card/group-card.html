@@ -139,7 +139,11 @@
             this.$.request.generateRequest();
         },
         handleResponse: function (response) {
-            console.log("Response : " + response.detail.response);
+            console.log("Response : " + response.detail.response.error);
+            console.log("Response : " + response.detail.response.data);
+            console.log("Response : " + response.data);
+            console.log("Response : " + response);
+            console.log("--------------");
         }
     });
 </script>
