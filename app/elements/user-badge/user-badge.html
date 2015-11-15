@@ -18,7 +18,10 @@
         <iron-ajax
                 auto
                 url="computeURL()"
-                last-response="{{user}}"></iron-ajax>
+                last-response="{{user}}"
+                on-response="handleResponse"
+        ></iron-ajax>
+        
         <div>
             <span>HELLO</span>
             <img id="avatar" src="[[user.img]]">
@@ -38,6 +41,9 @@
         },
         computeURL: function() {
             return "http://api.oversimplified.io/users/" + this.userID;
+        },
+        handleResponse: function(e, request) {
+            console.log(request);
         }
     });
 </script>
