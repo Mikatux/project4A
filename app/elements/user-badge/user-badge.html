@@ -38,16 +38,20 @@
         properties: {
             url: {
                 type: String,
-                computed: 'computeURL()'
+                computed: 'computeURL(userID)'
             },
             userID: String,
             user: Object
         },
-        computeURL: function() {
-            return "http://api.oversimplified.io/users/" + this.userID;
+        computeURL: function(id) {
+            console.log("http://api.oversimplified.io/users/" + id);
+            return "http://api.oversimplified.io/users/" + id;
         },
         handleResponse: function(e, request) {
             console.log(request);
+            console.log(request.xhr);
+            console.log(this.userID);
+            console.log("----------");
         }
     });
 </script>
