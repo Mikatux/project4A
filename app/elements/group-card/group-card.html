@@ -80,7 +80,7 @@
                 auto=false
                 url="[[computeURL(group.id)]]"
                 type="DELETE"
-                on-response="handleResponse()"
+                on-response="handleResponse"
         ></iron-ajax>
 
         <paper-material elevation="1" id="cardMessage" on-mouseover="mouseOver" on-mouseout="mouseOut" on-click="onClick">
@@ -139,8 +139,8 @@
             console.log("DELETE " + this.group.id + " | " + this.group);
             this.$.request.generateRequest();
         },
-        handleResponse: function () {
-            console.log("Ok");
+        handleResponse: function (responce) {
+            console.log("Ok : " + responce);
         }
     });
 </script>
