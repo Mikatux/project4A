@@ -16,6 +16,8 @@
                 margin: 6px 6px 6px 6px;
                 border-radius: 50%;
                 display: inline-block;
+                border-color: #2e7d32;
+                border-width: 4px;
             }
         </style>
 
@@ -46,11 +48,7 @@
             },
             user: Object
         },
-        ready: function() {
-            console.log(this.userId);
-        },
         computeURL: function(id) {
-            console.log("http://api.oversimplified.io/users/" + id);
             return "http://api.oversimplified.io/users/" + id;
         }
     });
