@@ -99,7 +99,7 @@
 
             <div id="membersContainer">
                 <template is="dom-repeat" items="{{group.members}}">
-                    <user-badge user-id="hello"></user-badge>
+                    <user-badge user-id="[[item]]"></user-badge>
                 </template>
             </div>
         </paper-material>
