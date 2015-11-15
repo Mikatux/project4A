@@ -38,10 +38,12 @@
         properties: {
             url: {
                 type: String,
-                value: "56154da0d32c233e52f30815",
                 computed: 'computeURL(userID)'
             },
-            userID: String,
+            userID: {
+                type: String,
+                value: "56154da0d32c233e52f30815"
+            },
             user: Object
         },
         ready: function() {
