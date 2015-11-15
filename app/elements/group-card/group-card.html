@@ -77,7 +77,7 @@
 
         <iron-ajax
                 id="request"
-                url="[[computeURL(group.id)]]"
+                url="[[computeURL(group._id)]]"
                 type="DELETE"
                 on-response="handleResponse"
         ></iron-ajax>
@@ -135,7 +135,7 @@
             this.$.cardMessage.style.marginTop = "0px";
         },
         onClick: function () {
-            console.log("DELETE " + this.group.date + " | " + this.group);
+            console.log("DELETE " + this.group._id);
             this.$.request.generateRequest();
         },
         handleResponse: function (response) {
