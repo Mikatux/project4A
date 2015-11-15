@@ -138,7 +138,7 @@
             this.$.cardMessage.style.marginTop = "0px";
         },
         onClick: function () {
-            this.$.request.send({url: computeURL(), method: "DELETE"});
+            this.$.request.send({url: this.computeURL(), method: "DELETE"});
             console.log("DELETE " + this.group._id);
             /*
             console.log("DELETE " + this.group._id);
