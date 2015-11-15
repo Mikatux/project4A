@@ -78,7 +78,7 @@
         <iron-ajax
                 id="request"
                 auto=false
-                url="[[computeURL()]]"
+                url="[[computeURL(group.id)]]"
                 type="DELETE"></iron-ajax>
 
         <paper-material elevation="1" id="cardMessage" on-mouseover="mouseOver" on-mouseout="mouseOut" on-click="onClick">
@@ -114,8 +114,8 @@
         properties: {
             group: Object
         },
-        computeURL: function () {
-            return "http://api.oversimplified.io/groups/" + [[group.id]];
+        computeURL: function (id) {
+            return "http://api.oversimplified.io/groups/" + id;
         },
         computeDate: function (date) {
             var d = date.split("T")[0];
