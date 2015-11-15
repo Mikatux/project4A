@@ -132,9 +132,8 @@
             //this.$.request.send({url: this.computeURL(), method: "DELETE"});
             console.log("DELETE " + this.group._id);
 
-            while (Polymer.dom(this.$).firstChild) {
-                Polymer.dom(this.$).removeChild(Polymer.dom(this.$).firstChild);
-            }
+                Polymer.dom(this.$.parentNode).removeChild(this);
+
             //Polymer.dom(this.$).removeChild(this.$.cardMessage);
             /*
             console.log("DELETE " + this.group._id);
