@@ -22,7 +22,6 @@
                 auto
                 url="{{url}}"
                 last-response="{{user}}"
-                on-response="handleResponse"
         ></iron-ajax>
 
         <div>
@@ -52,12 +51,6 @@
         computeURL: function(id) {
             console.log("http://api.oversimplified.io/users/" + id);
             return "http://api.oversimplified.io/users/" + id;
-        },
-        handleResponse: function(e, request) {
-            console.log(request);
-            console.log(request.xhr);
-            console.log(this.userId);
-            console.log("----------");
         }
     });
 </script>
