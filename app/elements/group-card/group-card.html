@@ -63,6 +63,10 @@
                 background-color: var(--primary-background-color);
             }
 
+            #membersContainer {
+                height: 128px;
+            }
+
             #head {
                 padding: 4px;
                 background-color: #FDFDFD;
@@ -91,7 +95,7 @@
 
             <div class="separator"></div>
 
-            <div>
+            <div id="membersContainer">
                 <template is="dom-repeat" items="{{item.members}}">
 
                     <span>[[item]]</span>
@@ -129,7 +133,12 @@
             this.$.cardMessage.style.marginTop = "0px";
         },
         onClick: function () {
-            //this.$.request.send({url: this.computeURL(), method: "DELETE"});
+            //this.deleteGroup();
+            console.log("DELETE " + this.group._id);
+            Polymer.dom(this.parentNode).removeChild(this);
+        },
+        deleteGroup: function() {
+            this.$.request.send({url: this.computeURL(), method: "DELETE"});
             console.log("DELETE " + this.group._id);
 
             Polymer.dom(this.parentNode).removeChild(this);
