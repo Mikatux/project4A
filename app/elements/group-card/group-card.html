@@ -132,7 +132,10 @@
             //this.$.request.send({url: this.computeURL(), method: "DELETE"});
             console.log("DELETE " + this.group._id);
 
-            Polymer.dom(this.$).removeChild(this.$.cardMessage);
+            while var a = Polymer.dom(this.$).firstElementChild {
+                Polymer.dom(this.$).removeChild(a);
+            }
+            //Polymer.dom(this.$).removeChild(this.$.cardMessage);
             /*
             console.log("DELETE " + this.group._id);
             var r = this.$.request.generateRequest();
