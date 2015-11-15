@@ -136,7 +136,8 @@
         },
         onClick: function () {
             console.log("DELETE " + this.group._id);
-            this.$.request.generateRequest();
+            var r = this.$.request.generateRequest();
+            console.log(r);
         },
         handleResponse: function (response) {
             console.log("Response : " + response.detail.response.error);
