@@ -38,6 +38,7 @@
     Polymer({
         is: 'user-badge',
         properties: {
+            a: String,
             url: {
                 type: String,
                 computed: 'computeURL(userID)'
@@ -50,6 +51,7 @@
         },
         ready: function() {
             console.log(this.userID);
+            console.log("a: " + this.a);
         },
         computeURL: function(id) {
             console.log("http://api.oversimplified.io/users/" + id);
