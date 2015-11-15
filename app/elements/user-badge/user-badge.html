@@ -25,10 +25,7 @@
         ></iron-ajax>
 
         <div>
-            <span>HELLO</span>
             <img id="avatar" src="[[user.img]]">
-            <span>{{userID}}</span>
-            <span>{{user._id}}</span>
         </div>
 
     </template>
@@ -38,7 +35,6 @@
     Polymer({
         is: 'user-badge',
         properties: {
-            a: String,
             url: {
                 type: String,
                 computed: 'computeURL(userId)'
@@ -51,7 +47,6 @@
         },
         ready: function() {
             console.log(this.userId);
-            console.log("a: " + this.a);
         },
         computeURL: function(id) {
             console.log("http://api.oversimplified.io/users/" + id);
