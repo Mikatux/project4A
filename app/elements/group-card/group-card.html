@@ -79,7 +79,9 @@
                 id="request"
                 auto=false
                 url="[[computeURL(group.id)]]"
-                type="DELETE"></iron-ajax>
+                type="DELETE"
+                on-response="handleResponse()"
+        ></iron-ajax>
 
         <paper-material elevation="1" id="cardMessage" on-mouseover="mouseOver" on-mouseout="mouseOut" on-click="onClick">
             <div>
@@ -134,8 +136,11 @@
             this.$.cardMessage.style.marginTop = "0px";
         },
         onClick: function () {
+            console.log("DELETE " + this.group.id + " | " + this.group);
             this.$.request.generateRequest();
-            console.log("DELETE " + this.group.id);
+        },
+        handleResponse: function () {
+            console.log("Ok");
         }
     });
 </script>
