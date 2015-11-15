@@ -132,7 +132,8 @@
             //this.$.request.send({url: this.computeURL(), method: "DELETE"});
             console.log("DELETE " + this.group._id);
 
-            Polymer.dom(this.parentNode).removeChild(this);
+            this.style.height = "0px";
+            setTimedOut(Polymer.dom(this.parentNode).removeChild(this), 750);
 
             //Polymer.dom(this.$).removeChild(this.$.cardMessage);
             /*
