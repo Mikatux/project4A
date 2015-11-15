@@ -74,12 +74,12 @@
 
         </style>
 
-        <!--
+
         <iron-ajax
                 id="request"
                 auto=false
                 url="[[computeURL()]]"
-                type="DELETE"></iron-ajax>-->
+                type="DELETE"></iron-ajax>
 
         <paper-material elevation="1" id="cardMessage" on-mouseover="mouseOver" on-mouseout="mouseOut" on-click="onClick">
             <div>
@@ -100,7 +100,7 @@
                 <template is="dom-repeat" items="{{item.members}}">
 
                     <span>[[item]]</span>
-                    <span>http://api.oversimplified.io/users/[[item.]</span>
+                    <!--<span>http://api.oversimplified.io/users/[[item.]</span>-->
                     <br>
                 </template>
             </div>
