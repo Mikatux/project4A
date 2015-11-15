@@ -41,16 +41,16 @@
             a: String,
             url: {
                 type: String,
-                computed: 'computeURL(userID)'
+                computed: 'computeURL(userId)'
             },
-            userID: {
+            userId: {
                 type: String,
                 value: "56154da0d32c233e52f30815"
             },
             user: Object
         },
         ready: function() {
-            console.log(this.userID);
+            console.log(this.userId);
             console.log("a: " + this.a);
         },
         computeURL: function(id) {
@@ -60,7 +60,7 @@
         handleResponse: function(e, request) {
             console.log(request);
             console.log(request.xhr);
-            console.log(this.userID);
+            console.log(this.userId);
             console.log("----------");
         }
     });
