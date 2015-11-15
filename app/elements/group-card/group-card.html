@@ -99,7 +99,7 @@
             <div id="membersContainer">
                 <template is="dom-repeat" items="{{group.members}}">
 
-                    <user-badge userID="[[item]]"></user-badge>
+                    <user-badge userID="{{item}}"></user-badge>
                     <!--<span>[[item]]</span>
                     <span>http://api.oversimplified.io/users/[[item.]</span>
                     <br>-->
@@ -129,10 +129,12 @@
         mouseOver: function () {
             this.$.cardMessage.elevation = 4;
             this.$.cardMessage.style.marginTop = "-4px";
+            this.$.cardMessage.style.marginBottom= "4px";
         },
         mouseOut: function () {
             this.$.cardMessage.elevation = 1;
             this.$.cardMessage.style.marginTop = "0px";
+            this.$.cardMessage.style.marginBottom= "0px";
         },
         onClick: function () {
             //this.deleteGroup();
