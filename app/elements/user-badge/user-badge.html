@@ -17,11 +17,11 @@
 
         <iron-ajax
                 auto
-                url="computeURL()"
+                url="computeURL"
                 last-response="{{user}}"
                 on-response="handleResponse"
         ></iron-ajax>
-        
+
         <div>
             <span>HELLO</span>
             <img id="avatar" src="[[user.img]]">
