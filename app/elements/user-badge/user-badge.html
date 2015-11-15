@@ -43,6 +43,10 @@
             userID: String,
             user: Object
         },
+        ready: function() {
+            console.log(this.userID);
+            console.log(userID);
+        },
         computeURL: function(id) {
             console.log("http://api.oversimplified.io/users/" + id);
             return "http://api.oversimplified.io/users/" + id;
