@@ -24,6 +24,7 @@
 
             paper-icon-button {
                 color: #ffffff;
+                margin: auto;
             }
         </style>
 
@@ -34,7 +35,7 @@
         ></iron-ajax>
 
         <div class="layout horizontal">
-            <div id="add">
+            <div id="add" on-click="mouseClick">
                 <paper-icon-button icon="add"></paper-icon-button>
             </div>
         </div>
@@ -57,6 +58,9 @@
             user: Object
         },
         ready: function() {
+        },
+        mouseClick: function () {
+            
         },
         computeURL: function(id) {
             return "http://api.oversimplified.io/users/" + id;
