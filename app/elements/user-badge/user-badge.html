@@ -17,16 +17,25 @@
                 margin: 6px 6px 6px 6px;
                 border-radius: 50%;
                 display: inline-block;
-                border: 2px solid #4CAF50;
                 transition: 0.15s;
             }
 
+            #badge {
+                height: 16px;
+                width: 16px;
+                border-radius: 50%;
+                background: #4CAF50;
+                margin: 0 -8px 0 0;
+            }
+
+            /*
             #avatar:hover {
                 height: 42px;
                 width: 42px;
                 border: 6px solid #4CAF50;
                 transition: 0.15s;
             }
+            */
         </style>
 
         <iron-ajax
@@ -37,6 +46,7 @@
 
         <div>
             <img id="avatar" src="[[user.img]]">
+            <div id="badge"></div>
         </div>
 
     </template>
