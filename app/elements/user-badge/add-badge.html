@@ -1,0 +1,65 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+
+<dom-module id="add-badge">
+
+    <template>
+        <style>
+            :host {
+                display: block;
+                position: relative;
+            }
+
+            #add {
+                height: 50px;
+                width: 50px;
+                padding: 0;
+                margin: 6px 6px 6px 6px;
+                border-radius: 50%;
+                display: inline-block;
+                transition: 0.15s;
+                background: var(--default-primary-color);
+            }
+
+            paper-icon-button {
+                color: #ffffff;
+            }
+        </style>
+
+        <iron-ajax
+                auto
+                url="{{url}}"
+                last-response="{{user}}"
+        ></iron-ajax>
+
+        <div class="layout horizontal">
+            <div id="add">
+                <paper-icon-button icon="add"></paper-icon-button>
+            </div>
+        </div>
+
+    </template>
+</dom-module>
+
+<script>
+    Polymer({
+        is: 'add-badge',
+        properties: {
+            url: {
+                type: String,
+                computed: 'computeURL(userId)'
+            },
+            userId: {
+                type: String,
+                value: "56154da0d32c233e52f30815"
+            },
+            user: Object
+        },
+        ready: function() {
+        },
+        computeURL: function(id) {
+            return "http://api.oversimplified.io/users/" + id;
+        }
+    });
+</script>

@@ -1,6 +1,7 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
 <link rel="import" href="../user-badge/user-badge.html">
+<link rel="import" href="../user-badge/add-badge.html">
 
 <dom-module id="group-card">
 
@@ -101,6 +102,7 @@
                 <template is="dom-repeat" items="{{group.members}}">
                     <user-badge user-id="[[item]]"></user-badge>
                 </template>
+                <add-badge></add-badge>
             </div>
         </paper-material>
     </template>
