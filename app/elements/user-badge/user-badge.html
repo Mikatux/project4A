@@ -58,7 +58,7 @@
             user: Object
         },
         ready: function() {
-            color();
+            connectedColor();
         },
         computeURL: function(id) {
             return "http://api.oversimplified.io/users/" + id;
@@ -66,9 +66,9 @@
         connectedColor: function() {
             var connected = true;//this.user.connected;
             if (connected) {
-                return "#4CAF50";
+                this.§.badge.style.background = "#E74C3C";
             } else {
-                return "##e74c3c";
+                this.§.badge.style.background = "#4CAF50";
             }
         }
     });
