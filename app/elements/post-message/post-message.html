@@ -250,7 +250,7 @@
       deletePost: function() {
         console.log("delete message");
         var ajax = document.getElementById('deleteMessage');
-        ajax.url = "http://back.oversimplified.io/message/" + this.item._id;
+        ajax.url = "http://back.oversimplified.io/messages/" + this.item._id;
         ajax.generateRequest();
         document.querySelector('#postList').deleteMessage();
         this.removePost();
