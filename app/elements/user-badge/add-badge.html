@@ -1,6 +1,5 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
-<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
 
 <dom-module id="add-badge">
 
@@ -14,16 +13,19 @@
             #add {
                 height: 50px;
                 width: 50px;
-                padding: 0;
                 margin: 6px 6px 6px 6px;
                 border-radius: 50%;
                 display: inline-block;
                 transition: 0.15s;
                 background: var(--default-primary-color);
+                padding: 0;
             }
 
-            paper-icon-button {
+            #addButton {
                 color: #ffffff;
+                font-size: 220px;
+                text-align: center;
+                width: inherit;
                 margin: auto;
             }
         </style>
@@ -36,7 +38,7 @@
 
         <div class="layout horizontal">
             <div id="add" on-click="mouseClick">
-                <paper-icon-button icon="add"></paper-icon-button>
+                <span id="addButton">+</span>
             </div>
         </div>
 
@@ -60,7 +62,7 @@
         ready: function() {
         },
         mouseClick: function () {
-            
+
         },
         computeURL: function(id) {
             return "http://api.oversimplified.io/users/" + id;
