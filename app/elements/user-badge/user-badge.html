@@ -27,15 +27,6 @@
                 background: #4CAF50;
                 margin: 0 -8px 0 0;
             }
-
-            /*
-            #avatar:hover {
-                height: 42px;
-                width: 42px;
-                border: 6px solid #4CAF50;
-                transition: 0.15s;
-            }
-            */
         </style>
 
         <iron-ajax
@@ -44,7 +35,7 @@
                 last-response="{{user}}"
         ></iron-ajax>
 
-        <div>
+        <div class="layout horizontal">
             <img id="avatar" src="[[user.img]]">
             <div id="badge"></div>
         </div>
