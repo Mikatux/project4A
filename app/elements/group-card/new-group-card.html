@@ -69,9 +69,9 @@
             <form is="iron-form" id="form" method="post" action="http://api.oversimplified.io/groups">
                 <paper-input name="name" value="New Group"></paper-input>
                 <paper-input name="public" value="true" hidden></paper-input>
-                <paper-input name="author" value="56154da0d32c233e52f30815" hidden></paper-input>
-                <paper-input name="members" value=56154da0d32c233e52f30815 hidden></paper-input>
-                <paper-input name="img" value="{{cover}}""></paper-input>
+                <paper-input name="author" value="{{getUserId}}" hidden></paper-input>
+                <paper-input name="members" value="{{getUserId}}" hidden></paper-input>
+                <paper-input name="img" value="{{cover}}"></paper-input>
             </form>
 
             <div class="buttons">
@@ -111,6 +111,9 @@
         mouseClick: function () {
             this.$.createDialog.open();
             //this.$.form.submit();
+        },
+        getUserId: function () {
+            return app.getUserId();
         },
         submitForm: function () {
             this.$.form.submit();
