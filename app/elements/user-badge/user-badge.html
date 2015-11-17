@@ -24,7 +24,7 @@
                 height: 16px;
                 width: 16px;
                 border-radius: 50%;
-                background: #4CAF50;
+                background: #e74c3c;
                 margin: 40px 0 0 -18px;
             }
         </style>
@@ -57,8 +57,19 @@
             },
             user: Object
         },
+        ready: function() {
+            color();
+        },
         computeURL: function(id) {
             return "http://api.oversimplified.io/users/" + id;
+        },
+        connectedColor: function() {
+            var connected = true;//this.user.connected;
+            if (connected) {
+                return "#4CAF50";
+            } else {
+                return "##e74c3c";
+            }
         }
     });
 </script>
