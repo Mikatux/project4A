@@ -1,5 +1,6 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
 <link rel="import" href="../user-badge/user-badge.html">
 <link rel="import" href="../user-badge/add-badge.html">
 
@@ -30,6 +31,13 @@
                 position: relative;
                 padding: 0;
                 margin: 0;
+            }
+
+            #removeButton {
+                color: #FFFFFF;
+                width: 16px;
+                height: 16px;
+                margin: 16px 0 0 -32px;
             }
 
             #nameContainer {
@@ -75,8 +83,9 @@
         <iron-request id="request"></iron-request>
 
         <paper-material elevation="1" id="cardMessage" on-mouseover="mouseOver" on-mouseout="mouseOut" on-click="onClick">
-            <div>
+            <div id="imageContainer">
                 <img src="{{group.img}}" alt="[[group.img]]" class="cover">
+                <iron-icon id="removeButton" icon="delete"></iron-icon>
             </div>
 
             <div id="nameContainer">
@@ -106,6 +115,10 @@
             group: Object
         },
         ready: function () {
+            this.removeAdd();
+            this.canRemove();
+        },
+        removeAdd: function () {
             var userId = app.getUserId();
             var contained = false;
 
@@ -119,6 +132,14 @@
 
             if (contained) {
                 Polymer.dom(this.$.membersContainer).removeChild(this.$.addBadge);
+            }
+        },
+        //TODO A FACTORISER...
+        canRemove: function() {
+            var userId = app.getUserId();
+
+            if (userId != this.group.author) {
+                Polymer.dom(this.$.imageContainer).removeChild(this.$.removeButton);
             }
         },
         computeURL: function () {
