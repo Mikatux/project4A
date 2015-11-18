@@ -157,6 +157,8 @@
                         newCardGroup.name.value = "it works !";
                         newCardGroup.cover.src = photoUrl;
                         newCardGroup.coverForm.value = photoUrl;
+                    } else {
+                        console.log("error " + response.stat);
                     }
             }
             xmlHttp.open("GET", searchURL, true);
