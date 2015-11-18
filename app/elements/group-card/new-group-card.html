@@ -141,7 +141,7 @@
             xmlHttp.onreadystatechange = function() {
                 if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
                     var response = xmlHttp.responseText;
-                    var newCardGroup = Document.getElementById("createGroupDialog");
+                    var newCardGroup = document.getElementById("createGroupDialog");
                 console.log(searchURL);
                 console.log(response);
                     if (response.stat == "ok") {
