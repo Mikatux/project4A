@@ -110,13 +110,14 @@
             var contained = false;
 
             for (var user in this.group.members) {
+                console.log(user._id + " | " + userId);
                 if (user._id == userId) {
                     contained = true;
                     break;
                 }
             }
 
-            if (true) {
+            if (contained) {
                 Polymer.dom(this.$.membersContainer).removeChild(this.$.addBadge);
             }
         },
