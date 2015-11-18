@@ -93,7 +93,7 @@
                 <template is="dom-repeat" items="{{group.members}}">
                     <user-badge user-id="[[item]]"></user-badge>
                 </template>
-                <add-badge group-id="[[group._id]]"></add-badge>
+                <add-badge group-id="[[group._id]]" id="addBadge"></add-badge>
             </div>
         </paper-material>
     </template>
@@ -104,6 +104,21 @@
         is: 'group-card',
         properties: {
             group: Object
+        },
+        ready: function () {
+            var userId = app.getUserId();
+            var contained = false;
+
+            for (var user in this.group.members) {
+                if (user._id == userId) {
+                    contained = true;
+                    break;
+                }
+            }
+
+            if (contained) {
+                Polymer.dom(this).removeChild(this.$.addBadge);
+            }
         },
         computeURL: function () {
             return "http://api.oversimplified.io/groups/" + this.group._id;
