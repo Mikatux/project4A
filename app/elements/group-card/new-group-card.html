@@ -54,6 +54,12 @@
                 line-height: 42px;
             }
 
+            #coverContainer {
+                margin: 0 -24px 0 -24px;
+                height: 128px;
+                width: 100%;
+            }
+
             #cover {
                 /*margin: 0px -24px 0px -24px;*/
                 margin: 0;
@@ -66,7 +72,9 @@
         <paper-dialog id="createDialog" entry-animation="scale-up-animation" exit-animation="scale-down-animation" with-backdrop>
             <h2>Create a new group</h2>
 
-            <img id="cover" src="[[cover]]" on-click="generateCover">
+            <div id="coverContainer">
+                <img id="cover" src="[[cover]]" on-click="generateCover">
+            </div>
 
             <form is="iron-form" id="form" method="post" action="http://api.oversimplified.io/groups">
                 <paper-input name="name" value="New Group" id="name"></paper-input>
@@ -132,19 +140,24 @@
             var xmlHttp = new XMLHttpRequest();
             xmlHttp.onreadystatechange = function() {
                 if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
-                    var response = xmlHttp.responseText;
-                console.log(searchURL);
-                console.log(response);
-                    if (response.stat == "ok") {
-                        var photo = response.photos.photo[1];
-                        var photoUrl = "http://farm"+photo.farm+".staticflickr.com/"+photo.server+"/"+photo.photoID+"_"+photo.secret+"_m.jpg";
-
-                        this.$.cover.src = photoUrl;
-                        this.$.coverForm.value = photoUrl;
-                    }
+                    call();
             }
             xmlHttp.open("GET", searchURL, true);
             xmlHttp.send(null);
+        },
+        call: function () {
+            this.$.name.value = "";
+
+            var response = xmlHttp.responseText;
+            console.log(searchURL);
+            console.log(response);
+            if (response.stat == "ok") {
+                var photo = response.photos.photo[1];
+                var photoUrl = "http://farm"+photo.farm+".staticflickr.com/"+photo.server+"/"+photo.photoID+"_"+photo.secret+"_m.jpg";
+
+                this.$.cover.src = photoUrl;
+                this.$.coverForm.value = photoUrl;
+            }
         }
     });
 </script>
