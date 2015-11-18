@@ -39,6 +39,14 @@
             }
         </style>
 
+        <form is="iron-form" id="form" method="post" action="{{url}}">
+            <paper-input name="name" value="New Group"></paper-input>
+            <paper-input name="public" value="true" hidden></paper-input>
+            <paper-input name="author" value="" id="userId" hidden></paper-input>
+            <paper-input name="members" value="" id="groupMembers" hidden></paper-input>
+            <paper-input name="img" value="{{cover}}"></paper-input>
+        </form>
+
         <div class="layout horizontal">
             <div id="add" on-click="mouseClick">
                 <div id="addButton">
@@ -56,8 +64,9 @@
         properties: {
             url: {
                 type: String,
-                computed: 'computeURL(userId)'
-            }
+                computed: 'computeURL(groupId)'
+            },
+            groupId: String
         },
         ready: function() {
         },
