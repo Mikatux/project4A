@@ -129,16 +129,19 @@
 
             var searchURL = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key="+apiKey+"&text="+search+"&per_page=20&format=json&nojsoncallback=1";
             var xmlHttp = new XMLHttpRequest();
-            xmlHttp.open("GET", searchURL, false); // false for synchronous request
-            xmlHttp.send(null);
-            var response = xmlHttp.responseText;
-            if (response.stat == "ok") {
-                var photo = response.photos.photo[1];
-                var photoUrl = "http://farm"+photo.farm+".staticflickr.com/"+photo.server+"/"+photo.photoID+"_"+photo.secret+"_m.jpg";
+            xmlHttp.onreadystatechange = function() {
+                if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+                    var response = xmlHttp.responseText;
+                    if (response.stat == "ok") {
+                        var photo = response.photos.photo[1];
+                        var photoUrl = "http://farm"+photo.farm+".staticflickr.com/"+photo.server+"/"+photo.photoID+"_"+photo.secret+"_m.jpg";
 
-                this.$.cover.src = photoUrl;
-                this.$.coverForm.value = photoUrl;
+                        this.$.cover.src = photoUrl;
+                        this.$.coverForm.value = photoUrl;
+                    }
             }
+            xmlHttp.open("GET", searchURL, true);
+            xmlHttp.send(null);
         }
     });
 </script>
