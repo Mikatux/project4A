@@ -41,13 +41,13 @@
                 margin: 0;
             }
 
-            #createDialog {
+            #createGroupDialog {
                 background: #fefefe;
                 width: 512px;
                 border-radius: 2px;
             }
 
-            #createDialog h2 {
+            #createGroupDialog h2 {
                 background: var(--default-primary-color);
                 color:  #FEFEFE;
                 margin: 0;
@@ -69,7 +69,7 @@
             }
         </style>
 
-        <paper-dialog id="createDialog" entry-animation="scale-up-animation" exit-animation="scale-down-animation" with-backdrop>
+        <paper-dialog id="createGroupDialog" entry-animation="scale-up-animation" exit-animation="scale-down-animation" with-backdrop>
             <h2>Create a new group</h2>
 
             <div id="coverContainer">
@@ -140,24 +140,20 @@
             var xmlHttp = new XMLHttpRequest();
             xmlHttp.onreadystatechange = function() {
                 if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
-                    call();
+                    var response = xmlHttp.responseText;
+                    var newCardGroup = Document.getElementById("createGroupDialog");
+                console.log(searchURL);
+                console.log(response);
+                    if (response.stat == "ok") {
+                        var photo = response.photos.photo[1];
+                        var photoUrl = "http://farm"+photo.farm+".staticflickr.com/"+photo.server+"/"+photo.photoID+"_"+photo.secret+"_m.jpg";
+
+                        newCardGroup.cover.src = photoUrl;
+                        newCardGroup.coverForm.value = photoUrl;
+                    }
             }
             xmlHttp.open("GET", searchURL, true);
             xmlHttp.send(null);
-        },
-        call: function () {
-            this.$.name.value = "";
-
-            var response = xmlHttp.responseText;
-            console.log(searchURL);
-            console.log(response);
-            if (response.stat == "ok") {
-                var photo = response.photos.photo[1];
-                var photoUrl = "http://farm"+photo.farm+".staticflickr.com/"+photo.server+"/"+photo.photoID+"_"+photo.secret+"_m.jpg";
-
-                this.$.cover.src = photoUrl;
-                this.$.coverForm.value = photoUrl;
-            }
         }
     });
 </script>
