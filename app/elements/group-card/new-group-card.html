@@ -140,7 +140,7 @@
             var xmlHttp = new XMLHttpRequest();
             xmlHttp.onreadystatechange = function() {
                 if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
-                    var response = xmlHttp.responseText;
+                    var response = JSON.parse(xmlHttp.responseText);
                     var newCardGroup = document.getElementById("createGroupDialog");
 
                     if (response === undefined) {
