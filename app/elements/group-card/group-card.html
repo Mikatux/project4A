@@ -90,10 +90,10 @@
             <div class="separator"></div>
 
             <div id="membersContainer" class="layout horizontal">
+                <add-badge group-id="[[group._id]]" id="addBadge"></add-badge>
                 <template is="dom-repeat" items="{{group.members}}">
                     <user-badge user-id="[[item]]"></user-badge>
                 </template>
-                <add-badge group-id="[[group._id]]" id="addBadge"></add-badge>
             </div>
         </paper-material>
     </template>
