@@ -110,8 +110,7 @@
             var contained = false;
 
             for (var user in this.group.members) {
-                console.log(user._id + " | " + userId);
-                if (user._id == userId) {
+                if (user == userId) {
                     contained = true;
                     break;
                 }
