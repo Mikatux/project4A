@@ -126,7 +126,7 @@
         },
         generateCover: function() {
             var apiKey = "04f0a1d9ea4bba8ec77770b3c2cb19e8";
-            var search = this.$.name;
+            var search = this.$.name.value;
 
             var searchURL = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key="+apiKey+"&text="+search+"&per_page=20&format=json&nojsoncallback=1";
             var xmlHttp = new XMLHttpRequest();
