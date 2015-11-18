@@ -146,17 +146,15 @@
                     if (response === undefined) {
                         return;
                     }
-                    console.log(response);
-                    console.log(response.photos);
-                    console.log(response.photos.total);
+                    console.log("Number of photos: " + response.photos.total);
 
                     if (response.stat == "ok") {
                         var photo = response.photos.photo[1];
                         var photoUrl = "http://farm"+photo.farm+".staticflickr.com/"+photo.server+"/"+photo.photoID+"_"+photo.secret+"_m.jpg";
 
-                        newCardGroup.name.value = "it works !";
-                        newCardGroup.cover.src = photoUrl;
-                        newCardGroup.coverForm.value = photoUrl;
+                        newCardGroup.getElementById("name").value = "it works !";
+                        newCardGroup.getElementById("cover").src = photoUrl;
+                        newCardGroup.getElementById("coverForm").value = photoUrl;
                     } else {
                         console.log("error " + response.stat);
                     }
