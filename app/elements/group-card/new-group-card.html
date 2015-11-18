@@ -142,11 +142,11 @@
                 if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
                     var response = xmlHttp.responseText;
                     var newCardGroup = document.getElementById("createGroupDialog");
-                //console.log(searchURL);
-                console.log(response.photos.total);
+
                     if (response === undefined) {
                         return;
                     }
+                    console.log(response.photos.total);
 
                     if (response.stat == "ok") {
                         var photo = response.photos.photo[1];
