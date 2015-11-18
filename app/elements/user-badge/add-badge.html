@@ -40,11 +40,7 @@
         </style>
 
         <form is="iron-form" id="form" method="post" action="{{url}}">
-            <paper-input name="name" value="New Group"></paper-input>
-            <paper-input name="public" value="true" hidden></paper-input>
-            <paper-input name="author" value="" id="userId" hidden></paper-input>
-            <paper-input name="members" value="" id="groupMembers" hidden></paper-input>
-            <paper-input name="img" value="{{cover}}"></paper-input>
+            <paper-input name="userId" value=""></paper-input>
         </form>
 
         <div class="layout horizontal">
@@ -71,7 +67,12 @@
         ready: function() {
         },
         mouseClick: function () {
-
+            this.$.userId.value = app.getUserId();
+            if (this.$.userId.value != "") {
+                this.$.form.submit();
+            } else {
+                alert("Vous n'êtes pas connecté.");
+            }
         },
         computeURL: function(id) {
             return "http://api.oversimplified.io/groups/" + id;
