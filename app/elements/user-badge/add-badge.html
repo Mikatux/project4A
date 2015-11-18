@@ -39,12 +39,6 @@
             }
         </style>
 
-        <iron-ajax
-                auto
-                url="{{url}}"
-                last-response="{{user}}"
-        ></iron-ajax>
-
         <div class="layout horizontal">
             <div id="add" on-click="mouseClick">
                 <div id="addButton">
@@ -63,12 +57,7 @@
             url: {
                 type: String,
                 computed: 'computeURL(userId)'
-            },
-            userId: {
-                type: String,
-                value: "56154da0d32c233e52f30815"
-            },
-            user: Object
+            }
         },
         ready: function() {
         },
@@ -76,7 +65,7 @@
 
         },
         computeURL: function(id) {
-            return "http://api.oversimplified.io/users/" + id;
+            return "http://api.oversimplified.io/groups/" + id;
         }
     });
 </script>

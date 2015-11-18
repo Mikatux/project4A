@@ -55,6 +55,7 @@
             }
         </style>
         <iron-ajax
+                id="ajaxRequest"
                 auto
                 url="http://api.oversimplified.io/groups"
                 handle-as="json"
@@ -79,6 +80,9 @@
         },
         computeUrl: function() {
             return 'http://api.oversimplified.io/groups';
+        },
+        refresh: function () {
+            this.$.ajaxRequest.generateRequest();
         }
     });
 </script>
