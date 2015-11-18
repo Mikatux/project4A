@@ -55,7 +55,8 @@
             }
 
             #cover {
-                margin: 0px -24px 0px -24px;
+                /*margin: 0px -24px 0px -24px;*/
+                margin: 0;
                 height: 128px;
                 width: 100%;
                 background: #EFEFEF;
@@ -68,7 +69,7 @@
             <img id="cover" src="[[cover]]" on-click="generateCover">
 
             <form is="iron-form" id="form" method="post" action="http://api.oversimplified.io/groups">
-                <paper-input name="name" value="New Group"></paper-input>
+                <paper-input name="name" value="New Group" id="name"></paper-input>
                 <paper-input name="public" value="true" hidden></paper-input>
                 <paper-input name="author" value="" id="userId" hidden></paper-input>
                 <paper-input name="members" value="" id="groupMembers" hidden></paper-input>
@@ -124,7 +125,7 @@
             }
         },
         generateCover: function() {
-            var apiKey = "";
+            var apiKey = "04f0a1d9ea4bba8ec77770b3c2cb19e8";
             var search = this.$.name;
 
             var searchURL = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key="+apiKey+"&text="+search+"&per_page=20&format=json&nojsoncallback=1";
