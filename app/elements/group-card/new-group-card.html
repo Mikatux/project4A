@@ -132,6 +132,7 @@
             xmlHttp.onreadystatechange = function() {
                 if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
                     var response = xmlHttp.responseText;
+                console.log(response);
                     if (response.stat == "ok") {
                         var photo = response.photos.photo[1];
                         var photoUrl = "http://farm"+photo.farm+".staticflickr.com/"+photo.server+"/"+photo.photoID+"_"+photo.secret+"_m.jpg";
