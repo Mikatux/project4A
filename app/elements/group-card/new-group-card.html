@@ -142,12 +142,17 @@
                 if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
                     var response = xmlHttp.responseText;
                     var newCardGroup = document.getElementById("createGroupDialog");
-                console.log(searchURL);
-                console.log(response);
+                //console.log(searchURL);
+                console.log(response.photos.total);
+                    if (response === undefined) {
+                        return;
+                    }
+
                     if (response.stat == "ok") {
                         var photo = response.photos.photo[1];
                         var photoUrl = "http://farm"+photo.farm+".staticflickr.com/"+photo.server+"/"+photo.photoID+"_"+photo.secret+"_m.jpg";
 
+                        newCardGroup.name.value = "it works !";
                         newCardGroup.cover.src = photoUrl;
                         newCardGroup.coverForm.value = photoUrl;
                     }
