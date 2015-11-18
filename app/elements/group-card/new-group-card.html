@@ -152,9 +152,9 @@
                         var photo = response.photos.photo[1];
                         var photoUrl = "http://farm"+photo.farm+".staticflickr.com/"+photo.server+"/"+photo.photoID+"_"+photo.secret+"_m.jpg";
 
-                        Polymer.dom(newCardGroup).getElementById("name").value = "it works !";
-                        Polymer.dom(newCardGroup).getElementById("cover").src = photoUrl;
-                        Polymer.dom(newCardGroup).getElementById("coverForm").value = photoUrl;
+                        Polymer.dom(newCardGroup).querySelector("#name").value = "it works !";
+                        Polymer.dom(newCardGroup).querySelector("#cover").src = photoUrl;
+                        Polymer.dom(newCardGroup).querySelector("#coverForm").value = photoUrl;
                     } else {
                         console.log("error " + response.stat);
                     }
