@@ -76,7 +76,7 @@
             #membersContainer {
                 margin: 0;
                 padding: 0;
-                overflow-x: scroll;
+                overflow-x: auto;
             }
         </style>
 
@@ -123,7 +123,6 @@
             var contained = false;
 
             for (var user in this.group.members) {
-                console.log(this.group.members[user] + " | " + userId);
                 if (this.group.members[user] == userId) {
                     contained = true;
                     break;
