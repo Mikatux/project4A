@@ -109,11 +109,13 @@
                 <div id="newImage">
                     <span>+</span>
                 </div>
-                <template is="dom-repeat" items="{{getPhotos}}">
+
+                <template is="dom-repeat" items="{{photos}}">
                     <div>
                         <img src="{{item.image_url}}" class="imageSelector">
                     </div>
                 </template>
+
                 <div id="moreImage">
                     <span>Load more</span>
                 </div>
@@ -151,6 +153,10 @@
             cover: {
                 type: String,
                 value: ""
+            },
+            photos: {
+                type: Object,
+                computed: 'computePhotos()'
             }
         },
         mouseOver: function () {
@@ -175,7 +181,7 @@
                 alert("Vous n'êtes pas connecté.");
             }
         },
-        getPhotos: function () {
+        computePhotos: function () {
             _500px.api('/photos', { feature: 'popular', page: 1 }, function (response) {
                 console.log(response.data.photos);
                 return response.data.photos;
