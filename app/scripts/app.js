@@ -30,10 +30,6 @@
 
     // See https://github.com/Polymer/polymer/issues/1381
     window.addEventListener('WebComponentsReady', function() {
-        _500px.init({
-            sdk_key: '38c376a9e15070c2d19339f6b133478e8466cbfd'
-        });
-
         var cookie = document.querySelector('#cookie');
 
         if (cookie.value == null) {
