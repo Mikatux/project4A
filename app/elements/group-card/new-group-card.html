@@ -184,7 +184,7 @@
         computePhotos: function () {
             _500px.api('/photos', { feature: 'popular', page: 1 }, function (response) {
                 console.log(response.data.photos);
-                return response.data.photos;
+                return '[{"url": "https://drscdn.500px.org/photo/129467023/w%3D280_h%3D280/c4bfbcd5deb372ea7041058c3c6960cf?v=2"}, {"url": "https://drscdn.500px.org/photo/129467023/w%3D280_h%3D280/c4bfbcd5deb372ea7041058c3c6960cf?v=2"}, {"url": "https://drscdn.500px.org/photo/129467023/w%3D280_h%3D280/c4bfbcd5deb372ea7041058c3c6960cf?v=2"}, {"url": "https://drscdn.500px.org/photo/129467023/w%3D280_h%3D280/c4bfbcd5deb372ea7041058c3c6960cf?v=2"}, {"url": "https://drscdn.500px.org/photo/129467023/w%3D280_h%3D280/c4bfbcd5deb372ea7041058c3c6960cf?v=2"}, {"url": "https://drscdn.500px.org/photo/129467023/w%3D280_h%3D280/c4bfbcd5deb372ea7041058c3c6960cf?v=2"}]';
             });
         },
         generateCover: function () {
