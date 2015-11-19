@@ -83,6 +83,12 @@
                 color:  #FEFEFE;
             }
 
+            .imageSelector {
+                height: 88px;
+                width: 88px;
+                margin: 4px 4px 4px 4px;
+            }
+
             #moreImage {
                 height: 88px;
                 width: 88px;
@@ -107,7 +113,11 @@
                 <div id="newImage">
                     <span>+</span>
                 </div>
-                <!-- -->
+                <template is="dom-repeat" items="{{getPhotos}}">
+                    <div>
+                        <img src="{{item.image_url}}" class="imageSelector">
+                    </div>
+                </template>
                 <div id="moreImage">
                     <span>Load more</span>
                 </div>
@@ -169,7 +179,13 @@
                 alert("Vous n'êtes pas connecté.");
             }
         },
-        generateCover: function() {
+        getPhotos: function () {
+            _500px.api('/photos', { feature: 'popular', page: 1 }, function (response) {
+                console.log(response.data.photos);
+                return response.data.photos;
+            });
+        },
+        generateCover: function () {
             var apiKey = "04f0a1d9ea4bba8ec77770b3c2cb19e8";
             var search = this.$.name.value;
 
