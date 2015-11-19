@@ -68,6 +68,10 @@
                 height: 512px;
                 background: #EFEFEF;
             }
+
+            #buttonContainer {
+                height: 128px;
+            }
         </style>
 
         <paper-dialog id="createGroupDialog" entry-animation="scale-up-animation" exit-animation="scale-down-animation" with-backdrop>
@@ -85,7 +89,7 @@
                 <paper-input name="img" value="{{cover}}" id="coverForm"></paper-input>
             </form>
 
-            <div class="buttons">
+            <div id="buttonContainer">
                 <paper-button dialog-dismiss>Cancel</paper-button>
                 <paper-button dialog-confirm autofocus on-click="submitForm">Create</paper-button>
             </div>

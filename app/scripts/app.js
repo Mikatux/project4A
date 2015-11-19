@@ -26,6 +26,9 @@
     // have resolved and content has been stamped to the page
     app.addEventListener('dom-change', function() {
         //console.log('Our app is ready to rock!');
+        _500px.init({
+            sdk_key: '38c376a9e15070c2d19339f6b133478e8466cbfd'
+        });
     });
 
     // See https://github.com/Polymer/polymer/issues/1381
