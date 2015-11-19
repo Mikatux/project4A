@@ -110,7 +110,7 @@
                     <span>+</span>
                 </div>
 
-                <template is="dom-repeat" items="{{photos}}">
+                <template is="dom-repeat" items="{{photosList}}">
                     <div>
                         <span>[[item.url]]</span>
                     </div>
@@ -154,7 +154,7 @@
                 type: String,
                 value: ""
             },
-            photos: {
+            photosList: {
                 type: Object,
                 computed: 'computePhotos()',
                 value: []
