@@ -69,6 +69,28 @@
                 background: #EFEFEF;
             }
 
+            #selectImage {
+                height: 96px;
+                width: 512px;
+                overflow: scroll;
+            }
+
+            #newImage {
+                height: 88px;
+                width: 88px;
+                margin: 4px 4px 4px 4px;
+                background: var(--default-primary-color);
+                color:  #FEFEFE;
+            }
+
+            #moreImage {
+                height: 88px;
+                width: 88px;
+                margin: 4px 4px 4px 4px;
+                background: var(--default-primary-color);
+                color:  #FEFEFE;
+            }
+
             #buttonContainer {
                 height: 128px;
             }
@@ -79,6 +101,16 @@
 
             <div id="coverContainer">
                 <img id="cover" src="[[cover]]" on-click="generateCover">
+            </div>
+
+            <div id="selectImage">
+                <div id="newImage">
+                    <span>+</span>
+                </div>
+                <!-- -->
+                <div id="moreImage">
+                    <span>Load more</span>
+                </div>
             </div>
 
             <form is="iron-form" id="form" method="post" action="http://api.oversimplified.io/groups">
