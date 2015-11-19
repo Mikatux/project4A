@@ -193,13 +193,6 @@
             var l = [{"url": "1"}, {"url": "2"}, {"url": "3"}, {"url": "4"}, {"url": "5"}, {"url": "6"}];
             console.log(l);
             return l;
-
-            _500px.api('/photos', { feature: 'popular', page: 1 }, function (response) {
-                console.log(response.data.photos);
-                var l = [{"url": "1"}, {"url": "2"}, {"url": "3"}, {"url": "4"}, {"url": "5"}, {"url": "6"}];
-                console.log(l);
-                return l;
-            });
         },
         generateCover: function () {
             var apiKey = "04f0a1d9ea4bba8ec77770b3c2cb19e8";
