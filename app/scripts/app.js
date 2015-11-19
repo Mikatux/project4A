@@ -26,14 +26,14 @@
     // have resolved and content has been stamped to the page
     app.addEventListener('dom-change', function() {
         //console.log('Our app is ready to rock!');
-        _500px.init({
-            sdk_key: '38c376a9e15070c2d19339f6b133478e8466cbfd'
-        });
     });
 
     // See https://github.com/Polymer/polymer/issues/1381
     window.addEventListener('WebComponentsReady', function() {
-        // imports are loaded and elements have been registered
+        _500px.init({
+            sdk_key: '38c376a9e15070c2d19339f6b133478e8466cbfd'
+        });
+
         var cookie = document.querySelector('#cookie');
 
         if (cookie.value == null) {
@@ -128,9 +128,9 @@
             }
         };
         if(window.location.hostname == "project.oversimplified.io") {
-            xhttp.open("GET", "http://back.oversimplified.io/pushprod", true);
+            xhttp.open("GET", "http://api.oversimplified.io/pushprod", true);
         } else {
-            xhttp.open("GET", "http://back.oversimplified.io/pushbeta", true);
+            xhttp.open("GET", "http://api.oversimplified.io/pushbeta", true);
         }
         xhttp.send();
     }
