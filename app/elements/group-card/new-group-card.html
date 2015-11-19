@@ -192,7 +192,7 @@
             _500px.api('/photos', { feature: 'popular', page: 1 }, function (response) {
                 console.log(response.data.photos);
                 var l = [{"url": "1"}, {"url": "2"}, {"url": "3"}, {"url": "4"}, {"url": "5"}, {"url": "6"}];
-                console.log("obj: " + l);
+                console.log(l);
                 return l;
             });
         },
