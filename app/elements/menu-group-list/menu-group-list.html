@@ -1,9 +1,7 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
-<link rel="import" href="../group-card/group-card.html">
-<link rel="import" href="../group-card/new-group-card.html">
 
-<dom-module id="group-list">
+<dom-module id="menu-group-list">
 
     <template>
         <style>
@@ -26,7 +24,7 @@
 
 <script>
     Polymer({
-        is: 'group-list',
+        is: 'menu-group-list',
         properties: {
             url: {
                 computed: 'computeUrl()'
