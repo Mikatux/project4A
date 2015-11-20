@@ -45,7 +45,8 @@
             return "http://api.oversimplified.io/users/" + userId;
         },
         performRequest: function () {
-            console.log("requet");
+            console.log("Request");
+            console.log(this.$.query.url);
             this.$.query.generateRequest();
         }
         });
