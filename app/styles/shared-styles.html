@@ -1,16 +1,23 @@
 <!-- shared styles for all elements and index.html -->
 <dom-module id="shared-styles">
-  <template>
-    <style>
-      .page-title {
-        @apply(--paper-font-display2);
-      }
+    <template>
+        <style>
+            .separator {
+                width: 90%;
+                height: 2px;
+                background: #dfdfdf;
+                margin: 2px;
+            }
 
-      @media (max-width: 600px) {
-        .page-title {
-          font-size: 24px!important;
-        }
-      }
-    </style>
-  </template>
+            .page-title {
+                @apply(--paper-font-display2);
+            }
+
+            @media (max-width: 600px) {
+                .page-title {
+                    font-size: 24px!important;
+                }
+            }
+        </style>
+    </template>
 </dom-module>
