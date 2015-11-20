@@ -36,6 +36,7 @@
             //TODO rediriger vers la page Login
             window.location.href = window.location.origin + "/#!/login";
             document.querySelector("#logInOutMenuButtonText").innerHTML = "Login";
+            document.querySelector("user-info-bar").performRequest;
         } else {
             //TODO transformer le bouton Login en Logout
             document.querySelector("#logInOutMenuButtonText").innerHTML = "Logout";
