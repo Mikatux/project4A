@@ -3,7 +3,7 @@
 <dom-module id="user-info-bar">
     <template>
         <style>
-            .userInfo {
+            #userInfo {
                 height: 100%;
                 margin: auto 0 auto 0;
             }
@@ -17,6 +17,7 @@
             #name {
                 color: #FEFEFE;
                 margin: auto 0 auto 4px;
+                text-align: center;
                 height: 42px;
             }
         </style>
@@ -27,7 +28,7 @@
                 last-response="{{user}}"
         ></iron-ajax>
 
-        <div class="userInfo">
+        <div id="userInfo">
             <span id="name">{{user.name}}</span>
             <img src="{{user.img}}" id="avatar">
         </div>
