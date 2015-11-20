@@ -57,6 +57,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <link rel="import" href="elements/user-card/user-card.html">
     <link rel="import" href="elements/user-info-bar/user-info-bar.html">
     <link rel="import" href="elements/group-list/group-list.html">
+    <link rel="import" href="elements/menu-group-list/menu-group-list.html">
     <link rel="import" href="elements/send-box/send-box.html">
     <link rel="import" href="elements/login-box/login-box.html">
 
@@ -82,18 +83,26 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <paper-drawer-panel id="paperDrawerPanel">
         <paper-scroll-header-panel drawer fixed>
-            <!--<paper-toolbar id="drawerToolbar">
-                <span class="paper-font-title">Menu</span>
-            </paper-toolbar>-->
             <paper-toolbar id="drawerToolbar"></paper-toolbar>
 
             <paper-menu class="list" attr-for-selected="data-route" selected="[[route]]">
                 <a data-route="home" href="/" on-click="onDataRouteClick">
                     <iron-icon icon="home"></iron-icon>
-                    <span>Home</span>
+                    <span>Today</span>
                 </a>
 
-                <span>Mes groupes</span>
+                <a data-route="home" href="/" on-click="onDataRouteClick">
+                    <iron-icon icon="social:whatshot"></iron-icon>
+                    <span>Hot</span>
+                </a>
+
+                <div class="separaotr"></div>
+                <span>Groups</span>
+
+                <menu-group-list></menu-group-list>
+
+                <div class="separaotr"></div>
+
                 <a data-route="users" href="/users" on-click="onDataRouteClick">
                     <iron-icon icon="social:group"></iron-icon>
                     <span>Users</span>
@@ -113,7 +122,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         <paper-scroll-header-panel fixed main condenses>
             <paper-toolbar>
-                <paper-icon-button id="paperToggle" icon="menu" ></paper-icon-button>
+                <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
                 <span class="flex"></span>
 
                 <!-- Toolbar icons -->

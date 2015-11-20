@@ -1,0 +1,42 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../group-card/group-card.html">
+<link rel="import" href="../group-card/new-group-card.html">
+
+<dom-module id="group-list">
+
+    <template>
+        <style>
+
+        </style>
+
+        <iron-ajax
+                id="ajaxRequest"
+                auto
+                url="{{url}}"
+                handle-as="json"
+                last-response="{{response}}"></iron-ajax>
+
+        <template is="dom-repeat" items="{{response}}">
+            <span>{{item.name}}</span>
+        </template>
+
+    </template>
+</dom-module>
+
+<script>
+    Polymer({
+        is: 'group-list',
+        properties: {
+            url: {
+                computed: 'computeUrl()'
+            }
+        },
+        computeUrl: function() {
+            return 'http://api.oversimplified.io/groups';
+        },
+        refresh: function () {
+            this.$.ajaxRequest.generateRequest();
+        }
+    });
+</script>
