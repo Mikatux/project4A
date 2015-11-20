@@ -46,6 +46,7 @@
         },
         performRequest: function () {
             console.log("Request");
+            this.$.query.url = this.computeURL;
             console.log(this.$.query.url);
             this.$.query.generateRequest();
         }
