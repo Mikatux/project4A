@@ -1,5 +1,6 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../bower_components/iron-icons/social-icons.html">
 
 <dom-module id="user-info-bar">
     <template>
@@ -48,6 +49,7 @@
             <span id="name">{{user.name}}</span>
             <img src="{{user.img}}" id="avatar">
 
+            <paper-icon-button icon="social:notifications" class="icons"></paper-icon-button>
             <paper-icon-button icon="question-answer" class="icons"></paper-icon-button>
             <paper-icon-button icon="settings" class="icons"></paper-icon-button>
         </div>
