@@ -4,11 +4,27 @@
     <template>
         <style>
             .userInfo {
-                height: 200px;
+                height: 100%;
+            }
+
+            #avatar {
+                border-radius: 50%;
+                margin: auto 0 auto 0;
+            }
+
+            #name {
+                color: #FEFEFE;
             }
         </style>
 
+        <iron-ajax
+                auto
+                url="{{url}}"
+                last-response="{{user}}"
+        ></iron-ajax>
+
         <div class="userInfo">
+            <span id="name">{{user.name}}</span>
             <img src="{{user.img}}" id="avatar">
         </div>
     </template>
@@ -18,7 +34,18 @@
     Polymer({
         is: 'user-info-bar',
         properties: {
-            user: Object
+            user: Object,
+            url: {
+                type: String,
+                computed: 'computeURL()'
+            }
+        },
+        ready: function () {
+
+        },
+        computeURL: function() {
+            var userId = app.getUserId();
+            return "http://api.oversimplified.io/users/" + userId;
         }
         });
 </script>
