@@ -12,3 +12,10 @@ body {
   font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #333;
 }
+
+.separator {
+    width: 90%;
+    height: 2px;
+    background: #dfdfdf;
+    margin: auto;
+}

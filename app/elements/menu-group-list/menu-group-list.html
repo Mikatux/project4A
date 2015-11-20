@@ -5,7 +5,10 @@
 
     <template>
         <style>
-
+            .groupTitle {
+                color: #5e5d5e;
+                font-weight: 600;
+            }
         </style>
 
         <iron-ajax
@@ -15,9 +18,11 @@
                 handle-as="json"
                 last-response="{{response}}"></iron-ajax>
 
-        <template is="dom-repeat" items="{{response}}">
-            <span>{{item.name}}</span>
-        </template>
+        <div class="layout vertical">
+            <template is="dom-repeat" items="{{response}}">
+                <span class="groupTitle">{{item.name}}</span>
+            </template>
+        </div>
 
     </template>
 </dom-module>
