@@ -78,8 +78,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <span id="browser-sync-binding"></span>
 <template is="dom-bind" id="app">
 
-    <paper-drawer-panel id="paperDrawerPanel">
+    <polymer-cookie name="oversimplifiedcookie" id="cookie"></polymer-cookie>
 
+    <paper-drawer-panel id="paperDrawerPanel">
         <paper-scroll-header-panel drawer fixed>
             <!--<paper-toolbar id="drawerToolbar">
                 <span class="paper-font-title">Menu</span>
@@ -135,13 +136,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 
                     <section data-route="home">
-
-                        <template is="dom-bind">
-                            <polymer-cookie name="oversimplifiedcookie" id="cookie"></polymer-cookie>
-                            <send-box></send-box>
-                            <post-list id="postList"></post-list>
-                        </template>
-
+                        <send-box></send-box>
+                        <post-list id="postList"></post-list>
                     </section>
 
                     <section data-route="users">
