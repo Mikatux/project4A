@@ -12,7 +12,7 @@
 
             #avatar {
                 border-radius: 50%;
-                margin: auto 8px auto 8px;
+                margin: 8px;
                 height: 42px;
                 width: 42px;
                 display: table-cell;
@@ -46,9 +46,7 @@
 
         <div id="userInfo" class="layout horizontal">
             <span id="name">{{user.name}}</span>
-            <div style="padding: auto; height: 100%">
-                <img src="{{user.img}}" id="avatar">
-            </div>
+            <img src="{{user.img}}" id="avatar">
 
             <paper-icon-button icon="question-answer" class="icons"></paper-icon-button>
             <paper-icon-button icon="settings" class="icons"></paper-icon-button>
