@@ -15,12 +15,23 @@
                 margin: auto 8px auto 8px;
                 height: 42px;
                 width: 42px;
+                display: table-cell;
+                vertical-align: middle;
             }
 
             #name {
                 color: #FEFEFE;
                 height: 42px;
                 margin: auto 0 auto 0;
+                text-align: center;
+                display: table-cell;
+                vertical-align: middle;
+            }
+
+            .icons {
+                color: #FEFEFE;
+                height: 42px;
+                margin: auto 8px auto 8px;
                 text-align: center;
                 display: table-cell;
                 vertical-align: middle;
@@ -33,12 +44,12 @@
                 last-response="{{user}}"
         ></iron-ajax>
 
-        <div id="userInfo">
+        <div id="userInfo" class="layout horizontal">
             <span id="name">{{user.name}}</span>
             <img src="{{user.img}}" id="avatar">
 
-            <paper-icon-button icon="question-answer"></paper-icon-button>
-            <paper-icon-button icon="settings"></paper-icon-button>
+            <paper-icon-button icon="question-answer" class="icons"></paper-icon-button>
+            <paper-icon-button icon="settings" class="icons"></paper-icon-button>
         </div>
     </template>
 </dom-module>
