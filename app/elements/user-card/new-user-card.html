@@ -36,6 +36,18 @@
                 text-align: center;
                 width: inherit;
             }
+
+            #form {
+                color: #FEFEFE;
+                margin: 8px;
+            }
+
+            #submitButton {
+                color: #FEFEFE;
+                width: 100px;
+                height: 30px;
+                padding: auto;
+            }
         </style>
 
         <paper-material elevation="1" id="cardMessage" on-mouseover="mouseOver" on-mouseout="mouseOut">
@@ -53,7 +65,8 @@
                 <paper-input name="password" value="*****" id="password" hidden></paper-input>
                 <paper-input name="img" value="" id="img"></paper-input>
             </form>
-            <span on-click="submitForm">Create</span>
+
+            <a on-click="submitForm" id="submitButton">Create</a>
         </paper-material>
     </template>
 </dom-module>
@@ -80,6 +93,10 @@
             this.$.email.value = this.$.name.value + "." + this.$.lastname.value + "@oversimplified.io";
 
             this.$.form.submit();
+
+            this.$.name.value = "";
+            this.$.lastname.value = "";
+            this.$.img.value = "";
         }
     });
 </script>
