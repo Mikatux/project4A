@@ -40,7 +40,7 @@
                         auto
                         url="{{groupURL(item)}}"
                         handle-as="json"
-                        last-response="{{group}}"></iron-ajax>
+                        on-response="handelResponse"></iron-ajax>
                 
                 <div class="layout horizontal title">
                     <img class="groupCover" src="[[group.img]]">
@@ -63,6 +63,9 @@
         },
         groupURL: function (id) {
             return 'http://api.oversimplified.io/groups/' + id;
+        },
+        handelResponse: function (request) {
+            request.model.set('group', request.detail.response);
         },
         refresh: function () {
             this.$.request.url = this.computeURL();
