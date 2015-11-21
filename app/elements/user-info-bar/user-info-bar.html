@@ -41,7 +41,7 @@
         </style>
 
         <iron-ajax
-                id="query"
+                id="request"
                 url="{{url}}"
                 last-response="{{user}}"
         ></iron-ajax>
@@ -72,8 +72,8 @@
             return "http://api.oversimplified.io/users/" + userId;
         },
         performRequest: function () {
-            this.$.query.url = this.computeURL();
-            this.$.query.generateRequest();
+            this.$.request.url = this.computeURL();
+            this.$.request.generateRequest();
         }
         });
 </script>
