@@ -42,10 +42,10 @@
 
             #nameContainer {
                 margin: 16px;
-                overflow: hidden;
+                overflow: auto;
             }
 
-            .username {
+            .groupname {
                 font-size: 18px;
                 text-transform: capitalize;
                 font-weight: 500;
@@ -53,8 +53,8 @@
                 line-height: 1.3em;
                 max-width: 90%;
                 text-overflow: ellipsis;
-                overflow: hidden;
                 white-space: nowrap;
+                overflow: hidden;
             }
 
             .timestamp {
@@ -90,7 +90,7 @@
             </div>
 
             <div id="nameContainer">
-                <span class="username">{{group.name}}</span>
+                <span class="groupname">{{group.name}}</span>
                 <br>
                 <span class="timestamp">{{computeDate(group.date)}}</span>
                 <br>
