@@ -80,8 +80,8 @@
             this.$.titleList.render();
 
             console.log(this.groups);
-            console.log(this.groups.name);
-            console.log(this.groups.img);
+            console.log(this.groups[0].name);
+            console.log(this.groups[0].img);
         },
         refresh: function () {
             this.$.request.url = this.computeURL();
