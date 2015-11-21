@@ -43,7 +43,7 @@
                         on-response="handelResponse"></iron-ajax>
             </template>
 
-            <template is="dom-repeat" items="{{groups}}">
+            <template is="dom-repeat" items="{{getGroups()}}">
                 <div class="layout horizontal title">
                     <img class="groupCover" src="[[group.img]]">
                     <span class="groupTitle">{{group.name}}</span>
