@@ -28,7 +28,7 @@
                 last-response="{{response}}"></iron-ajax>
 
         <div class="layout vertical">
-            <template is="dom-repeat" items="{{response}}">
+            <template is="dom-repeat" items="{{response.groups}}">
                 <span class="groupTitle">{{item.name}}</span>
             </template>
         </div>
@@ -40,13 +40,10 @@
     Polymer({
         is: 'menu-group-list',
         properties: {
-            url: {
-                type: String,
-                computed: 'computeURL()'
-            }
         },
         computeUrl: function() {
-            return 'http://api.oversimplified.io/groups';
+            var id = app.getUserId();
+            return 'http://api.oversimplified.io/users/' + id;
         },
         refresh: function () {
             this.$.ajaxRequest.generateRequest();
