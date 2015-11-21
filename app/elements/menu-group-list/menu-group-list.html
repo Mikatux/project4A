@@ -35,7 +35,7 @@
                 last-response="{{response}}"></iron-ajax>
 
         <div class="layout vertical">
-            <template is="dom-repeat" items="{{response.groups}}" id="heuuu">
+            <template is="dom-repeat" items="{{response.groups}}">
                 <iron-ajax
                         auto
                         url="{{groupURL(item)}}"
@@ -43,7 +43,7 @@
                         on-response="handelResponse"></iron-ajax>
             </template>
 
-            <template is="dom-repeat" items="{{groups}}" id="hello">
+            <template is="dom-repeat" items="{{groups}}" id="titleList">
                 <div class="layout horizontal title">
                     <img class="groupCover" src="[[group.img]]">
                     <span class="groupTitle">{{group.name}}</span>
@@ -79,6 +79,7 @@
             console.log("setGroup: " + this.groups);
 //            console.log(request.detail.response);
             this.groups.push(request.detail.response);
+            this.$.titleList.render();
         },
         refresh: function () {
             this.$.request.url = this.computeURL();
