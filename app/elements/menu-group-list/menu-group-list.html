@@ -22,7 +22,7 @@
 
         <iron-ajax
                 id="ajaxRequest"
-                url="[[computeUrl()]]"
+                url="{{url}}"
                 handle-as="json"
                 last-response="{{response}}"></iron-ajax>
 
@@ -41,10 +41,11 @@
         properties: {
         },
         computeUrl: function() {
-            var id = 0;//app.getUserId();
+            var id = app.getUserId();
             return 'http://api.oversimplified.io/users/' + id;
         },
         refresh: function () {
+            this.$.query.url = this.computeURL();
             this.$.ajaxRequest.generateRequest();
         }
     });
