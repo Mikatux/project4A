@@ -45,8 +45,8 @@
 
             <template is="dom-repeat" items="{{groups}}" id="titleList">
                 <div class="layout horizontal title">
-                    <span class="groupTitle">{{item._id}}</span>
-                    <img class="groupCover" src="{{groups[0].img}}">
+                    <span class="groupTitle">[[item._id]]</span>
+                    <img class="groupCover" src="[[item.img]]">
                     <span class="groupTitle">{{item.name}}</span>
                     <span class="groupTitle">{{item}}</span>
                 </div>
