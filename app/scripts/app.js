@@ -40,6 +40,7 @@
             //TODO transformer le bouton Login en Logout
             document.querySelector("#logInOutMenuButtonText").innerHTML = "Logout";
             document.querySelector("user-info-bar").performRequest();
+            document.querySelector("menu-group-list").refresh();
         }
     });
 
