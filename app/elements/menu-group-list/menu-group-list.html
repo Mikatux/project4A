@@ -71,11 +71,11 @@
             return 'http://api.oversimplified.io/groups/' + id;
         },
         getGroups: function () {
-            console.log(this.groups);
+            console.log("getGroup" + this.groups);
             return this.groups;
         },
         handelResponse: function (request) {
-//            console.log(this.groups);
+            console.log("setGroup" + this.groups);
 //            console.log(request.detail.response);
             this.groups.push(request.detail.response);
         },
