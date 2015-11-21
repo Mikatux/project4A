@@ -76,10 +76,10 @@
             return this.groups;
         },
         handelResponse: function (request) {
-            console.log("setGroup: " + this.groups);
-//            console.log(request.detail.response);
             this.groups.push(request.detail.response);
             this.$.titleList.render();
+
+            console.log(this.groups);
         },
         refresh: function () {
             this.$.request.url = this.computeURL();
