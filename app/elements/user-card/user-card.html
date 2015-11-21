@@ -15,6 +15,9 @@
                 margin: 0;
                 padding: 0;
                 width: 300px;
+
+                transition: 0.2s;
+                -webkit-transition: 0.2s;
             }
 
             .avatar {
@@ -98,11 +101,15 @@
 
             return d + ", " + h;
         },
-        mouseOver: function() {
-            this.$.cardMessage.elevation = 3;
+        mouseOver: function () {
+            this.$.cardMessage.elevation = 4;
+            this.$.cardMessage.style.marginTop = "-4px";
+            this.$.cardMessage.style.marginBottom= "4px";
         },
-        mouseOut: function() {
+        mouseOut: function () {
             this.$.cardMessage.elevation = 1;
+            this.$.cardMessage.style.marginTop = "0px";
+            this.$.cardMessage.style.marginBottom= "0px";
         }
     });
 </script>
