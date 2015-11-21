@@ -41,7 +41,9 @@
                         url="{{groupURL(item)}}"
                         handle-as="json"
                         on-response="handelResponse"></iron-ajax>
-                
+            </template>
+
+            <template is="dom-repeat" items="{{groups}}">
                 <div class="layout horizontal title">
                     <img class="groupCover" src="[[group.img]]">
                     <span class="groupTitle">{{group.name}}</span>
@@ -56,6 +58,10 @@
     Polymer({
         is: 'menu-group-list',
         properties: {
+            groups: {
+                type: Object,
+                value: []
+            }
         },
         computeURL: function() {
             var id = app.getUserId();
@@ -64,8 +70,11 @@
         groupURL: function (id) {
             return 'http://api.oversimplified.io/groups/' + id;
         },
+        getGroups: function () {
+            return this.groups;
+        },
         handelResponse: function (request) {
-            request.model.set('group', request.detail.response);
+            this.groups.push(request.detail.response);
         },
         refresh: function () {
             this.$.request.url = this.computeURL();
