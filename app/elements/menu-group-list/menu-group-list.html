@@ -22,13 +22,19 @@
 
         <iron-ajax
                 id="request"
-                url="{{url}}"
+                url=""
                 handle-as="json"
                 last-response="{{response}}"></iron-ajax>
 
         <div class="layout vertical">
             <template is="dom-repeat" items="{{response.groups}}">
+                <iron-ajax
+                        auto
+                        url="{{groupURL(item)}}"
+                        handle-as="json"
+                        last-response="{{group}}"></iron-ajax>
                 <span class="groupTitle">{{item}}</span>
+                <span class="groupTitle">{{group.name}}</span>
             </template>
         </div>
 
@@ -44,6 +50,9 @@
             var id = app.getUserId();
             return 'http://api.oversimplified.io/users/' + id;
         },
+        groupURL: function (id) {
+            return 'http://api.oversimplified.io/groups/' + id;
+        };
         refresh: function () {
             this.$.request.url = this.computeURL();
             this.$.request.generateRequest();
