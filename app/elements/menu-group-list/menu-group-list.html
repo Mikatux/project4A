@@ -43,7 +43,7 @@
                         on-response="handelResponse"></iron-ajax>
             </template>
 
-            <template is="dom-repeat" items="{{getGroups()}}" id="hello">
+            <template is="dom-repeat" items="{{group}}" id="hello">
                 <div class="layout horizontal title">
                     <img class="groupCover" src="[[group.img]]">
                     <span class="groupTitle">{{group.name}}</span>
@@ -60,7 +60,8 @@
         properties: {
             groups: {
                 type: Object,
-                value: []
+                value: [],
+                computed: getGroups()
             }
         },
         computeURL: function() {
