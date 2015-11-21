@@ -125,7 +125,7 @@
                 <paper-input name="name" value="New Group" id="name"></paper-input>
                 <paper-input name="public" value="true" hidden></paper-input>
                 <paper-input name="author" value="" id="userId" hidden></paper-input>
-                <paper-input name="members" value="" id="groupMembers" hidden></paper-input>
+                <!--<paper-input name="members" value="" id="groupMembers" hidden></paper-input>-->
                 <paper-input name="img" value="{{cover}}" id="coverForm"></paper-input>
             </form>
 
@@ -161,7 +161,7 @@
             }
         },
         ready: function() {
-            this.computePhotos();
+
         },
         mouseOver: function () {
             this.$.cardMessage.elevation = 4;
