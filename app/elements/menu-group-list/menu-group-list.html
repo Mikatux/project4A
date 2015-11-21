@@ -74,6 +74,8 @@
             return this.groups;
         },
         handelResponse: function (request) {
+            console.log(this.groups);
+            console.log(request.detail.response);
             this.groups.push(request.detail.response);
         },
         refresh: function () {
