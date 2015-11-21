@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a0b82b3-bd6c-49e8-b00f-1ca000401742" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/elements/group-card/group-card.html" afterPath="$PROJECT_DIR$/app/elements/group-card/group-card.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/elements/menu-group-list/menu-group-list.html" afterPath="$PROJECT_DIR$/app/elements/menu-group-list/menu-group-list.html" />
     </list>
     <ignored path="Polymer4A.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,20 +34,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="menu-group-list.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="menu-group-list.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/elements/menu-group-list/menu-group-list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-46.333332">
-              <caret line="77" column="33" selection-start-line="77" selection-start-column="33" selection-end-line="77" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.7505543">
+              <caret line="77" column="34" selection-start-line="77" selection-start-column="33" selection-end-line="77" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="group-card.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="group-card.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/elements/group-card/group-card.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4345898">
+            <state vertical-scroll-proportion="-16.333334">
               <caret line="85" column="102" selection-start-line="85" selection-start-column="102" selection-end-line="85" selection-end-column="102" />
               <folding />
             </state>
@@ -170,8 +171,8 @@
         <option value="$PROJECT_DIR$/app/elements/user-card/new-user-card.html" />
         <option value="$PROJECT_DIR$/app/elements/group-card/new-group-card.html" />
         <option value="$PROJECT_DIR$/app/elements/user-card/user-card.html" />
-        <option value="$PROJECT_DIR$/app/elements/menu-group-list/menu-group-list.html" />
         <option value="$PROJECT_DIR$/app/elements/group-card/group-card.html" />
+        <option value="$PROJECT_DIR$/app/elements/menu-group-list/menu-group-list.html" />
       </list>
     </option>
   </component>
@@ -1018,18 +1019,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/elements/menu-group-list/menu-group-list.html">
+    <entry file="file://$PROJECT_DIR$/app/elements/group-card/group-card.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-46.333332">
-          <caret line="77" column="33" selection-start-line="77" selection-start-column="33" selection-end-line="77" selection-end-column="33" />
+        <state vertical-scroll-proportion="-16.333334">
+          <caret line="85" column="102" selection-start-line="85" selection-start-column="102" selection-end-line="85" selection-end-column="102" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/elements/group-card/group-card.html">
+    <entry file="file://$PROJECT_DIR$/app/elements/menu-group-list/menu-group-list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4345898">
-          <caret line="85" column="102" selection-start-line="85" selection-start-column="102" selection-end-line="85" selection-end-column="102" />
+        <state vertical-scroll-proportion="0.7505543">
+          <caret line="77" column="34" selection-start-line="77" selection-start-column="33" selection-end-line="77" selection-end-column="34" />
           <folding />
         </state>
       </provider>
