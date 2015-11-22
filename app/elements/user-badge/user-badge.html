@@ -58,7 +58,7 @@
             <img id="avatar" src="[[user.img]]">
             <div id="badge"></div>
 
-            <template is="dom-if" if="{{isUser()}}">
+            <template is="dom-if" if="{{isUser}}">
                 <div id="removeDiv">
 
                 </div>
@@ -81,7 +81,11 @@
                 value: ""
             },
             groupId: String,
-            user: Object
+            user: Object,
+            isUser: {
+                type: Boolean,
+                value: true
+            }
         },
         ready: function() {
             this.connectedColor();
@@ -100,7 +104,7 @@
                 this.$.badge.style.background = "#4CAF50";
             }
         },
-        isUser: function () {
+        isUserMe: function () {
             return true;
         },
         removeFromGroup: function () {
