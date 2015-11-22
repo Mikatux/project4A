@@ -43,9 +43,10 @@
                         on-response="handelResponse"></iron-ajax>
             </template>
 
-            <template is="dom-repeat" items="{{groups}}" id="titleList" as="group">
+            <template is="dom-repeat" items="{{groups}}" id="titleList" as="group" index-as="groupId">
                 <div class="layout horizontal title">
-                    <span class="groupTitle">[[item._id]]</span>
+                    <span class="groupTitle">[[group._id]]</span>
+                    <span class="groupTitle">[[groupId]]</span>
                     <img class="groupCover" src="[[group.img]]">
                     <span class="groupTitle">{{item.name}}</span>
                     <span class="groupTitle">{{item}}</span>
