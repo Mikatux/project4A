@@ -92,7 +92,7 @@
                 type: Boolean,
                 value: function () { return true; },
                 notify: true,
-                computed: 'computedCanRemove()'
+                computed: 'computedCanRemove(userId)'
             }
         },
         ready: function() {
@@ -112,8 +112,8 @@
                 this.$.badge.style.background = "#4CAF50";
             }
         },
-        computedCanRemove: function () {
-            return this.userId == app.getUserId(); //|| this.user.isAdmin;
+        computedCanRemove: function (userId) {
+            return userId == app.getUserId(); //|| this.user.isAdmin;
         },
         removeFromGroup: function () {
             this.$.request.send({url: this.computeGroupURL(), method: "DELETE"});
