@@ -111,6 +111,8 @@
             page('/groups');
         },
         selection: function (e) {
+            console.log(e);
+
             this.unselectAll();
             e.target.classList.add('selected');
             this.selected = e.target;
