@@ -49,8 +49,6 @@
                     <span class="groupTitle">[[group._id]]</span>
                     <span class="groupTitle">[[index]]</span>
                     <img class="groupCover" src="[[group.img]]">
-                    <span class="groupTitle">{{item.name}}</span>
-                    <span class="groupTitle">{{item}}</span>
                 </div>
             </template>
         </div>
@@ -64,8 +62,8 @@
         properties: {
             groups: {
                 type: Object,
-                value: function () {return [];},
-                notift: true,
+                value: [],
+                notify: true,
                 computed: 'getGroups()'
             }
         },
