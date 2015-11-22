@@ -109,8 +109,10 @@
             sender.classList.add('selected');
             page('/groups');
         },
-        selection: function (event, detail, sender) {
-            sender.classList.add('selected');
+        selection: function (e, detail) {
+            console.log(e);
+            console.log(detail);
+            //e.classList.add('selected');
         },
         refresh: function () {
             this.$.request.url = this.computeURL();
