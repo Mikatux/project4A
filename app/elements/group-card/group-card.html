@@ -102,7 +102,9 @@
             <div class="separator"></div>
 
             <div id="membersContainer" class="layout horizontal">
-                <add-badge group-id="[[group._id]]" id="addBadge"></add-badge>
+                <template is="dom-if" if="{{removeAdd}}">
+                    <add-badge group-id="[[group._id]]" id="addBadge"></add-badge>
+                </template>
                 <template is="dom-repeat" items="{{group.members}}">
                     <user-badge user-id="[[item]]" group-id="[[group._id]]"></user-badge>
                 </template>
@@ -116,11 +118,31 @@
         is: 'group-card',
         properties: {
             group: Object,
+            removeAdd: {
+                type: Boolean,
+                value: function () { var userId = app.getUserId();
+                    var contained = false;
+
+                    for (var user in this.group.members) {
+                        if (this.group.members[user] == userId) {
+                            contained = true;
+                            break;
+                        }
+                    }
+
+                    return contained;
+                },
+                notify: true/*,
+                computed: 'computedRemoveAdd()'*/
+            },
             canRemove: {
                 type: Boolean,
-                value: function () { return true; },
-                notify: true,
-                computed: 'computedCanRemove()'
+                value: function () { var userId = app.getUserId();
+
+                    return userId == this.group.author;
+                },
+                notify: true/*,
+                computed: 'computedCanRemove()'*/
             }
         },
         ready: function () {
@@ -140,6 +162,19 @@
             if (contained) {
                 Polymer.dom(this.$.membersContainer).removeChild(this.$.addBadge);
             }
+        },
+        computedRemoveAdd: function () {
+            var userId = app.getUserId();
+            var contained = false;
+
+            for (var user in this.group.members) {
+                if (this.group.members[user] == userId) {
+                    contained = true;
+                    break;
+                }
+            }
+
+            return contained;
         },
         computedCanRemove: function() {
             var userId = app.getUserId();
