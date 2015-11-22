@@ -61,10 +61,10 @@
         is: 'menu-group-list',
         properties: {
             groups: {
-                type: Object,
-                value: [],
-                notify: true,
-                computed: 'getGroups()'
+                type: Array,
+                value: function() { return []; },
+                notify: true
+                //computed: 'getGroups()'
             }
         },
         computeURL: function() {
@@ -79,8 +79,10 @@
             return this.groups;
         },
         handelResponse: function (request) {
-            this.groups.push(request.detail.response);
-            this.$.titleList.render();
+            //this.groups.push(request.detail.response);
+            console.log(request.detail.response);
+            this.push('groups', request.detail.response);
+            //this.$.titleList.render();
 
             console.log(this.groups);
             console.log(this.groups[0].name);
