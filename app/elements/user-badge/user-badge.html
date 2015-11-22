@@ -64,7 +64,7 @@
             <img id="avatar" src="[[user.img]]">
             <div id="badge"></div>
 
-            <template is="dom-if" if="{{isUser}}">
+            <template is="dom-if" if="{{canRemove}}">
                 <div id="removeDiv" on-click="removeFromGroup">
                     <iron-icon id="removeButton" icon="delete"></iron-icon>
                 </div>
@@ -88,9 +88,10 @@
             },
             groupId: String,
             user: Object,
-            isUser: {
+            canRemove: {
                 type: Boolean,
-                value: function () { return true; }
+                value: function () { return true; },
+                computed: computedCanRemove()
             }
         },
         ready: function() {
@@ -110,8 +111,8 @@
                 this.$.badge.style.background = "#4CAF50";
             }
         },
-        isUserMe: function () {
-            return true;
+        computedCanRemove: function () {
+            return this.userId == app.getUserId(); //|| this.user.isAdmin;
         },
         removeFromGroup: function () {
             this.$.request.send({url: this.computeGroupURL(), method: "DELETE"});
