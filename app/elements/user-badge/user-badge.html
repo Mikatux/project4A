@@ -29,6 +29,7 @@
             }
 
             #removeDiv {
+                color: #FEFEFE;
                 height: 50px;
                 width: 50px;
                 padding: auto;
@@ -59,8 +60,8 @@
             <div id="badge"></div>
 
             <template is="dom-if" if="{{isUser}}">
-                <div id="removeDiv">
-                    a
+                <div id="removeDiv" on-click="removeFromGroup">
+                    <span>x</span>
                 </div>
             </template>
         </div>
