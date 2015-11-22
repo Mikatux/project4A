@@ -68,7 +68,7 @@
                 </div>
             </template>
 
-            <div class="layout horizontal title">
+            <div class="layout horizontal title" on-click="goToGroups">
                 <div id="moreGroups">
                     <iron-icon icon="more-horiz"></iron-icon>
                 </div>
@@ -98,6 +98,9 @@
         },
         handelResponse: function (request) {
             this.push('groups', request.detail.response);
+        },
+        goToGroups: function () {
+            page('/groups');
         },
         refresh: function () {
             this.$.request.url = this.computeURL();
