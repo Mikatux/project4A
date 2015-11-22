@@ -35,10 +35,10 @@
                 last-response="{{response}}"></iron-ajax>
 
         <div class="layout vertical">
-            <template is="dom-repeat" items="{{response.groups}}" as="request">
+            <template is="dom-repeat" items="{{response.groups}}" as="groupID">
                 <iron-ajax
                         auto
-                        url="{{groupURL(item)}}"
+                        url="{{groupURL(groupID)}}"
                         handle-as="json"
                         on-response="handelResponse"></iron-ajax>
             </template>
