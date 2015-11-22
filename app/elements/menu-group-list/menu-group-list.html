@@ -64,7 +64,8 @@
         properties: {
             groups: {
                 type: Object,
-                value: [],
+                value: function () {return [];},
+                notift: true,
                 computed: 'getGroups()'
             }
         },
