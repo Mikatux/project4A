@@ -31,7 +31,7 @@
             #removeDiv {
                 height: 50px;
                 width: 50px;
-                padding: 0;
+                padding: auto;
                 margin: 6px 6px 6px -56px;
                 border-radius: 50%;
                 display: inline-block;
@@ -60,7 +60,7 @@
 
             <template is="dom-if" if="{{isUser}}">
                 <div id="removeDiv">
-
+                    a
                 </div>
             </template>
         </div>
@@ -84,7 +84,7 @@
             user: Object,
             isUser: {
                 type: Boolean,
-                value: true
+                value: function () { return true; }
             }
         },
         ready: function() {
