@@ -76,12 +76,7 @@
             return 'http://api.oversimplified.io/groups/' + id;
         },
         handelResponse: function (request) {
-            //this.groups.push(request.detail.response);
             this.push('groups', request.detail.response);
-
-            console.log(this.groups);
-            console.log(this.groups[0].name);
-            console.log(this.groups[0].img);
         },
         refresh: function () {
             this.$.request.url = this.computeURL();
