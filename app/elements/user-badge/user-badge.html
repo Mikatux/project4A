@@ -27,6 +27,23 @@
                 background: #e74c3c;
                 margin: 40px 0 0 -18px;
             }
+
+            #removeDiv {
+                height: 50px;
+                width: 50px;
+                padding: 0;
+                margin: 6px 6px 6px -56px;
+                border-radius: 50%;
+                display: inline-block;
+                opacity: 0.3;
+                background: var(--primary-background-color);
+                transition: 0.15s;
+            }
+
+            #removeDiv:hover {
+                opacity: 0.7;
+                transition: 0.15s;
+            }
         </style>
 
         <iron-ajax
@@ -35,9 +52,17 @@
                 last-response="{{user}}"
         ></iron-ajax>
 
+        <iron-request id="request"></iron-request>
+
         <div class="layout horizontal">
             <img id="avatar" src="[[user.img]]">
             <div id="badge"></div>
+
+            <template is="dom-if" if="{{isUser()}}">
+                <div id="removeDiv">
+
+                </div>
+            </template>
         </div>
 
     </template>
@@ -55,6 +80,7 @@
                 type: String,
                 value: ""
             },
+            groupId: String,
             user: Object
         },
         ready: function() {
@@ -63,6 +89,9 @@
         computeURL: function(id) {
             return "http://api.oversimplified.io/users/" + id;
         },
+        computeGroupURL: function (){
+            return "http://api.oversimplified.io/groups/" + this.groupId + "/" + this.userId;
+        },
         connectedColor: function() {
             var connected = true;//this.user.connected;
             if (connected) {
@@ -70,6 +99,13 @@
             } else {
                 this.$.badge.style.background = "#4CAF50";
             }
+        },
+        isUser: function () {
+            return true;
+        },
+        removeFromGroup: function () {
+            this.$.request.send({url: this.computeGroupURL(), method: "DELETE"});
+            console.log("DELETE " + this.group._id);
         }
     });
 </script>

@@ -102,7 +102,7 @@
             <div id="membersContainer" class="layout horizontal">
                 <add-badge group-id="[[group._id]]" id="addBadge"></add-badge>
                 <template is="dom-repeat" items="{{group.members}}">
-                    <user-badge user-id="[[item]]"></user-badge>
+                    <user-badge user-id="[[item]]" group-id="[[group._id]]"></user-badge>
                 </template>
             </div>
         </paper-material>
