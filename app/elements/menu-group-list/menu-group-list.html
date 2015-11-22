@@ -30,6 +30,14 @@
             .title span {
                 margin: auto 0 auto 0;
             }
+
+            #moreGroups {
+                border-radius: 2px;
+                margin-right: 8px;
+                height: 32px;
+                width: 32px;
+                background: var(--primary-background-color);
+            }
         </style>
 
         <iron-ajax
@@ -49,10 +57,17 @@
 
             <template is="dom-repeat" items="{{groups}}" id="titleList" as="group">
                 <div class="layout horizontal title">
-                    <img class="groupCover" src="[[group.img]]">
-                    <span class="groupTitle">[[group.name]]</span>
+                    <img src="[[group.img]]">
+                    <span>[[group.name]]</span>
                 </div>
             </template>
+
+            <div class="layout horizontal title">
+                <div id="moreGroups">
+                    <iron-icon icon="more-horiz"></iron-icon>
+                </div>
+                <span>More groups</span>
+            </div>
         </div>
 
     </template>
