@@ -116,7 +116,9 @@
             this.selected = e.target;
         },
         unselectAll: function () {
-            this.selected.classList.remove('selected');
+            if (this.selected != undefined) {
+                this.selected.classList.remove('selected');
+            }
         },
         refresh: function () {
             this.$.request.url = this.computeURL();
