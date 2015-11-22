@@ -132,40 +132,25 @@
             }
         },
         ready: function () {
-            //this.removeAdd();
-        },
-        removeAdd: function () {
-            var userId = app.getUserId();
-            var contained = false;
-
-            for (var user in this.group.members) {
-                if (this.group.members[user] == userId) {
-                    contained = true;
-                    break;
-                }
-            }
-
-            if (contained) {
-                Polymer.dom(this.$.membersContainer).removeChild(this.$.addBadge);
-            }
+            
         },
         computedRemoveAdd: function (group) {
             var userId = app.getUserId();
             var contained = false;
 
-            for (var user in this.group.members) {
-                if (this.group.members[user] == userId) {
+            for (var user in group.members) {
+                if (group.members[user] == userId) {
                     contained = true;
                     break;
                 }
             }
 
-            return contained;
+            return !contained;
         },
         computedCanRemove: function(group) {
             var userId = app.getUserId();
 
-            return userId == this.group.author || userId == group.author;
+            return userId == group.author;
         },
         computeURL: function () {
             return "http://api.oversimplified.io/groups/" + this.group._id;
