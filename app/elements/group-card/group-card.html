@@ -120,9 +120,9 @@
             group: Object,
             removeAdd: {
                 type: Boolean,
-                value: function () { return computedRemoveAdd(); },
-                notify: true/*,
-                computed: 'computedRemoveAdd()'*/
+                value: function () { return true },
+                notify: true,
+                computed: 'computedRemoveAdd(group)'
             },
             canRemove: {
                 type: Boolean,
@@ -132,7 +132,7 @@
             }
         },
         ready: function () {
-            this.removeAdd();
+            //this.removeAdd();
         },
         removeAdd: function () {
             var userId = app.getUserId();
@@ -149,7 +149,7 @@
                 Polymer.dom(this.$.membersContainer).removeChild(this.$.addBadge);
             }
         },
-        computedRemoveAdd: function () {
+        computedRemoveAdd: function (group) {
             var userId = app.getUserId();
             var contained = false;
 
