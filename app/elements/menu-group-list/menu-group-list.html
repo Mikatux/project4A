@@ -44,6 +44,12 @@
             #moreGroups iron-icon {
                 margin: 4px;
             }
+
+            .selected {
+                background: #dfdfdf;
+                border-radius: 0 4px 4px 0;
+                color: #4185f6;
+            }
         </style>
 
         <iron-ajax
@@ -62,7 +68,7 @@
             </template>
 
             <template is="dom-repeat" items="{{groups}}" id="titleList" as="group">
-                <div class="layout horizontal title">
+                <div class="layout horizontal title" on-click="selection">
                     <img src="[[group.img]]">
                     <span>[[group.name]]</span>
                 </div>
@@ -99,8 +105,12 @@
         handelResponse: function (request) {
             this.push('groups', request.detail.response);
         },
-        goToGroups: function () {
+        goToGroups: function (event, detail, sender) {
+            sender.classList.add('selected');
             page('/groups');
+        },
+        selection: function (event, detail, sender) {
+            sender.classList.add('selected');
         },
         refresh: function () {
             this.$.request.url = this.computeURL();
