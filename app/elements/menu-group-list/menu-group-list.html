@@ -26,6 +26,14 @@
                 height: 32px;
                 width: 32px;
             }
+
+            .title span {
+                margin: auto 0 auto 0;
+                height: 32px;
+                text-align: center;
+                display: table-cell;
+                vertical-align: middle;
+            }
         </style>
 
         <iron-ajax
@@ -62,7 +70,6 @@
                 type: Array,
                 value: function() { return []; },
                 notify: true
-                //computed: 'getGroups()'
             }
         },
         computeURL: function() {
@@ -72,15 +79,9 @@
         groupURL: function (id) {
             return 'http://api.oversimplified.io/groups/' + id;
         },
-        getGroups: function () {
-            console.log("getGroup: " + this.groups);
-            return this.groups;
-        },
         handelResponse: function (request) {
             //this.groups.push(request.detail.response);
-            console.log(request.detail.response);
             this.push('groups', request.detail.response);
-            //this.$.titleList.render();
 
             console.log(this.groups);
             console.log(this.groups[0].name);
