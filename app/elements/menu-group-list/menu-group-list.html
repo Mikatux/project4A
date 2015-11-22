@@ -93,7 +93,8 @@
                 type: Array,
                 value: function() { return []; },
                 notify: true
-            }
+            },
+            selected: Object
         },
         computeURL: function() {
             var id = app.getUserId();
@@ -105,15 +106,17 @@
         handelResponse: function (request) {
             this.push('groups', request.detail.response);
         },
-        goToGroups: function (event, detail, sender) {
-            sender.classList.add('selected');
+        goToGroups: function (e) {
+            this.selection(e);
             page('/groups');
         },
-        selection: function (e, detail, sender) {
-            console.log(e);
-            console.log(detail);
-            console.log(sender);
+        selection: function (e) {
+            this.unselectAll();
             e.target.classList.add('selected');
+            this.selected = e.target;
+        },
+        unselectAll: function () {
+            this.selected.classList.remove('selected');
         },
         refresh: function () {
             this.$.request.url = this.computeURL();
