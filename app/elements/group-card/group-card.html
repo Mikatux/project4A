@@ -126,9 +126,9 @@
             },
             canRemove: {
                 type: Boolean,
-                value: function () { return computedCanRemove(); },
-                notify: true/*,
-                computed: 'computedCanRemove()'*/
+                value: function () { return true; },
+                notify: true,
+                computed: 'computedCanRemove(group)'
             }
         },
         ready: function () {
@@ -162,10 +162,10 @@
 
             return contained;
         },
-        computedCanRemove: function() {
+        computedCanRemove: function(group) {
             var userId = app.getUserId();
 
-            return userId == this.group.author;
+            return userId == this.group.author || userId == group.author;
         },
         computeURL: function () {
             return "http://api.oversimplified.io/groups/" + this.group._id;
