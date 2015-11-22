@@ -115,7 +115,13 @@
     Polymer({
         is: 'group-card',
         properties: {
-            group: Object
+            group: Object,
+            canRemove: {
+                type: Boolean,
+                value: function () { return true; },
+                notify: true,
+                computed: 'computedCanRemove()'
+            }
         },
         ready: function () {
             this.removeAdd();
@@ -136,7 +142,7 @@
                 Polymer.dom(this.$.membersContainer).removeChild(this.$.addBadge);
             }
         },
-        canRemove: function() {
+        computedCanRemove: function() {
             var userId = app.getUserId();
 
             return userId == this.group.author;
