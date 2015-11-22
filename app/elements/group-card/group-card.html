@@ -86,7 +86,9 @@
         <paper-material elevation="1" id="cardMessage" on-mouseover="mouseOver" on-mouseout="mouseOut">
             <div id="imageContainer" class="layout horizontal">
                 <img src="{{group.img}}" alt="[[group.img]]" class="cover">
-                <iron-icon id="removeButton" icon="delete" on-click="mouseClick"></iron-icon>
+                <template is="dom-if" if="{{canRemove}}">
+                    <iron-icon id="removeButton" icon="delete" on-click="mouseClick"></iron-icon>
+                </template>
             </div>
 
             <div id="nameContainer">
@@ -137,9 +139,7 @@
         canRemove: function() {
             var userId = app.getUserId();
 
-            if (userId != this.group.author) {
-                Polymer.dom(this.$.imageContainer).removeChild(this.$.removeButton);
-            }
+            return userId == this.group.author;
         },
         computeURL: function () {
             return "http://api.oversimplified.io/groups/" + this.group._id;

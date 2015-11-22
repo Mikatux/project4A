@@ -117,7 +117,6 @@
         },
         removeFromGroup: function () {
             this.$.request.send({url: this.computeGroupURL(), method: "DELETE"});
-            console.log("DELETE " + this.group._id);
         }
     });
 </script>
