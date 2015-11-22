@@ -1,5 +1,6 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
 
 <dom-module id="user-badge">
 
@@ -36,14 +37,18 @@
                 margin: 6px 6px 6px -56px;
                 border-radius: 50%;
                 display: inline-block;
-                opacity: 0.3;
+                opacity: 0.1;
                 background: var(--primary-background-color);
-                transition: 0.15s;
+                transition: 0.25s;
             }
 
             #removeDiv:hover {
-                opacity: 0.7;
-                transition: 0.15s;
+                opacity: 0.8;
+                transition: 0.25s;
+            }
+
+            #removeButton {
+                margin: auto;
             }
         </style>
 
@@ -59,11 +64,11 @@
             <img id="avatar" src="[[user.img]]">
             <div id="badge"></div>
 
-            <!--<template is="dom-if" if="{{isUser}}">-->
+            <template is="dom-if" if="{{isUser}}">
                 <div id="removeDiv" on-click="removeFromGroup">
-                    <span>x</span>
+                    <iron-icon id="removeButton" icon="delete"></iron-icon>
                 </div>
-            <!--</template>-->
+            </template>
         </div>
 
     </template>
