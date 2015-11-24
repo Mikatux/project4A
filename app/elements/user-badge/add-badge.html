@@ -78,12 +78,10 @@
         },
         mouseClick: function () {
             this.$.userId.value = app.getUserId();
-            console.log("12345");
             if (this.$.userId.value != "") {
                 this.$.form.submit();
                 document.querySelector("menu-group-list").refresh();
-                console.log("hello");
-                console.log(document.querySelector("menu-group-list"));
+                document.querySelector("group-list").refresh();
             } else {
                 alert("Vous n'êtes pas connecté.");
             }
