@@ -81,6 +81,7 @@
             if (this.$.userId.value != "") {
                 this.$.form.submit();
                 Polymer.querySelector("menu-group-list").refresh();
+                console.log(Polymer.querySelector("menu-group-list"));
             } else {
                 alert("Vous n'êtes pas connecté.");
             }
