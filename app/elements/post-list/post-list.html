@@ -8,60 +8,70 @@
 
 <dom-module id="post-list">
 
-  <template>
-    <style>
-      :host {
-        display: block;
-        box-sizing: border-box;
-        max-width: 512px;
-        
-        -webkit-transition: 0.6s;
-        transition: 0.6s;
-      }
-      
-    </style>
-    <iron-ajax
-      id="ajaxRequest"
-      auto
-      url="http://api.oversimplified.io/messages"
-      handle-as="json"
-      last-response="{{response}}"></iron-ajax>
+    <template>
+        <style>
+            :host {
+                display: block;
+                box-sizing: border-box;
+                max-width: 512px;
 
-      <template is="dom-repeat" items="{{response}}">
-        <post-message item={{item}}></post-message>
-      </template>
-      <br>
-  </template>
+                -webkit-transition: 0.6s;
+                transition: 0.6s;
+            }
+
+        </style>
+        <iron-ajax
+                id="ajaxRequest"
+                auto
+                url="{{url}}"
+                handle-as="json"
+                last-response="{{response}}"></iron-ajax>
+
+        <template is="dom-repeat" items="{{response}}">
+            <post-message item={{item}}></post-message>
+        </template>
+        <br>
+    </template>
 
 </dom-module>
 
 <script>
-  Polymer({
-    is: 'post-list',
-    properties: {
+    Polymer({
+        is: 'post-list',
+        properties: {
+            group: String,
+            url: {
+                type: String,
+                value: "",
+                computed: 'computeUrl(group)',
+                notify: true
+            }
+        },
 
-    },
-    
-    refresh: function() {
-      this.$.ajaxRequest.generateRequest();
-    },
-    
-    newMessage: function() {
-      this.playSound("refresh");
-      this.$.ajaxRequest.generateRequest();
-    },
-    
-    deleteMessage: function() {
-      this.$.ajaxRequest.generateRequest();
-    },
-    
-    playSound: function(sound) {
-      var soundToPlay = new buzz.sound( "../../sounds/" + sound, {
-          formats: ["wav"],
-          preload: true
-      });
-      
-      soundToPlay.play();
-    }
-  });
+        refresh: function () {
+            this.$.ajaxRequest.generateRequest();
+        },
+
+        computeUrl: function (group) {
+            return "http://api.oversimplified.io/groups/" + group + "/messages";
+        },
+
+        newMessage: function () {
+            this.playSound("refresh");
+            this.$.ajaxRequest.generateRequest();
+        },
+
+        deleteMessage: function () {
+            this.$.ajaxRequest.generateRequest();
+        },
+
+        playSound: function (sound) {
+            var soundToPlay = new buzz.sound("../../sounds/" + sound, {
+                formats: ["wav"],
+                preload: true
+            });
+
+            soundToPlay.play();
+        }
+    });
 </script>
