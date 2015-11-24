@@ -101,6 +101,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <span class="titleMenuButton">Groups</span>
 
                 <menu-group-list></menu-group-list>
+                <a href$="/group/56508f97fc96b8653fbf608e">Birthday Party for Benoit, Tanguy</a><br>
 
                 <div class="separator"></div>
 
@@ -141,8 +142,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 
                     <section data-route="home">
-                        <send-box></send-box>
-                        <post-list id="postList"></post-list>
+                        <post-list id="postList" group=""></post-list>
                     </section>
 
                     <section data-route="users">
@@ -151,6 +151,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
                     <section data-route="groups">
                         <group-list></group-list>
+                    </section>
+
+                    <section data-route="group">
+                        <send-box group="{{param.id}}"></send-box>
+                        <post-list id="postList" group="{{groupId}}"></post-list>
                     </section>
 
                 </iron-pages>
