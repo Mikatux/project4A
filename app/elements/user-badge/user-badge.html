@@ -117,8 +117,8 @@
         },
         removeFromGroup: function () {
             this.$.request.send({url: this.computeGroupURL(), method: "DELETE"});
-            document.querySelector("menu-group-list").refresh();
-            document.querySelector("group-list").refresh();
+            //setTimeout(app.refreshGroup(), 1000);
+            app.refreshGroup();
         }
     });
 </script>

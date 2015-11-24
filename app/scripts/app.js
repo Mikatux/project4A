@@ -28,6 +28,11 @@
         //console.log('Our app is ready to rock!');
     });
 
+    app.refreshGroup = function () {
+        document.querySelector("menu-group-list").refresh();
+        document.querySelector("group-list").refresh();
+    }
+
     // See https://github.com/Polymer/polymer/issues/1381
     window.addEventListener('WebComponentsReady', function() {
         var cookie = document.querySelector('#cookie');
