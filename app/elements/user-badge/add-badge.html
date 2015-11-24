@@ -78,6 +78,7 @@
         },
         mouseClick: function () {
             this.$.userId.value = app.getUserId();
+            console.log("12345");
             if (this.$.userId.value != "") {
                 this.$.form.submit();
                 Polymer.querySelector("menu-group-list").refresh();
