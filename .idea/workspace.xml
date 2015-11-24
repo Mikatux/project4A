@@ -34,21 +34,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="add-badge.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="add-badge.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/elements/user-badge/add-badge.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-28.833334">
-              <caret line="82" column="65" selection-start-line="82" selection-start-column="16" selection-end-line="82" selection-end-column="65" />
+            <state vertical-scroll-proportion="0.767184">
+              <caret line="82" column="66" selection-start-line="82" selection-start-column="66" selection-end-line="82" selection-end-column="66" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user-badge.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="user-badge.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/elements/user-badge/user-badge.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8935698">
-              <caret line="119" column="61" selection-start-line="119" selection-start-column="61" selection-end-line="119" selection-end-column="61" />
+            <state vertical-scroll-proportion="-33.833332">
+              <caret line="119" column="62" selection-start-line="119" selection-start-column="62" selection-end-line="119" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -171,8 +171,8 @@
         <option value="$PROJECT_DIR$/app/scripts/app.js" />
         <option value="$PROJECT_DIR$/app/index.html" />
         <option value="$PROJECT_DIR$/app/elements/menu-group-list/menu-group-list.html" />
-        <option value="$PROJECT_DIR$/app/elements/user-badge/add-badge.html" />
         <option value="$PROJECT_DIR$/app/elements/user-badge/user-badge.html" />
+        <option value="$PROJECT_DIR$/app/elements/user-badge/add-badge.html" />
       </list>
     </option>
   </component>
@@ -1019,18 +1019,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/elements/user-badge/add-badge.html">
+    <entry file="file://$PROJECT_DIR$/app/elements/user-badge/user-badge.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-28.833334">
-          <caret line="82" column="65" selection-start-line="82" selection-start-column="16" selection-end-line="82" selection-end-column="65" />
+        <state vertical-scroll-proportion="-33.833332">
+          <caret line="119" column="62" selection-start-line="119" selection-start-column="62" selection-end-line="119" selection-end-column="62" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/elements/user-badge/user-badge.html">
+    <entry file="file://$PROJECT_DIR$/app/elements/user-badge/add-badge.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8935698">
-          <caret line="119" column="61" selection-start-line="119" selection-start-column="61" selection-end-line="119" selection-end-column="61" />
+        <state vertical-scroll-proportion="0.767184">
+          <caret line="82" column="66" selection-start-line="82" selection-start-column="66" selection-end-line="82" selection-end-column="66" />
           <folding />
         </state>
       </provider>
