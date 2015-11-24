@@ -117,6 +117,7 @@
         },
         removeFromGroup: function () {
             this.$.request.send({url: this.computeGroupURL(), method: "DELETE"});
+            Polymer.querySelector("menu-group-list").refresh;
         }
     });
 </script>

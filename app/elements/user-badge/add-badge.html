@@ -80,6 +80,7 @@
             this.$.userId.value = app.getUserId();
             if (this.$.userId.value != "") {
                 this.$.form.submit();
+                Polymer.querySelector("menu-group-list").refresh;
             } else {
                 alert("Vous n'êtes pas connecté.");
             }
