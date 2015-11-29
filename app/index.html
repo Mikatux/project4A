@@ -64,29 +64,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             background: #FEFEFE;
             padding: auto;
         }
-
-        #container {
-            display: block;
-            box-sizing: border-box;
-            max-width: 256px;
-            margin: auto;
-        }
-
-        #cardLogin {
-            background-color: #FFFFFF;
-            margin: 12px;
-            min-height: 64px;
-            padding: 8px 0px 8px 0px;
-        }
-
-        #form {
-            max-width: 216px;
-            margin: auto;
-        }
-
-        .loginButton {
-            color: var(--default-primary-color);
-        }
     </style>
 </head>
 
@@ -96,60 +73,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <polymer-cookie name="oversimplifiedcookie" id="cookie"></polymer-cookie>
 
-    <iron-a11y-keys
-            id="keys"
-            keys="enter"
-            target="[[target]]"
-            on-keys-pressed="updatePressed">
-    </iron-a11y-keys>
-
-    <div class="horizontal-section" id="container">
-        <paper-material elevation="1" flex id="cardLogin">
-            <form is="iron-form" id="form" method="post" action="http://api.oversimplified.io/login">
-                <paper-input label="Username" name="login" required value="" id="username"></paper-input>
-                <paper-input label="Password" name="password" required value="" type="password" id="password"></paper-input>
-                <div class="horizontal layout">
-                    <div flex></div>
-                    <paper-button on-click="submitForm" class="loginButton" id="loginButton"><iron-icon icon="lock"></iron-icon> Login</paper-button>
-                </div>
-            </form>
-        </paper-material>
+    <div class="horizontal-section">
+        <login-box></login-box>
     </div>
 
 </template>
 
 <script>
-
-    function response(event) {
-        var userInfo = event.detail;
-
-        if (userInfo.error) {
-            alert("il y a une erreur");
-        } else {
-            app.login(userInfo);
-            window.location.href = window.location.origin;
-        }
-    }
-
-    function updatePressed(event) {
-        this.submitForm();
-    }
-
-    function submitForm() {
-        this.$.username.validate();
-        this.$.password.validate();
-
-        this.$.form.addEventListener('iron-form-response', this.response);
-        this.$.form.submit();
-    }
-
-    function login(user) {
-        var cookie = document.querySelector('#cookie');
-
-        cookie.value = user._id;
-        cookie.expires = new Date() + 2;
-    }
-
     function load() {
         var cookie = document.querySelector('#cookie');
 
@@ -161,6 +91,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             window.location.href = window.location.origin + "index-oversimplified";
         }
     }
+
+    load();
 </script>
 <!-- endbuild-->
 </body>

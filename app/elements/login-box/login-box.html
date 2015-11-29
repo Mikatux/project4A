@@ -15,7 +15,7 @@
             :host {
                 display: block;
                 box-sizing: border-box;
-                max-width: 256px;
+                width: 256px;
                 margin: auto;
             }
 
@@ -70,8 +70,13 @@
             if (userInfo.error) {
                 alert("il y a une erreur");
             } else {
-                app.login(userInfo);
-                window.location.href = window.location.origin;
+                //app.login(userInfo);
+                var cookie = document.querySelector('#cookie');
+
+                cookie.value = user._id;
+                cookie.expires = new Date() + 2;
+
+                window.location.href = window.location.origin + "/index-oversimplified";
             }
         },
 
