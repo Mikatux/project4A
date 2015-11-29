@@ -91,13 +91,15 @@
         submitForm: function () {
             this.$.login.value = this.$.name.value;
 
-            this.$.form.submit();
-
-            this.$.name.value = "";
-            this.$.lastname.value = "";
-            this.$.email.value = "";
-            this.$.password.value = "";
-            this.$.img.value = "";
+            if (this.$.name.validate() && this.$.lastname.validate() && this.$.email.validate() && this.$.password.validate() && this.$.img.validate()) {
+                this.$.form.submit();
+                
+                this.$.name.value = "";
+                this.$.lastname.value = "";
+                this.$.email.value = "";
+                this.$.password.value = "";
+                this.$.img.value = "";
+            }
         }
     });
 </script>
