@@ -32,8 +32,8 @@
 
             #avatar {
                 border-radius: 50%;
-                width: 64px;
-                height: 64px;
+                width: 96px;
+                height: 96px;
                 margin: 8px 90px;
             }
 
@@ -46,35 +46,34 @@
             }
 
             #form {
-                color: #FEFEFE;
-                margin: 8px;
+                max-width: 216px;
+                margin: auto;
             }
 
-            #submitButton {
-                color: #FEFEFE;
-                width: 100px;
-                height: 30px;
-                padding: auto;
+            .loginButton {
+                color: var(--default-primary-color);
             }
         </style>
 
         <paper-material elevation="1" id="cardMessage" on-mouseover="mouseOver" on-mouseout="mouseOut">
             <div id="addText">
-                <span>Sign In</span>
+                <span>SIGN IN</span>
             </div>
 
-            <img src="https://s.ytimg.com/yts/img/avatar_720-vflYJnzBZ.png" id="avatar">
+            <img src="{{img}}" id="avatar">
 
             <form is="iron-form" id="form" method="post" action="http://api.oversimplified.io/users">
                 <paper-input name="name" value="" id="name" label="Name"></paper-input>
                 <paper-input name="lastname" value="" id="lastname" label="Last name"></paper-input>
                 <paper-input name="login" value="" id="login" hidden></paper-input>
                 <paper-input name="email" value="" id="email" label="Email"></paper-input>
-                <paper-input name="password" value="*****" id="password" type="password" label="Password"></paper-input>
-                <paper-input name="img" value="" id="img" label="Image URL"></paper-input>
-            </form>
+                <paper-input name="password" value="" id="password" type="password" label="Password"></paper-input>
+                <paper-input name="img" value="{{img}}" id="img" label="Image URL"></paper-input>
 
-            <a on-click="submitForm" id="submitButton">Create</a>
+                <div class="horizontal layout">
+                    <paper-button on-click="submitForm" class="loginButton" id="loginButton"><iron-icon icon="lock"></iron-icon>Sign In</paper-button>
+                </div>
+            </form>
         </paper-material>
     </template>
 
@@ -84,7 +83,10 @@
     Polymer({
         is: 'signin-box',
         properties: {
-
+            img: {
+                type: String,
+                value: "https://s.ytimg.com/yts/img/avatar_720-vflYJnzBZ.png"
+            }
         },
         mouseOver: function () {
             this.$.cardMessage.elevation = 4;
