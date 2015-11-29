@@ -14,7 +14,9 @@
         <style>
             :host {
                 display: block;
-                position: relative;
+                box-sizing: border-box;
+                width: 300px;
+                margin: auto;
             }
 
             #cardMessage {
@@ -38,6 +40,7 @@
 
             #addText {
                 color: #ffffff;
+                margin-top: 8px;
                 font-size: 50px;
                 text-align: center;
                 width: inherit;
@@ -60,13 +63,16 @@
             <div id="addText">
                 <span>Sign In</span>
             </div>
+
+            <img src="https://s.ytimg.com/yts/img/avatar_720-vflYJnzBZ.png" id="avatar">
+
             <form is="iron-form" id="form" method="post" action="http://api.oversimplified.io/users">
-                <paper-input name="name" value="" id="name"></paper-input>
-                <paper-input name="lastname" value="" id="lastname"></paper-input>
+                <paper-input name="name" value="" id="name" label="Name"></paper-input>
+                <paper-input name="lastname" value="" id="lastname" label="Last name"></paper-input>
                 <paper-input name="login" value="" id="login" hidden></paper-input>
-                <paper-input name="email" value="" id="email" hidden></paper-input>
-                <paper-input name="password" value="*****" id="password" hidden></paper-input>
-                <paper-input name="img" value="" id="img"></paper-input>
+                <paper-input name="email" value="" id="email" label="Email"></paper-input>
+                <paper-input name="password" value="*****" id="password" type="password" label="Password"></paper-input>
+                <paper-input name="img" value="" id="img" label="Image URL"></paper-input>
             </form>
 
             <a on-click="submitForm" id="submitButton">Create</a>

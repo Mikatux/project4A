@@ -39,11 +39,11 @@
 
         if (cookie.value == null) {
             //TODO rediriger vers la page Login
-            window.location.href = window.location.origin + "/#!/login";
-            document.querySelector("#logInOutMenuButtonText").innerHTML = "Login";
+            window.location.href = window.location.origin + "index";
+            //document.querySelector("#logInOutMenuButtonText").innerHTML = "Login";
         } else {
             //TODO transformer le bouton Login en Logout
-            document.querySelector("#logInOutMenuButtonText").innerHTML = "Logout";
+            //document.querySelector("#logInOutMenuButtonText").innerHTML = "Logout";
             document.querySelector("user-info-bar").performRequest();
             document.querySelector("menu-group-list").refresh();
         }

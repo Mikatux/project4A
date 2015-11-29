@@ -15,7 +15,7 @@
             :host {
                 display: block;
                 box-sizing: border-box;
-                width: 256px;
+                width: 300px;
                 margin: auto;
             }
 
@@ -23,12 +23,19 @@
                 background-color: #FFFFFF;
                 margin: 12px;
                 min-height: 64px;
-                padding: 8px 0px 8px 0px;
+                padding: 8px 0 8px 0;
             }
 
             #form {
                 max-width: 216px;
                 margin: auto;
+            }
+
+            #avatar {
+                border-radius: 50%;
+                width: 64px;
+                height: 64px;
+                margin: 8px auto;
             }
 
             .loginButton {
@@ -44,6 +51,8 @@
         </iron-a11y-keys>
 
         <paper-material elevation="1" flex id="cardLogin">
+            <img src="https://s.ytimg.com/yts/img/avatar_720-vflYJnzBZ.png" id="avatar">
+
             <form is="iron-form" id="form" method="post" action="http://api.oversimplified.io/login">
                 <paper-input label="Username" name="login" required value="" id="username"></paper-input>
                 <paper-input label="Password" name="password" required value="" type="password" id="password"></paper-input>

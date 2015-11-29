@@ -111,9 +111,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                     <span>Co-worker</span>
                 </a>
 
-                <a id="logInOutMenuButton" data-route="login" href="/login" on-click="logoutDataRouteClick">
+                <a id="logInOutMenuButton" href="/index" on-click="logoutDataRouteClick">
                     <iron-icon icon="lock"></iron-icon>
-                    <span id="logInOutMenuButtonText">Login</span>
+                    <span id="logInOutMenuButtonText">Logout</span>
                 </a>
             </paper-menu>
         </paper-scroll-header-panel>
@@ -137,10 +137,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <div class="content">
                 <iron-pages attr-for-selected="data-route" selected="{{route}}">
 
+                    <!--
                     <section data-route="login">
                         <login-box></login-box>
                     </section>
-
+                    -->
 
                     <section data-route="home">
                         <post-list id="postList" group="56508f97fc96b8653fbf608e"></post-list>
