@@ -1,0 +1,106 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../../bower_components/paper-input/paper-textarea.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../bower_components/iron-form/iron-form.html">
+<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../bower_components/iron-icons/editor-icons.html">
+<link rel="import" href="../../bower_components/iron-a11y-keys/iron-a11y-keys.html">
+
+<link type="text/css" href="http://csshake.surge.sh/csshake-slow.min.css">
+
+<dom-module id="signin-box">
+    <template>
+        <style>
+            :host {
+                display: block;
+                position: relative;
+            }
+
+            #cardMessage {
+                background-color: var(--default-primary-color);
+                border-radius: 2px;
+                margin: 0;
+                padding: 0;
+                width: 300px;
+                /*height: 400px;*/
+
+                transition: 0.2s;
+                -webkit-transition: 0.2s;
+            }
+
+            #avatar {
+                border-radius: 50%;
+                width: 64px;
+                height: 64px;
+                margin: auto;
+            }
+
+            #addText {
+                color: #ffffff;
+                font-size: 50px;
+                text-align: center;
+                width: inherit;
+            }
+
+            #form {
+                color: #FEFEFE;
+                margin: 8px;
+            }
+
+            #submitButton {
+                color: #FEFEFE;
+                width: 100px;
+                height: 30px;
+                padding: auto;
+            }
+        </style>
+
+        <paper-material elevation="1" id="cardMessage" on-mouseover="mouseOver" on-mouseout="mouseOut">
+            <div id="addText">
+                <span>Sign In</span>
+            </div>
+            <form is="iron-form" id="form" method="post" action="http://api.oversimplified.io/users">
+                <paper-input name="name" value="" id="name"></paper-input>
+                <paper-input name="lastname" value="" id="lastname"></paper-input>
+                <paper-input name="login" value="" id="login" hidden></paper-input>
+                <paper-input name="email" value="" id="email" hidden></paper-input>
+                <paper-input name="password" value="*****" id="password" hidden></paper-input>
+                <paper-input name="img" value="" id="img"></paper-input>
+            </form>
+
+            <a on-click="submitForm" id="submitButton">Create</a>
+        </paper-material>
+    </template>
+
+</dom-module>
+
+<script>
+    Polymer({
+        is: 'signin-box',
+        properties: {
+
+        },
+        mouseOver: function () {
+            this.$.cardMessage.elevation = 4;
+            this.$.cardMessage.style.marginTop = "-4px";
+        },
+        mouseOut: function () {
+            this.$.cardMessage.elevation = 1;
+            this.$.cardMessage.style.marginTop = "0px";
+        },
+        mouseClick: function () {
+
+        },
+        submitForm: function () {
+            this.$.login.value = this.$.name.value;
+            this.$.email.value = this.$.name.value + "." + this.$.lastname.value + "@oversimplified.io";
+
+            this.$.form.submit();
+
+            this.$.name.value = "";
+            this.$.lastname.value = "";
+            this.$.img.value = "";
+        }
+    });
+</script>
