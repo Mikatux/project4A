@@ -4,7 +4,6 @@
     <list default="true" id="4a0b82b3-bd6c-49e8-b00f-1ca000401742" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/elements/login-box/login-box.html" afterPath="$PROJECT_DIR$/app/elements/login-box/login-box.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/elements/login-box/signin-box.html" afterPath="$PROJECT_DIR$/app/elements/login-box/signin-box.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
     </list>
     <ignored path="Polymer4A.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,21 +46,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login-box.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="login-box.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/elements/login-box/login-box.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.46563193">
-              <caret line="37" column="33" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
+            <state vertical-scroll-proportion="-18.75">
+              <caret line="45" column="52" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="52" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="signin-box.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="signin-box.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/elements/login-box/signin-box.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="8.75">
-              <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
+            <state vertical-scroll-proportion="0.2660754">
+              <caret line="40" column="52" selection-start-line="40" selection-start-column="52" selection-end-line="40" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -146,8 +145,8 @@
         <option value="$PROJECT_DIR$/app/scripts/app.js" />
         <option value="$PROJECT_DIR$/app/index-oversimplified.html" />
         <option value="$PROJECT_DIR$/app/index.html" />
-        <option value="$PROJECT_DIR$/app/elements/login-box/signin-box.html" />
         <option value="$PROJECT_DIR$/app/elements/login-box/login-box.html" />
+        <option value="$PROJECT_DIR$/app/elements/login-box/signin-box.html" />
       </list>
     </option>
   </component>
@@ -1037,18 +1036,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/elements/login-box/signin-box.html">
+    <entry file="file://$PROJECT_DIR$/app/elements/login-box/login-box.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="8.75">
-          <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
+        <state vertical-scroll-proportion="-18.75">
+          <caret line="45" column="52" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="52" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/elements/login-box/login-box.html">
+    <entry file="file://$PROJECT_DIR$/app/elements/login-box/signin-box.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46563193">
-          <caret line="37" column="33" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.2660754">
+          <caret line="40" column="52" selection-start-line="40" selection-start-column="52" selection-end-line="40" selection-end-column="52" />
           <folding />
         </state>
       </provider>

@@ -20,10 +20,14 @@
             }
 
             #cardLogin {
+                border-radius: 2px;
                 background-color: #FEFEFE;
                 margin: 12px;
                 min-height: 64px;
-                padding: 8px auto;
+                padding: 8px 0;
+
+                transition: 0.2s;
+                -webkit-transition: 0.2s;
             }
 
             #form {
@@ -35,7 +39,7 @@
                 border-radius: 50%;
                 width: 96px;
                 height: 96px;
-                margin: 8px auto;
+                margin: 8px 90px;
             }
 
             .loginButton {
@@ -57,8 +61,7 @@
                 <paper-input label="Username" name="login" required value="" id="username"></paper-input>
                 <paper-input label="Password" name="password" required value="" type="password" id="password"></paper-input>
                 <div class="horizontal layout">
-                    <div flex></div>
-                    <paper-button on-click="submitForm" class="loginButton" id="loginButton"><iron-icon icon="lock"></iron-icon> Login</paper-button>
+                    <paper-button on-click="submitForm" class="loginButton" id="loginButton"><iron-icon icon="lock"></iron-icon>Login</paper-button>
                 </div>
             </form>
         </paper-material>
