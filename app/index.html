@@ -68,11 +68,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <!-- For shared styles, shared-styles.html import in elements.html -->
     <style is="custom-style" include="shared-styles"></style>
     <style>
-        #refreshButton {
-            -webkit-transition: 0.5s;
-            transition: 0.5s;
-            margin: 12px -4px 12px 12px;
-        }
+
     </style>
 </head>
 
@@ -82,104 +78,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <polymer-cookie name="oversimplifiedcookie" id="cookie"></polymer-cookie>
 
-    <paper-drawer-panel id="paperDrawerPanel">
-        <paper-scroll-header-panel drawer fixed>
-            <paper-toolbar id="drawerToolbar"></paper-toolbar>
+    <p>loading...</p>
 
-            <paper-menu class="list" attr-for-selected="data-route" selected="[[route]]">
-                <a data-route="home" href="/" on-click="onDataRouteClick">
-                    <iron-icon icon="av:library-books"></iron-icon>
-                    <span>Today</span>
-                </a>
-
-                <a data-route="home" href="/" on-click="onDataRouteClick">
-                    <iron-icon icon="social:whatshot"></iron-icon>
-                    <span>Hot</span>
-                </a>
-
-                <div class="separator"></div>
-                <span class="titleMenuButton">Groups</span>
-
-                <menu-group-list></menu-group-list>
-
-                <a data-route="groups/56508f97fc96b8653fbf608e" href$="/groups/56508f97fc96b8653fbf608e" on-click="onDataRouteClick">Test</a><br>
-
-                <div class="separator"></div>
-
-                <a data-route="users" href="/users" on-click="onDataRouteClick">
-                    <iron-icon icon="social:group"></iron-icon>
-                    <span>Co-worker</span>
-                </a>
-
-                <a id="logInOutMenuButton" data-route="login" href="/login" on-click="logoutDataRouteClick">
-                    <iron-icon icon="lock"></iron-icon>
-                    <span id="logInOutMenuButtonText">Login</span>
-                </a>
-            </paper-menu>
-        </paper-scroll-header-panel>
-
-        <paper-scroll-header-panel fixed main condenses>
-            <paper-toolbar>
-                <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
-                <span class="flex"></span>
-
-                <!-- Toolbar icons -->
-                <user-info-bar></user-info-bar>
-                <div style="width: 2px; height: 100%; margin: auto 0 auto 8px; background: #ececec"></div>
-                <paper-icon-button icon="refresh" on-click="onRefresh" id="refreshButton"></paper-icon-button>
-
-                <!-- Application name -->
-                <div class="middle middle-container center horizontal layout">
-                    <div class="app-name">Oversimplified</div>
-                </div>
-            </paper-toolbar>
-
-            <div class="content">
-                <iron-pages attr-for-selected="data-route" selected="{{route}}">
-
-                    <section data-route="login">
-                        <login-box></login-box>
-                    </section>
-
-
-                    <section data-route="home">
-                        <post-list id="postList" group="56508f97fc96b8653fbf608e"></post-list>
-                    </section>
-
-                    <section data-route="users">
-                        <user-list></user-list>
-                    </section>
-
-                    <section data-route="groups">
-                        <group-list></group-list>
-                    </section>
-
-                    <section data-route="group">
-                        <send-box group="{{param.id}}"></send-box>
-                        <post-list id="postListGroup" group="{{groupId}}"></post-list>
-                    </section>
-
-                </iron-pages>
-            </div>
-        </paper-scroll-header-panel>
-    </paper-drawer-panel>
 </template>
 
-<script src="scripts/500px.js"></script>
 <script>
-    _500px.init({
-        sdk_key: '38c376a9e15070c2d19339f6b133478e8466cbfd'
-    });
-</script>
-<script src="scripts/app.js"></script>
-<script src="http://api.oversimplified.io/coucou/socket.io.js"></script>
-<script>
-    var socket = io.connect("http://api.oversimplified.io:1024");
-    socket.on('message', function(message) {
-        var postList = document.querySelector('#postList');
-        postList.newMessage();
-        document.title = "(1) " + document.title;
-    });
+    var cookie = document.querySelector('#cookie');
+
+    if (cookie.value == null) {
+        //Redirection vers la page Login
+        window.location.href = window.location.origin + "index-oversimplified/#!login";
+    } else {
+        //Redirection vers la vraie page
+        window.location.href = window.location.origin + "index-oversimplified";
+    }
 </script>
 <!-- endbuild-->
 </body>
