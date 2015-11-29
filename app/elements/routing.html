@@ -40,9 +40,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             app.route = 'groups';
         });
 
-        page('/groups/:id', scrollToTop, function (data) {
+        page('/groups/:id', scrollToTop, function (context) {
             app.route = 'group';
-            app.params = data.params;
+            app.params = context.params.id;
         });
 
         page('/users/:name', scrollToTop, function (data) {
@@ -64,5 +64,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             hashbang: true
         });
 
+        page.start();
     });
 </script>
