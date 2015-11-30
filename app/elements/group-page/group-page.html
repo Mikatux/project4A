@@ -24,6 +24,12 @@
                 last-response="{{groupObj}}"
         ></iron-ajax>
 
+        <iron-ajax
+                id="requestUser"
+                url=""
+                last-response="{{user}}"
+        ></iron-ajax>
+
         <span>{{groupObj.name}}</span>
         <send-box id="sendBoxGroup" group="{{group}}"></send-box>
         <post-list id="postListGroup" group="{{group}}"></post-list>
@@ -35,13 +41,19 @@
         is: 'group-page',
         properties: {
             groupObj: Object,
-            group: String
+            group: String,
+            user: Object
         },
 
         refresh: function() {
             this.$.request.url = "http://api.oversimplified.io/groups/" + this.group;
             this.$.request.generateRequest();
+            this.$.requestUser.url = "http://api.oversimplified.io/users/" + app.getUserId();
+            this.$.requestUser.generateRequest();
+
             this.$.postListGroup.refresh();
+            this.$.sendBoxGroup.user = this.user;
+            this.$.sendBoxGroup.refresh();
         }
     });
 </script>

@@ -21,75 +21,28 @@
             #cardMessage {
                 background-color: #FFFFFF;
                 margin: 12px;
-                min-height: 64px;
+                height: 64px;
                 padding: 8px 0px 8px 0px;
             }
 
             #messageContent {
-
+                height: 36px;
             }
 
             #form {
                 margin: 0px 8px 7px 8px;
             }
 
-            paper-button.green {
-                color: var(--default-primary-color);
-                --paper-button-flat-focus-color: var(--light-primary-color);
-
-                -webkit-transition: 0.2s;
-                transition: 0.2s;
-            }
-
-            paper-button.green:hover {
-                background: var(--light-primary-color);
-
-                -webkit-transition: 0.2s;
-                transition: 0.2s;
-            }
-
-            paper-button.ripple {
-                --paper-button-ink-color: var(--dark-primary-color);
-            }
-
-            #sendButton {
-                height: 40px;
-            }
-
-            paper-icon-button#sendBtn {
-                color: var(--default-primary-color);
-                --paper-icon-button-ink-color: var((--light-primary-color);
-                --iron-icon-width: 15px;
-                --iron-icon-height: 15px;
-                padding: 0px 4px;
-            }
-
-            paper-icon-button.small {
-                color: #727272;
-
-                margin-left: 0px;
-                margin-right: 0px;
-                padding: 2px;
-
-                -webkit-transition: 0.2s;
-                transition: 0.2s;
-            }
-
-            paper-icon-button.small:hover {
-                color: var(--default-primary-color);
-
-                -webkit-transition: 0.2s;
-                transition: 0.2s;
-            }
-
-            paper-icon-button.ripple {
-                --paper-button-ink-color: var(--default-primary-color);
-            }
-
             .separator {
                 height: 1px;
                 width: 100%;
                 background-color: var(--primary-background-color);
+            }
+
+            #avatar {
+                border-radius: 50%;
+                height: 36px;
+                width: 36px;
             }
 
         </style>
@@ -102,6 +55,7 @@
         </iron-a11y-keys>
 
         <paper-material elevation="1" flex id="cardMessage">
+            <img id="avatar" src="{{user.img}}">
             <form is="iron-form" id="form" method="post">
                 <paper-input name="content" auto-validate error-message="No message to send" label="Send a message"
                              id="messageContent">
@@ -110,29 +64,26 @@
                     </paper-icon-button>
                 </paper-input>
 
-                <paper-input name="type" value="text" hidden></paper-input>
                 <paper-input name="userId" value="" id="userId" hidden></paper-input>
-
-                <div class="horizontal layout">
-                    <div>
-                        <paper-icon-button icon="editor:insert-emoticon" class="small"
-                                           id="emoticonButton"></paper-icon-button>
-                        <paper-icon-button icon="editor:insert-photo" class="small"
-                                           id="photoButton"></paper-icon-button>
-                        <paper-icon-button icon="editor:insert-drive-file" class="small"
-                                           id="fileButton"></paper-icon-button>
-                        <paper-icon-button icon="editor:insert-chart" class="small"
-                                           id="chartButton"></paper-icon-button>
-                        <paper-icon-button icon="room" class="small" id="roomButton"></paper-icon-button>
-                    </div>
-                    <div class="flex"></div>
-                </div>
             </form>
 
-            <div class="separator"></div>
-
-            <div class="editor">
+            <!--
+            <div class="horizontal layout">
+                <div>
+                    <paper-icon-button icon="editor:insert-emoticon" class="small"
+                                       id="emoticonButton"></paper-icon-button>
+                    <paper-icon-button icon="editor:insert-photo" class="small"
+                                       id="photoButton"></paper-icon-button>
+                    <paper-icon-button icon="editor:insert-drive-file" class="small"
+                                       id="fileButton"></paper-icon-button>
+                    <paper-icon-button icon="editor:insert-chart" class="small"
+                                       id="chartButton"></paper-icon-button>
+                    <paper-icon-button icon="room" class="small" id="roomButton"></paper-icon-button>
+                </div>
+                <div class="flex"></div>
             </div>
+            -->
+
         </paper-material>
 
     </template>
@@ -148,7 +99,8 @@
                 value: function () {
                     return document.body;
                 },
-                group: String
+                group: String,
+                user: Object,
             }
         },
 
@@ -171,6 +123,10 @@
 
         _updatePressed: function (event) {
             this.submitForm();
+        },
+
+        refresh: function () {
+            this.$.avatar.src = this.user.img;
         },
 
         sendSound: function () {

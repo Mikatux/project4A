@@ -118,9 +118,7 @@
                 target = e.target.parentElement;
             }
 
-            var gid = target.id;
-            console.log(gid);
-            app.goToGroupById(gid);
+            app.goToGroupById(target.id);
         },
         selection: function (e) {
             //console.log(e);
