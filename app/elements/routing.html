@@ -46,6 +46,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             app.params = context.params.id;
         });
 
+        page('/test', scrollToTop, function () {
+            app.route = 'group';
+        });
+
         page('/users/:name', scrollToTop, function (data) {
             app.route = 'user-info';
             app.params = data.params;
@@ -56,6 +60,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         });
 
         page('*', function () {
+            console.log();
             console.log("404");
             page.redirect("/");
         });

@@ -130,9 +130,11 @@
     };
 
     app.goToGroupById = function(id) {
-        page('/groups/' + id);
+        //page('/groups/' + id);
+        param.id = id;
         document.querySelector('#postListGroup').group = id;
         document.querySelector('#postListGroup').refresh();
+        page('/test');
     };
 
 })(document);
