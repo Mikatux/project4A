@@ -22,7 +22,7 @@
         </style>
         <iron-ajax
                 id="ajaxRequest"
-                url="{{url}}"
+                url=""
                 handle-as="json"
                 last-response="{{response}}"></iron-ajax>
 
@@ -48,6 +48,8 @@
         },
 
         refresh: function () {
+            this.id = app.getUserId();
+            this.$.ajaxRequest.url = "http://api.oversimplified.io/users/" + this.id + "/messages";
             this.$.ajaxRequest.generateRequest();
         },
 
