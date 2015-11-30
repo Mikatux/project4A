@@ -132,6 +132,7 @@
     app.goToGroupById = function(id) {
         //page('/groups/' + id);
         param.id = id;
+        console.log("hello");
         document.querySelector('#postListGroup').group = id;
         document.querySelector('#postListGroup').refresh();
         page('/test');
