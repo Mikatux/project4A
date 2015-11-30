@@ -98,7 +98,7 @@
         },
         notNull: function () {
             return function(group) {
-                if (group === undefined) {
+                if (group == undefined || group == null) {
                     return false;
                 } else if (group.img === undefined || group.name === undefined) {
                     return false;
