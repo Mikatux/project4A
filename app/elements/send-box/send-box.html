@@ -22,7 +22,7 @@
                 background-color: #FFFFFF;
                 margin: 12px;
                 height: 64px;
-                padding: 8px 0px 8px 0px;
+                padding: 0;
             }
 
             #messageContent {
@@ -30,7 +30,8 @@
             }
 
             #form {
-                margin: 0px 8px 7px 8px;
+                height: 36px;
+                margin: 14px 0 14px 4px;
             }
 
             .separator {
@@ -43,6 +44,7 @@
                 border-radius: 50%;
                 height: 36px;
                 width: 36px;
+                margin: 14px 4px;
             }
 
         </style>
@@ -55,18 +57,20 @@
         </iron-a11y-keys>
 
         <paper-material elevation="1" flex id="cardMessage">
-            <img id="avatar" src="{{user.img}}">
-            <form is="iron-form" id="form" method="post">
-                <paper-input name="content" auto-validate error-message="No message to send" label="Send a message"
-                             id="messageContent">
-                    <paper-icon-button suffix on-click="submitForm"
-                                       icon="send" alt="send" title="send" tabindex="0" id="sendBtn">
-                    </paper-icon-button>
-                </paper-input>
 
-                <paper-input name="userId" value="" id="userId" hidden></paper-input>
-            </form>
+            <div class="vertical layout">
+                <img id="avatar" src="{{user.img}}">
+                <form is="iron-form" id="form" method="post">
+                    <paper-input name="content" auto-validate error-message="No message to send" label="Send a message"
+                                 id="messageContent">
+                        <paper-icon-button suffix on-click="submitForm"
+                                           icon="send" alt="send" title="send" tabindex="0" id="sendBtn">
+                        </paper-icon-button>
+                    </paper-input>
 
+                    <paper-input name="userId" value="" id="userId" hidden></paper-input>
+                </form>
+            </div>
             <!--
             <div class="horizontal layout">
                 <div>
