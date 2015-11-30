@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4a0b82b3-bd6c-49e8-b00f-1ca000401742" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/elements/menu-group-list/menu-group-list.html" afterPath="$PROJECT_DIR$/app/elements/menu-group-list/menu-group-list.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/elements/routing.html" afterPath="$PROJECT_DIR$/app/elements/routing.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/elements/user-list/coworker-list.html" afterPath="$PROJECT_DIR$/app/elements/user-list/coworker-list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/app.js" afterPath="$PROJECT_DIR$/app/scripts/app.js" />
     </list>
     <ignored path="Polymer4A.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,11 +46,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="coworker-list.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="coworker-list.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/elements/user-list/coworker-list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6674058">
+            <state vertical-scroll-proportion="-25.083334">
               <caret line="81" column="30" selection-start-line="81" selection-start-column="30" selection-end-line="81" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.45356372">
+              <caret line="35" column="39" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -100,18 +109,8 @@
       <file leaf-file-name="menu-group-list.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/elements/menu-group-list/menu-group-list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.958333">
-              <caret line="69" column="116" selection-start-line="69" selection-start-column="104" selection-end-line="69" selection-end-column="116" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="signin-box.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/elements/login-box/signin-box.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="56" column="36" selection-start-line="56" selection-start-column="36" selection-end-line="56" selection-end-column="36" />
+            <state vertical-scroll-proportion="-5.7083335">
+              <caret line="69" column="82" selection-start-line="69" selection-start-column="82" selection-end-line="69" selection-end-column="82" />
               <folding />
             </state>
           </provider>
@@ -168,7 +167,6 @@
         <option value="$PROJECT_DIR$/app/elements/send-box/send-box.html" />
         <option value="$PROJECT_DIR$/app/elements/post-list/post-list.html" />
         <option value="$PROJECT_DIR$/app/elements/login-box/singin-box.html" />
-        <option value="$PROJECT_DIR$/app/scripts/app.js" />
         <option value="$PROJECT_DIR$/app/elements/user-list/user-list.html" />
         <option value="$PROJECT_DIR$/app/elements/login-box/login-box.html" />
         <option value="$PROJECT_DIR$/app/elements/login-box/signin-box.html" />
@@ -180,8 +178,9 @@
         <option value="$PROJECT_DIR$/app/elements/post-list/message-list.html" />
         <option value="$PROJECT_DIR$/app/index-oversimplified.html" />
         <option value="$PROJECT_DIR$/app/elements/routing.html" />
-        <option value="$PROJECT_DIR$/app/elements/menu-group-list/menu-group-list.html" />
         <option value="$PROJECT_DIR$/app/elements/user-list/coworker-list.html" />
+        <option value="$PROJECT_DIR$/app/elements/menu-group-list/menu-group-list.html" />
+        <option value="$PROJECT_DIR$/app/scripts/app.js" />
       </list>
     </option>
   </component>
@@ -954,14 +953,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="51" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7838138">
@@ -1056,14 +1047,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/elements/menu-group-list/menu-group-list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.958333">
-          <caret line="69" column="116" selection-start-line="69" selection-start-column="104" selection-end-line="69" selection-end-column="116" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/index-oversimplified.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.833333">
@@ -1090,10 +1073,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/elements/menu-group-list/menu-group-list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.7083335">
+          <caret line="69" column="82" selection-start-line="69" selection-start-column="82" selection-end-line="69" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/elements/user-list/coworker-list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6674058">
+        <state vertical-scroll-proportion="-25.083334">
           <caret line="81" column="30" selection-start-line="81" selection-start-column="30" selection-end-line="81" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45356372">
+          <caret line="35" column="39" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
           <folding />
         </state>
       </provider>

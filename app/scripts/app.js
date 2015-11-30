@@ -31,6 +31,9 @@
     app.refreshGroup = function () {
         document.querySelector("menu-group-list").refresh();
         document.querySelector("group-list").refresh();
+        document.querySelector("coworker-list").refresh();
+        document.querySelector("hot-list").refresh();
+        document.querySelector("message-list").refresh();
     }
 
     // See https://github.com/Polymer/polymer/issues/1381
