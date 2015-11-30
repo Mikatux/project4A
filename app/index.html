@@ -54,8 +54,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <link rel="import" href="elements/elements.html">
     <link rel="import" href="elements/login-box/login-box.html">
     <link rel="import" href="elements/login-box/signin-box.html">
-
-    <link rel="import" href="bower_components/paper-spinner/paper-spinner.html">
+    <link rel="import" href="bower_components/polymer-cookie/polymer-cookie.html">
     <!-- endreplace-->
 
     <!-- For shared styles, shared-styles.html import in elements.html -->
@@ -148,7 +147,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         }
     }
 
-    load();
+    addEventListener('dom-change', function() {
+        load();
+    });
 </script>
 <!-- endbuild-->
 </body>
