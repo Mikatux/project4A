@@ -15,7 +15,7 @@
             }
 
             .title:hover {
-                color: #4185f6;
+                color: #34a853;
                 margin: 4px 4px 4px 50px;
                 transition: 0.2s;
             }
@@ -48,7 +48,7 @@
             .selected {
                 background: #dfdfdf;
                 border-radius: 0 4px 4px 0;
-                color: #4185f6;
+                color: #34a853;
             }
         </style>
 
@@ -116,10 +116,11 @@
         },
         selection: function (e) {
             //console.log(e);
+            var target = e.target.parentElement.querySelectorAll('.title');
 
             this.unselectAll();
-            e.target.classList.add('selected');
-            this.selected = e.target;
+            target.classList.add('selected');
+            this.selected = target;
         },
         unselectAll: function () {
             if (this.selected != undefined) {
