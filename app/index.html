@@ -128,11 +128,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     function switchToLogin() {
         document.querySelector('#login').classList.remove("hide");
         document.querySelector('#signin').classList.add("hide");
+        console.log("hello");
     }
 
     function switchToSignin() {
-        document.querySelector('#signin').classList.remove("hide");
         document.querySelector('#login').classList.add("hide");
+        document.querySelector('#signin').classList.remove("hide");
     }
 
     function load() {
