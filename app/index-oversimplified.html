@@ -181,13 +181,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     });
 </script>
 <script src="scripts/app.js"></script>
-<script src="http://api.oversimplified.io/coucou/socket.io.js"></script>
+<script src="http://api.oversimplified.io/socket/socket.io.js"></script>
 <script>
     var socket = io.connect("http://api.oversimplified.io:1024");
     socket.on('message', function(message) {
-        var postList = document.querySelector('#postList');
-        postList.newMessage();
-        document.title = "(1) " + document.title;
+        console.log(message);
+        //var postList = document.querySelector('#postList');
+        //postList.newMessage();
+        //document.title = "(1) " + document.title;
     });
 </script>
 <!-- endbuild-->
