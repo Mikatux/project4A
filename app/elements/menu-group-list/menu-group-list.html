@@ -67,7 +67,7 @@
                         on-response="handelResponse"></iron-ajax>
             </template>
 
-            <template is="dom-repeat" items="{{groups}}" id="titleList" as="group" filter="{{notNull}}">
+            <template is="dom-repeat" items="{{groups}}" id="titleList" as="group" filter="{{notNull()}}">
                 <div class="layout horizontal title" on-click="goToGroupById" id="{{group._id}}">
                     <img src="[[group.img]]">
                     <span>[[group.name]]</span>
@@ -96,13 +96,15 @@
             },
             selected: Object
         },
-        notNull: function (group) {
-            if (group === undefined) {
-                return false;
-            } else if (group.img === undefined || group.name === undefined) {
-                return false;
-            } else {
-                return true;
+        notNull: function () {
+            return function(group) {
+                if (group === undefined) {
+                    return false;
+                } else if (group.img === undefined || group.name === undefined) {
+                    return false;
+                } else {
+                    return true;
+                }
             }
         },
         computeURL: function() {
