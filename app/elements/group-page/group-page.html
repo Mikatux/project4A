@@ -39,7 +39,7 @@
         },
 
         refresh: function() {
-            this.$.request.url = "http://api.oversimplified.io/groups/" + group;
+            this.$.request.url = "http://api.oversimplified.io/groups/" + this.group;
             this.$.request.generateRequest();
             this.$.postListGroup.refresh();
         }
