@@ -10,198 +10,176 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/buzz/1.1.10/buzz.min.js"></script>
 
 <dom-module id="send-box">
-  <template>
-    <style>
-      :host {
-        display: block;
-        box-sizing: border-box;
-        max-width: 512px;
-      }
-      
-      #cardMessage {
-        background-color: #FFFFFF;
-        margin: 12px;
-        min-height: 64px;
-        padding: 8px 0px 8px 0px;
-      }
-      
-      #messageContent {
-        
-      }
-      
-      #form {
-        margin: 0px 8px 7px 8px;
-      }
-      
-      paper-button.green {
-        color: var(--default-primary-color);
-        --paper-button-flat-focus-color: var(--light-primary-color);
-        
-        -webkit-transition: 0.2s;
-        transition: 0.2s;
-      }
-      paper-button.green:hover {
-        background: var(--light-primary-color);
-        
-        -webkit-transition: 0.2s;
-        transition: 0.2s;
-      }
-      paper-button.ripple {
-        --paper-button-ink-color: var(--dark-primary-color);
-      }
-      
-      #sendButton {
-        height: 40px;
-      }
-      
-      paper-icon-button#sendBtn {
-        color: var(--default-primary-color);
-        --paper-icon-button-ink-color: var((--light-primary-color);
-        --iron-icon-width: 15px;
-        --iron-icon-height: 15px;
-        padding: 0px 4px;
-      }
-      
-      paper-icon-button.small {
-        color: #727272;
-        
-        margin-left: 0px;
-        margin-right: 0px;
-        padding: 2px;
-        
-        -webkit-transition: 0.2s;
-        transition: 0.2s;
-      }
-      
-      paper-icon-button.small:hover {
-        color: var(--default-primary-color);
-        
-        -webkit-transition: 0.2s;
-        transition: 0.2s;
-      }
-      
-      paper-icon-button.ripple {
-        --paper-button-ink-color: var(--default-primary-color);
-      }
-      
-      .separator {
-        height: 1px;
-        width: 100%;
-        background-color: var(--primary-background-color);
-      }
-      
-    </style>
+    <template>
+        <style>
+            :host {
+                display: block;
+                box-sizing: border-box;
+                max-width: 512px;
+            }
 
-    <iron-a11y-keys
-      id="keys"
-      keys="shift+enter || enter"
-      target="[[target]]"
-      on-keys-pressed="_updatePressed">
-    </iron-a11y-keys>
+            #cardMessage {
+                background-color: #FFFFFF;
+                margin: 12px;
+                min-height: 64px;
+                padding: 8px 0px 8px 0px;
+            }
 
-    <paper-material elevation="1" flex id="cardMessage">
-      <form is="iron-form" id="form" method="post" action="http://api.oversimplified.io/messages">
-        <paper-input name="content" auto-validate error-message="No message to send" label="Send a message" id="messageContent">
-          <paper-icon-button suffix on-click="submitForm"
-            icon="send" alt="send" title="send" tabindex="0" id="sendBtn">
-          </paper-icon-button>
-        </paper-input>
-        
-        <paper-input name="type" value="text" hidden></paper-input>
-        <paper-input name="userId" value="" id="userId" hidden></paper-input>
-        
-        <div class="horizontal layout">
-          <div>
-            <paper-icon-button icon="editor:insert-emoticon" class="small" id="emoticonButton"></paper-icon-button>
-            <paper-icon-button icon="editor:insert-photo" class="small" id="photoButton"></paper-icon-button>
-            <paper-icon-button icon="editor:insert-drive-file" class="small" id="fileButton"></paper-icon-button>
-            <paper-icon-button icon="editor:insert-chart" class="small" id="chartButton"></paper-icon-button>
-            <paper-icon-button icon="room" class="small" id="roomButton"></paper-icon-button>
-          </div>
-          <div class="flex"> </div>
-          <div>
-            <!--<paper-button on-click="submitForm" class="green ripple" id="sendButton"><iron-icon icon="send"></iron-icon> Send</paper-button>-->
-          </div>
-        </div>
-      </form>
-      
-      <div class="separator"></div>
-      
-      <div class="editor">
-      </div>
-    </paper-material>
+            #messageContent {
 
-  </template>
+            }
+
+            #form {
+                margin: 0px 8px 7px 8px;
+            }
+
+            paper-button.green {
+                color: var(--default-primary-color);
+                --paper-button-flat-focus-color: var(--light-primary-color);
+
+                -webkit-transition: 0.2s;
+                transition: 0.2s;
+            }
+
+            paper-button.green:hover {
+                background: var(--light-primary-color);
+
+                -webkit-transition: 0.2s;
+                transition: 0.2s;
+            }
+
+            paper-button.ripple {
+                --paper-button-ink-color: var(--dark-primary-color);
+            }
+
+            #sendButton {
+                height: 40px;
+            }
+
+            paper-icon-button#sendBtn {
+                color: var(--default-primary-color);
+                --paper-icon-button-ink-color: var((--light-primary-color);
+                --iron-icon-width: 15px;
+                --iron-icon-height: 15px;
+                padding: 0px 4px;
+            }
+
+            paper-icon-button.small {
+                color: #727272;
+
+                margin-left: 0px;
+                margin-right: 0px;
+                padding: 2px;
+
+                -webkit-transition: 0.2s;
+                transition: 0.2s;
+            }
+
+            paper-icon-button.small:hover {
+                color: var(--default-primary-color);
+
+                -webkit-transition: 0.2s;
+                transition: 0.2s;
+            }
+
+            paper-icon-button.ripple {
+                --paper-button-ink-color: var(--default-primary-color);
+            }
+
+            .separator {
+                height: 1px;
+                width: 100%;
+                background-color: var(--primary-background-color);
+            }
+
+        </style>
+
+        <iron-a11y-keys
+                id="keys"
+                keys="shift+enter || enter"
+                target="[[target]]"
+                on-keys-pressed="_updatePressed">
+        </iron-a11y-keys>
+
+        <paper-material elevation="1" flex id="cardMessage">
+            <form is="iron-form" id="form" method="post">
+                <paper-input name="content" auto-validate error-message="No message to send" label="Send a message"
+                             id="messageContent">
+                    <paper-icon-button suffix on-click="submitForm"
+                                       icon="send" alt="send" title="send" tabindex="0" id="sendBtn">
+                    </paper-icon-button>
+                </paper-input>
+
+                <paper-input name="type" value="text" hidden></paper-input>
+                <paper-input name="userId" value="" id="userId" hidden></paper-input>
+
+                <div class="horizontal layout">
+                    <div>
+                        <paper-icon-button icon="editor:insert-emoticon" class="small"
+                                           id="emoticonButton"></paper-icon-button>
+                        <paper-icon-button icon="editor:insert-photo" class="small"
+                                           id="photoButton"></paper-icon-button>
+                        <paper-icon-button icon="editor:insert-drive-file" class="small"
+                                           id="fileButton"></paper-icon-button>
+                        <paper-icon-button icon="editor:insert-chart" class="small"
+                                           id="chartButton"></paper-icon-button>
+                        <paper-icon-button icon="room" class="small" id="roomButton"></paper-icon-button>
+                    </div>
+                    <div class="flex"></div>
+                </div>
+            </form>
+
+            <div class="separator"></div>
+
+            <div class="editor">
+            </div>
+        </paper-material>
+
+    </template>
 
 </dom-module>
 
 <script>
-  Polymer({
-    is: 'send-box',
-    properties: {
-      target: {
-        type: Object,
-        value: function() {
-          return document.body;
+    Polymer({
+        is: 'send-box',
+        properties: {
+            target: {
+                type: Object,
+                value: function () {
+                    return document.body;
+                },
+                group: String
+            }
         },
-        group: String
-      }
-    },
-    
-    submitForm: function() {
-      this.$.messageContent.validate();
-      
-      if (this.$.messageContent.value != "") {
-        
-        this.$.userId.value = app.getUserId();
-        if (this.$.userId.value != "") {
-          this.$.form.submit();
-          this.sendSound();
-          this.$.messageContent.value = "";
-        } else {
-          alert("Vous n'êtes pas connecté.");
+
+        submitForm: function () {
+            this.$.messageContent.validate();
+            this.$.form.url = "http://api.oversimplified.io/groups/" + this.group + "/messages";
+
+            if (this.$.messageContent.value != "") {
+
+                this.$.userId.value = app.getUserId();
+                if (this.$.userId.value != "") {
+                    this.$.form.submit();
+                    this.sendSound();
+                    this.$.messageContent.value = "";
+                } else {
+                    alert("Vous n'êtes pas connecté.");
+                }
+            }
+        },
+
+        _updatePressed: function (event) {
+            this.submitForm();
+        },
+
+        sendSound: function () {
+            var sendSound = new buzz.sound("../../sounds/send", {
+                formats: ["wav"],
+                preload: true
+            });
+
+            sendSound.play();
         }
-      }
-    },
-    
-    _updatePressed: function(event) {
-      this.submitForm();
-    },
- 
-    createEmoji: function() {
-      var emojiList = ['😀','😁','😂','😃','😄','😅','😆','😇','😈','👿','😉','😊','😋','😌','😍','😎','😏'];
-      //'😐','😑','😒','😓','😔','😕','😖','😗','😘','😙','😚','😛','😜','😝','😞','😟','😠','😡','😢','😣','😤',😥,'😦','😧','😨','😩','😪'];
-      
-      var result = "";
-      for (i = 0; i < emojiList.length; i++) {
-        result += "<span>" + emojiList[i] + "</span>";
-      }
-      return result;
-    },
-    
-    sendSound: function() {
-      var sendSound = new buzz.sound( "../../sounds/send", {
-          formats: ["wav"],
-          preload: true
-      });
-      
-      sendSound.play();
-    }
-  });
+    });
 </script>
-
-<!--
-
-<form is="iron-form" id="form" method="post" action="http://back.oversimplified.io/message">
- <paper-input name="content" label="content"></paper-input>
- <input name="type" value="text" hidden>
- <input name="userId" value="56154da0d32c233e52f30815" hidden>
-<paper-button raised onclick="submitForm()">Send</paper-button>
-</form>
-
-<script>
-function submitForm() {
- document.getElementById('form').submit();
-}
-
--->
