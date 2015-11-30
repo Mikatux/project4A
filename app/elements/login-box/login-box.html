@@ -43,7 +43,19 @@
             }
 
             .loginButton {
-                color: var(--default-primary-color);
+                border-radius: 2px;
+                background-color: var(--default-primary-color);
+                color: #FEFEFE;
+                max-width: 216px;
+                height: 32px;
+                letter-spacing: 0;
+                transition: 0.3s;
+            }
+
+            .loginButton :hover {
+                color: #d7eadb;
+                letter-spacing: 4px;
+                transition: 0.3s;
             }
         </style>
 
@@ -63,7 +75,8 @@
                 <paper-input label="Password" name="password" required value="" type="password" id="password"></paper-input>
 
                 <div class="horizontal layout">
-                    <paper-button on-click="submitForm" class="loginButton" id="loginButton"><iron-icon icon="lock"></iron-icon>Login</paper-button>
+                    <paper-button on-click="submitForm" class="loginButton" id="loginButton">LOGIN</paper-button>
+                    <paper-button on-click="submitForm" class="loginButton" id="signin"><iron-icon icon="lock"></iron-icon>Sign In</paper-button>
                 </div>
             </form>
         </paper-material>
@@ -76,8 +89,16 @@
     Polymer({
         is: 'login-box',
         properties: {
+            login: true
         },
-
+        mouseOver: function () {
+            this.$.cardLogin.elevation = 4;
+            this.$.cardLogin.style.marginTop = "-4px";
+        },
+        mouseOut: function () {
+            this.$.cardLogin.elevation = 1;
+            this.$.cardLogin.style.marginTop = "0px";
+        },
         response: function(event) {
             var userInfo = event.detail;
 
