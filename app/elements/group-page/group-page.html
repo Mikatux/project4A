@@ -6,10 +6,25 @@
 
     <template>
         <style>
+            :host {
+                padding: 0 auto;
+            }
 
+            span {
+                display: block;
+                color: var(--default-primary-color);
+                font-size: xx-large;
+                font-weight: 700;
+            }
         </style>
 
-        <span>{{group}}</span>
+        <iron-ajax
+                id="request"
+                url=""
+                last-response="{{groupObj}}"
+        ></iron-ajax>
+
+        <span>{{groupObj.name}}</span>
         <send-box id="sendBoxGroup" group="{{group}}"></send-box>
         <post-list id="postListGroup" group="{{group}}"></post-list>
     </template>
@@ -19,10 +34,13 @@
     Polymer({
         is: 'group-page',
         properties: {
+            groupObj: Object,
             group: String
         },
 
         refresh: function() {
+            this.$.request.url = "http://api.oversimplified.io/groups/" + group;
+            this.$.request.generateRequest();
             this.$.postListGroup.refresh();
         }
     });
