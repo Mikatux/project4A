@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a0b82b3-bd6c-49e8-b00f-1ca000401742" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/elements/group-page/group-page.html" afterPath="$PROJECT_DIR$/app/elements/group-page/group-page.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/elements/send-box/send-box.html" afterPath="$PROJECT_DIR$/app/elements/send-box/send-box.html" />
     </list>
     <ignored path="Polymer4A.iws" />
@@ -35,11 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="group-page.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="group-page.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/elements/group-page/group-page.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-32.583332">
-              <caret line="53" column="43" selection-start-line="53" selection-start-column="43" selection-end-line="53" selection-end-column="43" />
+            <state vertical-scroll-proportion="0.2849224">
+              <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -85,11 +86,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="send-box.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="send-box.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/elements/send-box/send-box.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8148559">
-              <caret line="60" column="34" selection-start-line="60" selection-start-column="34" selection-end-line="60" selection-end-column="34" />
+            <state vertical-scroll-proportion="-8.125">
+              <caret line="22" column="41" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -179,8 +180,8 @@
         <option value="$PROJECT_DIR$/app/index-oversimplified.html" />
         <option value="$PROJECT_DIR$/app/scripts/app.js" />
         <option value="$PROJECT_DIR$/app/elements/menu-group-list/menu-group-list.html" />
-        <option value="$PROJECT_DIR$/app/elements/group-page/group-page.html" />
         <option value="$PROJECT_DIR$/app/elements/send-box/send-box.html" />
+        <option value="$PROJECT_DIR$/app/elements/group-page/group-page.html" />
       </list>
     </option>
   </component>
@@ -1099,14 +1100,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/elements/group-page/group-page.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-32.583332">
-          <caret line="53" column="43" selection-start-line="53" selection-start-column="43" selection-end-line="53" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/index-oversimplified.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-26.958334">
@@ -1159,8 +1152,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/elements/send-box/send-box.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8148559">
-          <caret line="60" column="34" selection-start-line="60" selection-start-column="34" selection-end-line="60" selection-end-column="34" />
+        <state vertical-scroll-proportion="-8.125">
+          <caret line="22" column="41" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/elements/group-page/group-page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2849224">
+          <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
           <folding />
         </state>
       </provider>
