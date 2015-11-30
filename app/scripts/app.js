@@ -26,6 +26,7 @@
     // have resolved and content has been stamped to the page
     app.addEventListener('dom-change', function() {
         //console.log('Our app is ready to rock!');
+        app.refreshGroup();
     });
 
     app.refreshGroup = function () {
