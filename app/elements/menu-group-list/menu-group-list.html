@@ -67,7 +67,7 @@
                         on-response="handelResponse"></iron-ajax>
             </template>
 
-            <template is="dom-repeat" items="{{groups}}" id="titleList" as="group">
+            <template is="dom-repeat" items="{{groups}}" id="titleList" as="group" filter="{{removeNull(searchString)}}>
                 <div class="layout horizontal title" on-click="selection">
                     <img src="[[group.img]]">
                     <span>[[group.name]]</span>
