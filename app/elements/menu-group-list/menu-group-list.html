@@ -112,7 +112,15 @@
         },
         goToGroupById: function (e) {
             this.selection(e);
-            app.goToGroupById('56509668fc96b8653fbf6090');
+
+            var target = e.target;//.querySelectorAll('.title');
+            if (!target.classList.contains("title")) {
+                target = e.target.parentElement;
+            }
+
+            var gid = target.id;
+            console.log(gid);
+            app.goToGroupById(gid);
         },
         selection: function (e) {
             //console.log(e);
