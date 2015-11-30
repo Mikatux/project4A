@@ -79,15 +79,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             font-weight: 300;
         }
 
-        #create {
+        .button {
             color: #34a853;
             display: block;
             margin: 8px auto 0 auto;
             transition: 0.3s;
         }
-        #create:hover {
-            color: #d7eadb;
+        .button:hover {
+            color: #c3e0c9;
             transition: 0.3s;
+            width: 216px;
+        }
+
+        .hide {
+            display: none;
         }
     </style>
 </head>
@@ -105,15 +110,31 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </div>
 
         <div class="horizontal-section">
-            <login-box></login-box>
-            <paper-button id="create">Create a account</paper-button>
-            <signin-box></signin-box>
+            <div id="login">
+                <login-box></login-box>
+                <paper-button class="button" on-click="switchToSignin">Create a account</paper-button>
+            </div>
+
+            <div id="signin" class="hide">
+                <signin-box></signin-box>
+                <paper-button class="button" on-click="switchToLogin">I have a account</paper-button>
+            </div>
         </div>
     </div>
 
 </template>
 
 <script>
+    function switchToLogin() {
+        document.querySelector('#login').classList.remove("hide");
+        document.querySelector('#signin').classList.add("hide");
+    }
+
+    function switchToSignin() {
+        document.querySelector('#signin').classList.remove("hide");
+        document.querySelector('#login').classList.add("hide");
+    }
+
     function load() {
         var cookie = document.querySelector('#cookie');
 
