@@ -5,278 +5,287 @@
 <link rel="import" href="../../bower_components/iron-icons/social-icons.html">
 
 <dom-module id="post-message">
-  <template>
-    <style include="shared-styles"></style>
-    <style>
-      :host {
-        display: block;
-        box-sizing: border-box;
-      }
-      
-      #cardMessage {
-        background-color: #fefefe;
-        margin: 12px;
-        
-        -webkit-transition: 0.6s;
-        transition: 0.6s;
-      }
-      
-      .avatar {
-    		border-radius: 50%;
-    		width: 40px;
-    		height: 40px;
-    		position: relative;
-    	}
-    	
-    	.username {
-    	  font-size: 18px;
-    		text-transform: capitalize;
-    		font-weight: 500;
-    		color: var(--accent-color);
-    		line-height: 1.3em;
-    		max-width: 90%;
-    		text-overflow: ellipsis;
-    		overflow: hidden;
-    		white-space: nowrap;
-    	}
-      
-      .timestamp {
-        font-size: 14px;
-    		font-weight: 300;
-    		color: #b5a896;
-    		line-height: 1.3em;
-    		max-width: 90%;
-    		text-overflow: ellipsis;
-    		overflow: hidden;
-    		white-space: nowrap;
-      }
-      
-      #head {
-        padding: 4px;
-        background-color: #FDFDFD;
-        
-        -webkit-transition: 0.3s;
-        transition: 0.3s;
-      }
-      
-      #foot {
-        padding: 4px;
-        background-color: #FDFDFD;
-        
-        -webkit-transition: 0.3s;
-        transition: 0.3s;
-      }
-      
-      #name-zone {
-        padding-left: 16px;
-        width: 60%;
-      }
-      
-      #content {
-        min-height: 32px;
-        padding: 8px 8px 8px 8px;
-      }
-      
-      paper-icon-button.option {
-        width: 18px;
-        height: 18px;
-        color: #EAEAEA;
-        
-        margin: 2px;
-        
-        -webkit-transition: 0.3s;
-        transition: 0.3s;
-      }
-      
-      paper-icon-button.option::shadow #icon {
-        width: 18px;
-        height: 18px;
-      }
-      
-      paper-icon-button.option:hover {
-        color: #DADADA;
-        
-        -webkit-transition: 0.3s;
-        transition: 0.3s;
-      }
-      
-      .separator {
-        height: 1px;
-        width: 100%;
-        background-color: var(--primary-background-color);
-      }
-      
-      #reportDialog {
-        background-color: #FDFDFD;
-      }
-      
-      #foot {
-        margin: 0px 4px 2px 0px;
-      }
-      
-      paper-icon-button.replyButton {
-        color: #727272;
-        width: 18px;
-        height: 18px;
-        
-        margin: 0px 2px 0px 2px;
-        padding: 0px;
-        
-        -webkit-transition: 0.3s;
-        transition: 0.3s;
-      }
-      
-      paper-icon-button.replyButton::shadow #icon {
-        width: 18px;
-        height: 18px;
-      }
-      
-      paper-icon-button.replyButton:hover {
-        color: var(--default-primary-color);
-        
-        -webkit-transition: 0.3s;
-        transition: 0.3s;
-      }
-      
-      paper-icon-button.selected {
-        color: var(--default-primary-color);
-        
-        -webkit-transition: 0.3s;
-        transition: 0.3s;
-      }
-    </style>
-    
-    <iron-ajax
-      id="deleteMessage"
-      url=""
-      method="DELETE"
-      debounce-duration="300">
-    </iron-ajax>
-    
-    <paper-dialog id="reportDialog" entry-animation="scale-up-animation" exit-animation="scale-down-animation" with-backdrop>
-      <h2>Report this message</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      <div class="buttons">
-        <paper-button dialog-dismiss>Cancel</paper-button>
-        <paper-button dialog-confirm autofocus>Report</paper-button>
-      </div>
-    </paper-dialog>
-    
-    <paper-material elevation="1" flex id="cardMessage">
-      <div id="head" class="horizontal layout flex">
-        <div>
-          <img src="{{item.author.img}}" class="avatar">
-        </div>
-        <div class="vertical layout" id="name-zone">
-          <span class="username">{{item.author.name}}</span>
-          <span class="timestamp">{{computeDate(item.date)}}</span>
-        </div>
-        <div class="horizontal end-justified layout" flex>
-          <paper-icon-button icon="report" class="option" on-click="report"></paper-icon-button>
-          <paper-icon-button icon="settings" class="option" on-click="deletePost"></paper-icon-button>
-        </div>
-      </div>
-      <div class="separator"></div>
-      
-      <div id="content">
-        <span>{{addEmoji(item.content)}}</span>
-      </div>
-      
-      <div class="separator"></div>
-      
-      <div id="foot">
-        <div class="horizontal layout" flex>
-          <!--<paper-icon-button icon="report" class="small" on-click="report"></paper-icon-button>
-          <paper-icon-button icon="favorite" class="small" on-click="like" id="fav"></paper-icon-button>-->
-          <paper-icon-button icon="social:mood" class="replyButton" on-click="moodGoodToogle" id="moodGood"></paper-icon-button>
-          <paper-icon-button icon="social:mood-bad" class="replyButton" on-click="moodBadToogle" id="moodBad"></paper-icon-button>
-          <paper-icon-button icon="star" class="replyButton" on-click="" id="favorite"></paper-icon-button>
-          <paper-icon-button icon="reply" class="replyButton" on-click="" id="reply"></paper-icon-button>
-          <!--<paper-icon-button icon="delete" class="small" on-click="deletePost"></paper-icon-button>-->
-        </div>
-      </div>
-      
-      <div class="separator"></div>
-    </paper-material>
+    <template>
+        <style include="shared-styles"></style>
+        <style>
+            :host {
+                display: block;
+                box-sizing: border-box;
+            }
 
-  </template>
+            #cardMessage {
+                background-color: #fefefe;
+                margin: 12px;
 
-  <script>
-    Polymer({
-      is: 'post-message',
-      properties: {
-        item: Object,
-        cdate: {
-          computed: 'computeDate(date)'
-        },
-        moodGood: Boolean,
-        moodBad: Boolean
-      },
-      
-      computeDate: function(date) {
-        var d = date.split("T")[0];
-        var h = date.split("T")[1].substring(0, 5);
-        
-        d = new Date(d.split(':')).toString().substring(4, 15);
-        
-        return d + ", " + h;
-      },
-      
-      report: function() {
-        var dialog = this.$.reportDialog.open();
-      },
-      
-      moodGoodToogle: function() {
-        if (this.moodGood) {
-          this.$.moodGood.classList.add('selected');
-          this.moodGood = false;
-        } else {
-          this.$.moodGood.classList.remove('selected');
-          this.moodGood = true;
-        }
-      },
-      
-      moodBadToogle: function() {
-        if (this.moodBad) {
-          this.$.moodBad.classList.add('selected');
-          this.moodBad = false;
-        } else {
-          //this.$.moodBad.className.replace(/\bselected\b/,'');
-          this.$.moodBad.classList.remove('selected');
-          this.moodBad = true;
-        }
-      },
-      
-      deletePost: function() {
-        console.log("delete message");
-        var ajax = document.getElementById('deleteMessage');
-        ajax.url = "http://back.oversimplified.io/messages/" + this.item._id;
-        ajax.generateRequest();
-        document.querySelector('#postList').deleteMessage();
-        this.removePost();
-      },
-      
-      removePost: function() {
-        this.$.head.style.backgroundColor = "#e74c3c";
-        this.$.cardMessage.style.height = "0px";
-        this.$.cardMessage.style.opacity = "0.0";
-        this.$.cardMessage.style.margin = "0px";
-      },
-      
-      addEmoji: function(content) {
-        var newContent = content.replace(":D", "😀");
-        newContent = newContent.replace(";p", "😜");
-        newContent = newContent.replace(":)", "😃");
-        newContent = newContent.replace(";)", "😉");
-        newContent = newContent.replace("-_-", "😑");
-        newContent = newContent.replace(":O", "😮");
-        newContent = newContent.replace(":p", "😛");
-        newContent = newContent.replace(":'(", "😢");
-        newContent = newContent.replace("<3", "💝");
-        
-        return newContent;
-      }
-    });
-  </script>
+                -webkit-transition: 0.6s;
+                transition: 0.6s;
+            }
+
+            .avatar {
+                border-radius: 50%;
+                width: 40px;
+                height: 40px;
+                position: relative;
+            }
+
+            .username {
+                font-size: 18px;
+                text-transform: capitalize;
+                font-weight: 500;
+                color: var(--accent-color);
+                line-height: 1.3em;
+                max-width: 90%;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+            }
+
+            .timestamp {
+                font-size: 14px;
+                font-weight: 300;
+                color: #b5a896;
+                line-height: 1.3em;
+                max-width: 90%;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+            }
+
+            #head {
+                padding: 4px;
+                background-color: #FDFDFD;
+
+                -webkit-transition: 0.3s;
+                transition: 0.3s;
+            }
+
+            #foot {
+                padding: 4px;
+                background-color: #FDFDFD;
+
+                -webkit-transition: 0.3s;
+                transition: 0.3s;
+            }
+
+            #name-zone {
+                padding-left: 16px;
+                width: 60%;
+            }
+
+            #content {
+                min-height: 32px;
+                padding: 8px 8px 8px 8px;
+            }
+
+            paper-icon-button.option {
+                width: 18px;
+                height: 18px;
+                color: #EAEAEA;
+
+                margin: 2px;
+
+                -webkit-transition: 0.3s;
+                transition: 0.3s;
+            }
+
+            paper-icon-button.option::shadow #icon {
+                width: 18px;
+                height: 18px;
+            }
+
+            paper-icon-button.option:hover {
+                color: #DADADA;
+
+                -webkit-transition: 0.3s;
+                transition: 0.3s;
+            }
+
+            .separator {
+                height: 1px;
+                width: 100%;
+                background-color: var(--primary-background-color);
+            }
+
+            #reportDialog {
+                background-color: #FDFDFD;
+            }
+
+            #foot {
+                margin: 0px 4px 2px 0px;
+            }
+
+            paper-icon-button.replyButton {
+                color: #727272;
+                width: 18px;
+                height: 18px;
+
+                margin: 0px 2px 0px 2px;
+                padding: 0px;
+
+                -webkit-transition: 0.3s;
+                transition: 0.3s;
+            }
+
+            paper-icon-button.replyButton::shadow #icon {
+                width: 18px;
+                height: 18px;
+            }
+
+            paper-icon-button.replyButton:hover {
+                color: var(--default-primary-color);
+
+                -webkit-transition: 0.3s;
+                transition: 0.3s;
+            }
+
+            paper-icon-button.selected {
+                color: var(--default-primary-color);
+
+                -webkit-transition: 0.3s;
+                transition: 0.3s;
+            }
+        </style>
+
+        <iron-ajax
+                id="deleteMessage"
+                url=""
+                method="DELETE"
+                debounce-duration="300">
+        </iron-ajax>
+
+        <paper-dialog id="reportDialog" entry-animation="scale-up-animation" exit-animation="scale-down-animation"
+                      with-backdrop>
+            <h2>Report this message</h2>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                deserunt mollit anim id est laborum.</p>
+
+            <div class="buttons">
+                <paper-button dialog-dismiss>Cancel</paper-button>
+                <paper-button dialog-confirm autofocus>Report</paper-button>
+            </div>
+        </paper-dialog>
+
+        <paper-material elevation="1" flex id="cardMessage">
+            <div id="head" class="horizontal layout flex">
+                <div>
+                    <img src="{{item.author.img}}" class="avatar">
+                </div>
+                <div class="vertical layout" id="name-zone">
+                    <span class="username">{{item.author.name}}</span>
+                    <span class="timestamp">{{computeDate(item.date)}}</span>
+                </div>
+                <div class="horizontal end-justified layout" flex>
+                    <paper-icon-button icon="report" class="option" on-click="report"></paper-icon-button>
+                    <paper-icon-button icon="settings" class="option" on-click="deletePost"></paper-icon-button>
+                </div>
+            </div>
+            <div class="separator"></div>
+
+            <div id="content">
+                <span>{{addEmoji(item.content)}}</span>
+            </div>
+
+            <div class="separator"></div>
+
+            <div id="foot">
+                <div class="horizontal layout" flex>
+                    <!--<paper-icon-button icon="report" class="small" on-click="report"></paper-icon-button>
+                    <paper-icon-button icon="favorite" class="small" on-click="like" id="fav"></paper-icon-button>-->
+                    <paper-icon-button icon="social:mood" class="replyButton" on-click="moodGoodToogle"
+                                       id="moodGood"></paper-icon-button>
+                    <paper-icon-button icon="social:mood-bad" class="replyButton" on-click="moodBadToogle"
+                                       id="moodBad"></paper-icon-button>
+                    <paper-icon-button icon="star" class="replyButton" on-click="" id="favorite"></paper-icon-button>
+                    <paper-icon-button icon="reply" class="replyButton" on-click="" id="reply"></paper-icon-button>
+                    <!--<paper-icon-button icon="delete" class="small" on-click="deletePost"></paper-icon-button>-->
+                </div>
+            </div>
+
+            <div class="separator"></div>
+        </paper-material>
+
+    </template>
+
+    <script>
+        Polymer({
+            is: 'post-message',
+            properties: {
+                item: Object,
+                cdate: {
+                    computed: 'computeDate(date)'
+                },
+                moodGood: Boolean,
+                moodBad: Boolean
+            },
+
+            computeDate: function (date) {
+                var d = date.split("T")[0];
+                var h = date.split("T")[1].substring(0, 5);
+
+                d = new Date(d.split(':')).toString().substring(4, 15);
+
+                return d + ", " + h;
+            },
+
+            report: function () {
+                var dialog = this.$.reportDialog.open();
+            },
+
+            moodGoodToogle: function () {
+                if (this.moodGood) {
+                    this.$.moodGood.classList.add('selected');
+                    this.moodGood = false;
+                } else {
+                    this.$.moodGood.classList.remove('selected');
+                    this.moodGood = true;
+                }
+            },
+
+            moodBadToogle: function () {
+                if (this.moodBad) {
+                    this.$.moodBad.classList.add('selected');
+                    this.moodBad = false;
+                } else {
+                    //this.$.moodBad.className.replace(/\bselected\b/,'');
+                    this.$.moodBad.classList.remove('selected');
+                    this.moodBad = true;
+                }
+            },
+
+            deletePost: function () {
+                console.log("delete message");
+                var ajax = document.getElementById('deleteMessage');
+                ajax.url = "http://back.oversimplified.io/messages/" + this.item._id;
+                ajax.generateRequest();
+                document.querySelector('#postList').deleteMessage();
+                this.removePost();
+            },
+
+            removePost: function () {
+                this.$.head.style.backgroundColor = "#e74c3c";
+                this.$.cardMessage.style.height = "0px";
+                this.$.cardMessage.style.opacity = "0.0";
+                this.$.cardMessage.style.margin = "0px";
+            },
+
+            addEmoji: function (content) {
+                var newContent = content.replace(":D", "😀");
+                newContent = newContent.replace(";p", "😜");
+                newContent = newContent.replace(":)", "😃");
+                newContent = newContent.replace(";)", "😉");
+                newContent = newContent.replace("-_-", "😑");
+                newContent = newContent.replace(":O", "😮");
+                newContent = newContent.replace(":p", "😛");
+                newContent = newContent.replace(":'(", "😢");
+                newContent = newContent.replace("<3", "💝");
+
+                return newContent;
+            }
+        });
+    </script>
 
 </dom-module>

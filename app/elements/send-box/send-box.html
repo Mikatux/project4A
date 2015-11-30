@@ -112,7 +112,6 @@
 
         submitForm: function () {
             this.$.messageContent.validate();
-            //this.$.form.url = "http://api.oversimplified.io/groups/" + this.group + "/messages";
             this.$.form.action = "http://api.oversimplified.io/groups/" + this.group + "/messages";
 
             if (this.$.messageContent.value != "") {
