@@ -1,0 +1,78 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../post-message/post-message.html">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/buzz/1.1.10/buzz.min.js"></script>
+
+<dom-module id="hot-list">
+
+    <template>
+        <style>
+            :host {
+                display: block;
+                box-sizing: border-box;
+                max-width: 512px;
+
+                -webkit-transition: 0.6s;
+                transition: 0.6s;
+            }
+
+        </style>
+        <iron-ajax
+                id="ajaxRequest"
+                auto
+                url="{{url}}"
+                handle-as="json"
+                last-response="{{response}}"></iron-ajax>
+
+        <template is="dom-repeat" items="{{response}}">
+            <post-message item={{item}}></post-message>
+        </template>
+        <br>
+    </template>
+
+</dom-module>
+
+<script>
+    Polymer({
+        is: 'hot-list',
+        properties: {
+            id: String,
+            url: {
+                type: String,
+                value: "",
+                computed: 'computeUrl(id)',
+                notify: true
+            }
+        },
+
+        refresh: function () {
+            this.$.ajaxRequest.generateRequest();
+        },
+
+        computeUrl: function (uid) {
+            this.id = app.getUserId();
+            return "http://api.oversimplified.io/users/" + this.id + "/hot";
+        },
+
+        newMessage: function () {
+            this.playSound("refresh");
+            this.$.ajaxRequest.generateRequest();
+        },
+
+        deleteMessage: function () {
+            this.$.ajaxRequest.generateRequest();
+        },
+
+        playSound: function (sound) {
+            var soundToPlay = new buzz.sound("../../sounds/" + sound, {
+                formats: ["wav"],
+                preload: true
+            });
+
+            soundToPlay.play();
+        }
+    });
+</script>
