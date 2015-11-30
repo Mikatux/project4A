@@ -129,4 +129,10 @@
         return cookie.value;
     };
 
+    app.goToGroupById = function(id) {
+        page('/groups/' + id);
+        document.querySelector('#postListGroup').group = id;
+        document.querySelector('#postListGroup').refresh();
+    };
+
 })(document);
