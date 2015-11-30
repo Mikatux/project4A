@@ -65,6 +65,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             background: #ececec;
             padding: auto;
         }
+        span {
+            color: #34a853;
+            font-weight: 800;
+            text-align: center;
+        }
+        #light {
+            font-weight: 300;
+        }
     </style>
 </head>
 
@@ -74,9 +82,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <polymer-cookie name="oversimplifiedcookie" id="cookie"></polymer-cookie>
 
-    <div class="horizontal-section">
-        <login-box></login-box>
-        <signin-box></signin-box>
+    <div class="vertical">
+
+        <span>OVERSIMPLIFIED|</span><span id="light">Productivity</span>
+
+        <div class="horizontal-section">
+            <login-box></login-box>
+            <signin-box></signin-box>
+        </div>
     </div>
 
 </template>
