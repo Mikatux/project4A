@@ -78,6 +78,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         #light {
             font-weight: 300;
         }
+
+        #create {
+            color: #34a853;
+            display: block;
+            margin: 8px auto 0 auto;
+            transition: 0.3s;
+        }
+        #create:hover {
+            color: #d7eadb;
+            transition: 0.3s;
+        }
     </style>
 </head>
 
@@ -95,6 +106,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         <div class="horizontal-section">
             <login-box></login-box>
+            <paper-button id="create">Create a account</paper-button>
             <signin-box></signin-box>
         </div>
     </div>

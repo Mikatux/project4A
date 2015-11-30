@@ -43,7 +43,19 @@
             }
 
             .loginButton {
-                color: var(--default-primary-color);
+                border-radius: 2px;
+                background-color: var(--default-primary-color);
+                color: #FEFEFE;
+                width: 216px;
+                margin: 2px auto;
+                letter-spacing: 0px;
+                transition: 0.3s;
+            }
+
+            .loginButton:hover {
+                color: #d7eadb;
+                letter-spacing: 2px;
+                transition: 0.3s;
             }
         </style>
 
@@ -58,11 +70,11 @@
                 <paper-input name="email" value="" id="email" label="Email" required></paper-input>
                 <paper-input name="password" value="" id="password" type="password" label="Password" required></paper-input>
                 <paper-input name="img" value="{{img}}" id="img" label="Image URL" required></paper-input>
-
-                <div class="horizontal layout">
-                    <paper-button on-click="submitForm" class="loginButton" id="loginButton"><iron-icon icon="lock"></iron-icon>Sign In</paper-button>
-                </div>
             </form>
+
+            <div class="horizontal layout">
+                <paper-button on-click="submitForm" class="loginButton" id="loginButton">SIGN IN</paper-button>
+            </div>
         </paper-material>
     </template>
 

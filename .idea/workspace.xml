@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a0b82b3-bd6c-49e8-b00f-1ca000401742" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/elements/login-box/login-box.html" afterPath="$PROJECT_DIR$/app/elements/login-box/login-box.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/elements/login-box/signin-box.html" afterPath="$PROJECT_DIR$/app/elements/login-box/signin-box.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/styles/app-theme.html" afterPath="$PROJECT_DIR$/app/styles/app-theme.html" />
     </list>
     <ignored path="Polymer4A.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,21 +49,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.2083333">
-              <caret line="72" column="32" selection-start-line="72" selection-start-column="32" selection-end-line="72" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.4512195">
+              <caret line="89" column="29" selection-start-line="89" selection-start-column="29" selection-end-line="89" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login-box.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="login-box.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/elements/login-box/login-box.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.21840355">
-              <caret line="57" column="33" selection-start-line="57" selection-start-column="33" selection-end-line="57" selection-end-column="33" />
+            <state vertical-scroll-proportion="-8.208333">
+              <caret line="56" column="36" selection-start-line="56" selection-start-column="36" selection-end-line="56" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -68,8 +72,8 @@
       <file leaf-file-name="signin-box.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/elements/login-box/signin-box.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.958333">
-              <caret line="49" column="54" selection-start-line="49" selection-start-column="54" selection-end-line="49" selection-end-column="54" />
+            <state vertical-scroll-proportion="-20.083334">
+              <caret line="76" column="18" selection-start-line="76" selection-start-column="18" selection-end-line="76" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -88,8 +92,8 @@
       <file leaf-file-name="app-theme.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/styles/app-theme.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.625">
-              <caret line="27" column="40" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
+            <state vertical-scroll-proportion="-11.25">
+              <caret line="28" column="42" selection-start-line="28" selection-start-column="42" selection-end-line="28" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -163,9 +167,9 @@
         <option value="$PROJECT_DIR$/app/elements/routing.html" />
         <option value="$PROJECT_DIR$/app/elements/user-list/user-list.html" />
         <option value="$PROJECT_DIR$/app/styles/app-theme.html" />
-        <option value="$PROJECT_DIR$/app/index.html" />
-        <option value="$PROJECT_DIR$/app/elements/login-box/signin-box.html" />
         <option value="$PROJECT_DIR$/app/elements/login-box/login-box.html" />
+        <option value="$PROJECT_DIR$/app/elements/login-box/signin-box.html" />
+        <option value="$PROJECT_DIR$/app/index.html" />
       </list>
     </option>
   </component>
@@ -1031,14 +1035,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/styles/app-theme.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.625">
-          <caret line="27" column="40" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/elements/user-list/user-list.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-40.625">
@@ -1047,26 +1043,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/elements/login-box/signin-box.html">
+    <entry file="file://$PROJECT_DIR$/app/styles/app-theme.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.958333">
-          <caret line="49" column="54" selection-start-line="49" selection-start-column="54" selection-end-line="49" selection-end-column="54" />
+        <state vertical-scroll-proportion="-11.25">
+          <caret line="28" column="42" selection-start-line="28" selection-start-column="42" selection-end-line="28" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/index.html">
+    <entry file="file://$PROJECT_DIR$/app/elements/login-box/signin-box.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.2083333">
-          <caret line="72" column="32" selection-start-line="72" selection-start-column="32" selection-end-line="72" selection-end-column="32" />
+        <state vertical-scroll-proportion="-20.083334">
+          <caret line="76" column="18" selection-start-line="76" selection-start-column="18" selection-end-line="76" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/elements/login-box/login-box.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21840355">
-          <caret line="57" column="33" selection-start-line="57" selection-start-column="33" selection-end-line="57" selection-end-column="33" />
+        <state vertical-scroll-proportion="-8.208333">
+          <caret line="56" column="36" selection-start-line="56" selection-start-column="36" selection-end-line="56" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4512195">
+          <caret line="89" column="29" selection-start-line="89" selection-start-column="29" selection-end-line="89" selection-end-column="29" />
           <folding />
         </state>
       </provider>
