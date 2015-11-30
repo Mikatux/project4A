@@ -59,8 +59,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             app.route = 'contact';
         });
 
+        page('/index-oversimplified', scrollToTop, function () {
+            page.redirect("/");
+        });
+
+        page('/index', scrollToTop, function () {
+            page.redirect("/");
+            location.reload();
+        });
+
         page('*', function () {
-            console.log();
             console.log("404");
             page.redirect("/");
         });
