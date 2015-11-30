@@ -83,8 +83,8 @@
 
         <iron-request id="request"></iron-request>
 
-        <paper-material elevation="1" id="cardMessage" on-mouseover="mouseOver" on-mouseout="mouseOut" on-click="goToGroupById">
-            <div id="imageContainer" class="layout horizontal">
+        <paper-material elevation="1" id="cardMessage" on-mouseover="mouseOver" on-mouseout="mouseOut">
+            <div id="imageContainer" class="layout horizontal" on-click="goToGroupById">
                 <img src="{{group.img}}" alt="[[group.img]]" class="cover">
                 <template is="dom-if" if="{{canRemove}}">
                     <iron-icon id="removeButton" icon="delete" on-click="mouseClick"></iron-icon>
