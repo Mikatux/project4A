@@ -118,15 +118,7 @@
             //console.log(e);
             var target = e.target;//.querySelectorAll('.title');
             if (!target.classList.contains("title")) {
-                target = e.target.querySelectorAll('.title');
-                console.log(target);
-                console.log("PAS OK");
-            } else {
-                console.log("OK");
-            }
-            if (target === undefined) {
-                target = e.target.parentElement.querySelectorAll('.title');
-                console.log(target);
+                target = e.target.parentElement;
             }
 
             this.unselectAll();
