@@ -31,7 +31,7 @@
         ></iron-ajax>
 
         <span>{{groupObj.name}}</span>
-        <send-box id="sendBoxGroup" group="{{group}}"></send-box>
+        <send-box id="sendBoxGroup" group="{{group}}" user="{{user}}"></send-box>
         <post-list id="postListGroup" group="{{group}}"></post-list>
     </template>
 </dom-module>
@@ -52,7 +52,6 @@
             this.$.requestUser.generateRequest();
 
             this.$.postListGroup.refresh();
-            this.$.sendBoxGroup.user = this.user;
             this.$.sendBoxGroup.refresh();
         }
     });
