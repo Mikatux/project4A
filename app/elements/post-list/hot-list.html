@@ -22,7 +22,7 @@
         </style>
         <iron-ajax
                 id="ajaxRequest"
-                url="{{url}}"
+                url="http://api.oversimplified.io/hot"
                 handle-as="json"
                 last-response="{{response}}"></iron-ajax>
 
@@ -53,7 +53,7 @@
 
         computeUrl: function (uid) {
             this.id = app.getUserId();
-            return "http://api.oversimplified.io/users/" + this.id + "/hot";
+            return "http://api.oversimplified.io/hot";
         },
 
         newMessage: function () {
