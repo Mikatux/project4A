@@ -79,6 +79,8 @@
             }
         },
         refresh: function () {
+            this.id = app.getUserId();
+            this.$.ajaxRequest.url = "http://api.oversimplified.io/users/" + this.id + "/coworkers";
             this.$.ajaxRequest.generateRequest();
         },
         computeUrl: function (uid) {

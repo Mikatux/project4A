@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a0b82b3-bd6c-49e8-b00f-1ca000401742" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/elements/post-list/hot-list.html" afterPath="$PROJECT_DIR$/app/elements/post-list/hot-list.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/elements/post-list/message-list.html" afterPath="$PROJECT_DIR$/app/elements/post-list/message-list.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/elements/user-list/coworker-list.html" afterPath="$PROJECT_DIR$/app/elements/user-list/coworker-list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index-oversimplified.html" afterPath="$PROJECT_DIR$/app/index-oversimplified.html" />
     </list>
     <ignored path="Polymer4A.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,8 +27,8 @@
       <file leaf-file-name="index-oversimplified.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/index-oversimplified.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.5833335">
-              <caret line="143" column="30" selection-start-line="143" selection-start-column="30" selection-end-line="143" selection-end-column="30" />
+            <state vertical-scroll-proportion="-24.375">
+              <caret line="163" column="30" selection-start-line="163" selection-start-column="30" selection-end-line="163" selection-end-column="30" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#paper-toolbar#0;n#paper-scroll-header-panel#1;n#paper-drawer-panel#0;n#template#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -47,11 +46,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="coworker-list.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="coworker-list.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/elements/user-list/coworker-list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.458333">
-              <caret line="55" column="32" selection-start-line="55" selection-start-column="32" selection-end-line="55" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.6674058">
+              <caret line="80" column="30" selection-start-line="80" selection-start-column="30" selection-end-line="80" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -77,10 +76,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="message-list.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="message-list.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/elements/post-list/message-list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.18292683">
+            <state vertical-scroll-proportion="-8.125">
               <caret line="23" column="32" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
               <folding />
             </state>
@@ -164,14 +163,14 @@
         <option value="$PROJECT_DIR$/app/index.html" />
         <option value="$PROJECT_DIR$/app/styles/app-theme.html" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/app/index-oversimplified.html" />
         <option value="$PROJECT_DIR$/app/elements/routing.html" />
         <option value="$PROJECT_DIR$/app/elements/menu-group-list/menu-group-list.html" />
         <option value="$PROJECT_DIR$/app/scripts/app.js" />
         <option value="$PROJECT_DIR$/app/elements/group-card/new-group-card.html" />
-        <option value="$PROJECT_DIR$/app/elements/user-list/coworker-list.html" />
         <option value="$PROJECT_DIR$/app/elements/post-list/hot-list.html" />
         <option value="$PROJECT_DIR$/app/elements/post-list/message-list.html" />
+        <option value="$PROJECT_DIR$/app/index-oversimplified.html" />
+        <option value="$PROJECT_DIR$/app/elements/user-list/coworker-list.html" />
       </list>
     </option>
   </component>
@@ -1047,16 +1046,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/index-oversimplified.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.5833335">
-          <caret line="143" column="30" selection-start-line="143" selection-start-column="30" selection-end-line="143" selection-end-column="30" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#paper-toolbar#0;n#paper-scroll-header-panel#1;n#paper-drawer-panel#0;n#template#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/elements/menu-group-list/menu-group-list.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-21.333334">
@@ -1065,11 +1054,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/elements/user-list/coworker-list.html">
+    <entry file="file://$PROJECT_DIR$/app/elements/post-list/message-list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.458333">
-          <caret line="55" column="32" selection-start-line="55" selection-start-column="32" selection-end-line="55" selection-end-column="32" />
+        <state vertical-scroll-proportion="-8.125">
+          <caret line="23" column="32" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/index-oversimplified.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-24.375">
+          <caret line="163" column="30" selection-start-line="163" selection-start-column="30" selection-end-line="163" selection-end-column="30" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#paper-toolbar#0;n#paper-scroll-header-panel#1;n#paper-drawer-panel#0;n#template#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1081,10 +1080,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/elements/post-list/message-list.html">
+    <entry file="file://$PROJECT_DIR$/app/elements/user-list/coworker-list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18292683">
-          <caret line="23" column="32" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.6674058">
+          <caret line="80" column="30" selection-start-line="80" selection-start-column="30" selection-end-line="80" selection-end-column="30" />
           <folding />
         </state>
       </provider>
