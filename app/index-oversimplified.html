@@ -63,6 +63,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <link rel="import" href="elements/menu-group-list/menu-group-list.html">
     <link rel="import" href="elements/send-box/send-box.html">
     <link rel="import" href="elements/login-box/login-box.html">
+    <link rel="import" href="elements/group-page/group-page.html">
 
     <link rel="import" href="bower_components/iron-icons/social-icons.html">
     <link rel="import" href="bower_components/iron-icons/av-icons.html">
@@ -164,8 +165,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                     </section>
 
                     <section data-route="group">
-                        <send-box group="{{param.id}}"></send-box>
-                        <post-list id="postListGroup" group="{{groupId}}"></post-list>
+                        <group-page id="groupPage"></group-page>
                     </section>
 
                 </iron-pages>

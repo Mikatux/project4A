@@ -68,7 +68,7 @@
             </template>
 
             <template is="dom-repeat" items="{{groups}}" id="titleList" as="group">
-                <div class="layout horizontal title" on-click="goToGroupById">
+                <div class="layout horizontal title" on-click="goToGroupById" id="{{group._id}}">
                     <img src="[[group.img]]">
                     <span>[[group.name]]</span>
                 </div>

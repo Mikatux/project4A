@@ -1,0 +1,29 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../send-box/send-box.html">
+<link rel="import" href="../post-list/post-list.html">
+
+<dom-module id="group-page">
+
+    <template>
+        <style>
+
+        </style>
+
+        <span>{{group}}</span>
+        <send-box id="sendBoxGroup" group="{{group}}"></send-box>
+        <post-list id="postListGroup" group="{{group}}"></post-list>
+    </template>
+</dom-module>
+
+<script>
+    Polymer({
+        is: 'group-page',
+        properties: {
+            group: String
+        },
+
+        refresh: function() {
+            this.$.sendBoxGroup.refresh();
+        }
+    });
+</script>
