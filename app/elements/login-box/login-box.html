@@ -46,9 +46,10 @@
                 border-radius: 2px;
                 background-color: var(--default-primary-color);
                 color: #FEFEFE;
-                max-width: 216px;
+                width: 216px;
                 height: 32px;
-                letter-spacing: 0;
+                margin: auto;
+                letter-spacing: 0px;
                 transition: 0.3s;
             }
 
@@ -73,12 +74,12 @@
             <form is="iron-form" id="form" method="post" action="http://api.oversimplified.io/login">
                 <paper-input label="Username" name="login" required value="" id="username"></paper-input>
                 <paper-input label="Password" name="password" required value="" type="password" id="password"></paper-input>
-
-                <div class="horizontal layout">
-                    <paper-button on-click="submitForm" class="loginButton" id="loginButton">LOGIN</paper-button>
-                    <paper-button on-click="submitForm" class="loginButton" id="signin"><iron-icon icon="lock"></iron-icon>Sign In</paper-button>
-                </div>
             </form>
+
+            <div class="vertical layout">
+                <paper-button on-click="submitForm" class="loginButton" id="loginButton">LOGIN</paper-button>
+                <paper-button on-click="submitForm" class="loginButton" id="signinButton">SIGN IN</paper-button>
+            </div>
         </paper-material>
 
     </template>
