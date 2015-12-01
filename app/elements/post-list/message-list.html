@@ -48,6 +48,7 @@
         },
 
         refresh: function () {
+            console.log("message list");
             this.id = app.getUserId();
             this.$.ajaxRequest.url = "http://api.oversimplified.io/users/" + this.id + "/messages";
             this.$.ajaxRequest.generateRequest();
