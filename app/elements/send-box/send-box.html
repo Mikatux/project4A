@@ -139,6 +139,8 @@
         inputed: function () {
             if (this.$.messageContent.value != "") {
                 this.$.sendBtn.classList.add("selected");
+            } else {
+                this.$.sendBtn.classList.remove("selected");
             }
         },
 
