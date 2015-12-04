@@ -54,6 +54,10 @@
                 transition: 0.3s;
             }
 
+            .selected {
+                color: var(--primary-background-color);
+            }
+
             paper-icon-button:hover {
                 color: var(--primary-background-color);
                 transition: 0.3s;
@@ -74,7 +78,7 @@
                 <img id="avatar" src="{{user.img}}">
                 <form is="iron-form" id="form" method="post">
                     <paper-input name="content" auto-validate error-message="No message to send" label="Send a message"
-                                 id="messageContent">
+                                 id="messageContent" on-input="inputed">
                         <paper-icon-button suffix on-click="addPicture"
                                            icon="editor:insert-photo" alt="img" title="img" tabindex="0" id="imgBtn">
                         </paper-icon-button>
@@ -130,6 +134,12 @@
 
         refresh: function () {
             //this.$.avatar.src = this.user.img;
+        },
+
+        inputed: function () {
+            if (this.$.messageContent.value != "") {
+                this.$.sendBtn.classList.add("selected");
+            }
         },
 
         sendSound: function () {
