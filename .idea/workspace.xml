@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4a0b82b3-bd6c-49e8-b00f-1ca000401742" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/elements/post-message/post-message.html" afterPath="$PROJECT_DIR$/app/elements/post-message/post-message.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/elements/send-box/send-box.html" afterPath="$PROJECT_DIR$/app/elements/send-box/send-box.html" />
     </list>
     <ignored path="Polymer4A.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -76,10 +75,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="send-box.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="send-box.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/elements/send-box/send-box.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.36585367">
+            <state vertical-scroll-proportion="-26.875">
               <caret line="71" column="42" selection-start-line="71" selection-start-column="42" selection-end-line="71" selection-end-column="42" />
               <folding />
             </state>
@@ -96,11 +95,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="post-message.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="post-message.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/elements/post-message/post-message.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.458333">
-              <caret line="115" column="13" selection-start-line="115" selection-start-column="13" selection-end-line="115" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.7649667">
+              <caret line="248" column="41" selection-start-line="248" selection-start-column="41" selection-end-line="248" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -170,8 +169,8 @@
         <option value="$PROJECT_DIR$/app/elements/routing.html" />
         <option value="$PROJECT_DIR$/app/scripts/app.js" />
         <option value="$PROJECT_DIR$/app/elements/group-card/group-card.html" />
-        <option value="$PROJECT_DIR$/app/elements/post-message/post-message.html" />
         <option value="$PROJECT_DIR$/app/elements/send-box/send-box.html" />
+        <option value="$PROJECT_DIR$/app/elements/post-message/post-message.html" />
       </list>
     </option>
   </component>
@@ -1129,18 +1128,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/elements/post-message/post-message.html">
+    <entry file="file://$PROJECT_DIR$/app/elements/send-box/send-box.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.458333">
-          <caret line="115" column="13" selection-start-line="115" selection-start-column="13" selection-end-line="115" selection-end-column="13" />
+        <state vertical-scroll-proportion="-26.875">
+          <caret line="71" column="42" selection-start-line="71" selection-start-column="42" selection-end-line="71" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/elements/send-box/send-box.html">
+    <entry file="file://$PROJECT_DIR$/app/elements/post-message/post-message.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36585367">
-          <caret line="71" column="42" selection-start-line="71" selection-start-column="42" selection-end-line="71" selection-end-column="42" />
+        <state vertical-scroll-proportion="0.7649667">
+          <caret line="248" column="41" selection-start-line="248" selection-start-column="41" selection-end-line="248" selection-end-column="41" />
           <folding />
         </state>
       </provider>

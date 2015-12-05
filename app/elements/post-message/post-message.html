@@ -188,7 +188,7 @@
             </div>
             <div class="separator"></div>
 
-            <template is="dom-if" if="{{item.image}}">
+            <template is="dom-if" if="haveImg">
                 <img class="coverImg" src="{{item.image}}">
                 <div class="separator"></div>
             </template>
@@ -229,6 +229,12 @@
                     notify: true,
                     computed: 'computedCanRemove(item.author._id)'
                 },
+                haveImg: {
+                    type: Boolean,
+                    value: function () { return false; },
+                    notify: true,
+                    computed: 'computedHaveImg(item.image)'
+                },
                 moodGood: Boolean,
                 moodBad: Boolean
             },
@@ -237,6 +243,10 @@
                 var userId = app.getUserId();
 
                 return userId == author;
+            },
+
+            computedHaveImg: function(image) {
+                return image != undefined;
             },
 
             computeDate: function (date) {
