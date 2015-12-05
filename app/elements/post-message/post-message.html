@@ -248,7 +248,7 @@
             },
 
             computedHaveImg: function(image) {
-                const img = image != undefined && image != null && image != [];
+                const img = image[0] != undefined;
                 console.log(image);
                 console.log(img);
                 return img;
