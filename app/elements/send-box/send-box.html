@@ -77,7 +77,7 @@
                 on-keys-pressed="_updatePressed">
         </iron-a11y-keys>
 
-        <paper-dialog id="reportDialog" entry-animation="scale-up-animation" exit-animation="scale-down-animation"
+        <paper-dialog id="addImgDialog" entry-animation="scale-up-animation" exit-animation="scale-down-animation"
                       with-backdrop>
 
             <img class="imgCover" src="{{img}}">
@@ -175,11 +175,11 @@
         },
 
         submitImg: function () {
-            this.$.imgForm.close();
+            this.$.addImgDialog.close();
         },
 
         addPicture: function () {
-            this.$.imgForm.open();
+            this.$.addImgDialog.open();
         }
     });
 </script>
