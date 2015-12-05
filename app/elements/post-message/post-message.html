@@ -104,6 +104,7 @@
                 height: 1px;
                 width: 100%;
                 background-color: var(--primary-background-color);
+                margin: 0;
             }
 
             #deleteDialog {
@@ -112,6 +113,7 @@
 
             .coverImg {
                 width: 100%;
+                display: block;
                 margin: 0;
             }
 
@@ -246,7 +248,8 @@
             },
 
             computedHaveImg: function(image) {
-                const img = image != undefined && image != null;
+                const img = image != undefined && image != null && image != [];
+                console.log(image);
                 console.log(img);
                 return img;
             },
