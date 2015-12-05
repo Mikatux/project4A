@@ -153,24 +153,20 @@
                 debounce-duration="300">
         </iron-ajax>
 
-        <paper-dialog id="reportDialog" entry-animation="scale-up-animation" exit-animation="scale-down-animation"
+        <paper-dialog id="deleteDialog" entry-animation="scale-up-animation" exit-animation="scale-down-animation"
                       with-backdrop>
-            <h2>Report this message</h2>
+            <h2>Delete this message</h2>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                deserunt mollit anim id est laborum.</p>
+            <p>Are you sur ?</p>
 
             <div class="buttons">
                 <paper-button dialog-dismiss>Cancel</paper-button>
-                <paper-button dialog-confirm autofocus>Report</paper-button>
+                <paper-button dialog-confirm autofocus>Delete</paper-button>
             </div>
         </paper-dialog>
 
         <paper-material elevation="1" flex id="cardMessage">
-            <div id="head" class="horizontal layout flex">
+            <div id="head" class="horizontal layout">
                 <div>
                     <img src="{{item.author.img}}" class="avatar">
                 </div>
@@ -178,9 +174,9 @@
                     <span class="username">{{item.author.name}}</span>
                     <span class="timestamp">{{computeDate(item.date)}}</span>
                 </div>
-                <div class="horizontal end-justified layout" flex>
-                    <paper-icon-button icon="report" class="option" on-click="report"></paper-icon-button>
-                    <paper-icon-button icon="settings" class="option" on-click="deletePost"></paper-icon-button>
+                <div class="flex"></div>
+                <div>
+                    <paper-icon-button icon="delete" class="option" on-click="delete"></paper-icon-button>
                 </div>
             </div>
             <div class="separator"></div>
@@ -231,7 +227,7 @@
                 return d + ", " + h;
             },
 
-            report: function () {
+            delete: function () {
                 var dialog = this.$.reportDialog.open();
             },
 
