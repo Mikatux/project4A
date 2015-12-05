@@ -246,7 +246,9 @@
             },
 
             computedHaveImg: function(image) {
-                return image != undefined;
+                const img = image != undefined && image != null;
+                console.log(img);
+                return img;
             },
 
             computeDate: function (date) {
