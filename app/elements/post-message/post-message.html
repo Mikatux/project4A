@@ -106,8 +106,13 @@
                 background-color: var(--primary-background-color);
             }
 
-            #reportDialog {
+            #deleteDialog {
                 background-color: #FDFDFD;
+            }
+
+            .coverImg {
+                width: 100%;
+                margin: 0;
             }
 
             #foot {
@@ -184,7 +189,8 @@
             <div class="separator"></div>
 
             <template is="dom-if" if="{{item.image}}">
-                <img src="{{item.image}}">
+                <img class="coverImg" src="{{item.image}}">
+                <div class="separator"></div>
             </template>
 
             <div id="content">
@@ -218,12 +224,6 @@
                     computed: 'computeDate(date)'
                 },
                 removePossible: {
-                    type: Boolean,
-                    value: function () { return false; },
-                    notify: true,
-                    computed: 'computedCanRemove(item.author._id)'
-                },
-                haveImg: {
                     type: Boolean,
                     value: function () { return false; },
                     notify: true,
