@@ -63,6 +63,11 @@
                 transition: 0.3s;
             }
 
+            .imgCover {
+                width: 100%;
+                margin: 0;
+            }
+
         </style>
 
         <iron-a11y-keys
@@ -71,6 +76,20 @@
                 target="[[target]]"
                 on-keys-pressed="_updatePressed">
         </iron-a11y-keys>
+
+        <paper-dialog id="reportDialog" entry-animation="scale-up-animation" exit-animation="scale-down-animation"
+                      with-backdrop>
+
+            <img class="imgCover" src="{{img}}">
+
+            <form is="iron-form" id="imgForm" method="post">
+                <paper-input name="content" label="Image URL" id="imgInput" value="{{img}}">
+                    <paper-icon-button suffix on-click="submitImg"
+                                       icon="done" alt="img" title="img" tabindex="1" id="okImgBtn">
+                    </paper-icon-button>
+                </paper-input>
+            </form>
+        </paper-dialog>
 
         <paper-material elevation="1" id="cardMessage">
 
@@ -88,6 +107,7 @@
                     </paper-input>
 
                     <paper-input name="userId" value="" id="userId" hidden></paper-input>
+                    <paper-input name="image" value="{{img}}" id="image" hidden></paper-input>
                 </form>
             </div>
 
@@ -108,6 +128,7 @@
                 },
                 group: String,
                 user: Object,
+                img: String
             }
         },
 
@@ -153,8 +174,12 @@
             sendSound.play();
         },
 
+        submitImg: function () {
+            this.$.imgForm.close();
+        },
+
         addPicture: function () {
-            console.log("addPicture");
+            this.$.imgForm.open();
         }
     });
 </script>

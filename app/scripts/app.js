@@ -132,7 +132,7 @@
     app.goToGroupById = function(id) {
         document.querySelector('#groupPage').group = id;
         document.querySelector('#groupPage').refresh();
-        page('/test');
+        page('/group');
     };
 
 })(document);
