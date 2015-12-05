@@ -66,10 +66,23 @@
             .imgCover {
                 width: 100%;
                 margin: 0;
+                display: block;
             }
 
             #addImgDialog {
                 background-color: #FDFDFD;
+                width: 50%;
+            }
+
+            .separator {
+                height: 1px;
+                width: 100%;
+                background-color: var(--primary-background-color);
+                margin: 0;
+            }
+
+            img[src=""] {
+                display: none;
             }
 
         </style>
@@ -84,7 +97,9 @@
         <paper-dialog id="addImgDialog" entry-animation="scale-up-animation" exit-animation="scale-down-animation"
                       with-backdrop>
 
+            <div class="separator"></div>
             <img class="imgCover" src="{{img}}">
+            <div class="separator"></div>
 
             <form is="iron-form" id="imgForm" method="post">
                 <paper-input name="content" label="Image URL" id="imgInput" value="{{img}}">
