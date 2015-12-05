@@ -175,9 +175,11 @@
                     <span class="timestamp">{{computeDate(item.date)}}</span>
                 </div>
                 <div class="flex"></div>
-                <div>
-                    <paper-icon-button icon="delete" class="option" on-click="delete"></paper-icon-button>
-                </div>
+                <template is="dom-if" if="{{removePossible}}">
+                    <div>
+                        <paper-icon-button icon="delete" class="option" on-click="delete"></paper-icon-button>
+                    </div>
+                </template>
             </div>
             <div class="separator"></div>
 
@@ -214,8 +216,20 @@
                 cdate: {
                     computed: 'computeDate(date)'
                 },
+                removePossible {
+                    type: Boolean,
+                    value: function () { return true; },
+                    notify: true,
+                    computed: 'computedCanRemove(item.author._id)'
+                },
                 moodGood: Boolean,
                 moodBad: Boolean
+            },
+
+            computedCanRemove: function(author) {
+                var userId = app.getUserId();
+
+                return userId == author;
             },
 
             computeDate: function (date) {
