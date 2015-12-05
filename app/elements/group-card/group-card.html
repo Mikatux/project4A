@@ -120,13 +120,13 @@
             group: Object,
             removeAdd: {
                 type: Boolean,
-                value: function () { return true },
+                value: function () { return false; },
                 notify: true,
                 computed: 'computedRemoveAdd(group)'
             },
             canRemove: {
                 type: Boolean,
-                value: function () { return true; },
+                value: function () { return false; },
                 notify: true,
                 computed: 'computedCanRemove(group)'
             }
