@@ -112,24 +112,26 @@
 
         <paper-material elevation="1" id="cardMessage">
 
-            <div class="horizontal layout">
-                <img id="avatar" src="{{user.img}}">
-                <form is="iron-form" id="form" method="post">
-                    <paper-input name="content" auto-validate error-message="No message to send" label="Send a message"
-                                 id="messageContent" on-input="inputed">
-                        <paper-icon-button suffix on-click="addPicture"
-                                           icon="editor:insert-photo" alt="img" title="img" tabindex="0" id="imgBtn">
-                        </paper-icon-button>
-                        <paper-icon-button suffix on-click="submitForm"
-                                           icon="send" alt="send" title="send" tabindex="1" id="sendBtn">
-                        </paper-icon-button>
-                    </paper-input>
+            <div class="vertical layout">
+                <div class="horizontal layout">
+                    <img id="avatar" src="{{user.img}}">
+                    <form is="iron-form" id="form" method="post">
+                        <paper-input name="content" auto-validate error-message="No message to send" label="Send a message"
+                                     id="messageContent" on-input="inputed">
+                            <paper-icon-button suffix on-click="addPicture"
+                                               icon="editor:insert-photo" alt="img" title="img" tabindex="0" id="imgBtn">
+                            </paper-icon-button>
+                            <paper-icon-button suffix on-click="submitForm"
+                                               icon="send" alt="send" title="send" tabindex="1" id="sendBtn">
+                            </paper-icon-button>
+                        </paper-input>
 
-                    <paper-input name="userId" value="" id="userId" hidden></paper-input>
-                    <paper-input name="image" value="{{img}}" id="image" hidden></paper-input>
-                </form>
+                        <paper-input name="userId" value="" id="userId" hidden></paper-input>
+                        <paper-input name="image" value="{{img}}" id="image" hidden></paper-input>
+                    </form>
+                </div>
+                <img class="imgCover" src="{{img}}" onerror="this.style.display = 'none'">
             </div>
-
         </paper-material>
 
     </template>
