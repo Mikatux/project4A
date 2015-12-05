@@ -184,6 +184,7 @@
             <div class="separator"></div>
 
             <img src="{{item.image[0]}}">
+            <span>{{item.image[0]}}</span>
 
             <div id="content">
                 <span>{{addEmoji(item.content)}}</span>
@@ -192,16 +193,13 @@
             <div class="separator"></div>
 
             <div id="foot">
-                <div class="horizontal layout" flex>
-                    <!--<paper-icon-button icon="report" class="small" on-click="report"></paper-icon-button>
-                    <paper-icon-button icon="favorite" class="small" on-click="like" id="fav"></paper-icon-button>-->
+                <div class="horizontal layout">
                     <paper-icon-button icon="social:mood" class="replyButton" on-click="moodGoodToogle"
                                        id="moodGood"></paper-icon-button>
                     <paper-icon-button icon="social:mood-bad" class="replyButton" on-click="moodBadToogle"
                                        id="moodBad"></paper-icon-button>
                     <paper-icon-button icon="star" class="replyButton" on-click="" id="favorite"></paper-icon-button>
                     <paper-icon-button icon="reply" class="replyButton" on-click="" id="reply"></paper-icon-button>
-                    <!--<paper-icon-button icon="delete" class="small" on-click="deletePost"></paper-icon-button>-->
                 </div>
             </div>
 
