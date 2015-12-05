@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a0b82b3-bd6c-49e8-b00f-1ca000401742" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/elements/post-list/message-list.html" afterPath="$PROJECT_DIR$/app/elements/post-list/message-list.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/elements/post-message/post-message.html" afterPath="$PROJECT_DIR$/app/elements/post-message/post-message.html" />
     </list>
     <ignored path="Polymer4A.iws" />
@@ -39,8 +39,8 @@
       <file leaf-file-name="message-list.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/elements/post-list/message-list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="4.2916665">
-              <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+            <state vertical-scroll-proportion="-18.208334">
+              <caret line="54" column="10" selection-start-line="54" selection-start-column="10" selection-end-line="54" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -89,8 +89,8 @@
       <file leaf-file-name="post-message.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/elements/post-message/post-message.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="192" column="45" selection-start-line="192" selection-start-column="45" selection-end-line="192" selection-end-column="45" />
+            <state vertical-scroll-proportion="0.61529934">
+              <caret line="192" column="49" selection-start-line="192" selection-start-column="49" selection-end-line="192" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -164,13 +164,13 @@
         <option value="$PROJECT_DIR$/app/elements/group-page/group-page.html" />
         <option value="$PROJECT_DIR$/app/elements/group-card/new-group-card.html" />
         <option value="$PROJECT_DIR$/app/index-oversimplified.html" />
-        <option value="$PROJECT_DIR$/app/elements/post-list/message-list.html" />
         <option value="$PROJECT_DIR$/app/elements/post-list/hot-list.html" />
         <option value="$PROJECT_DIR$/app/index.html" />
         <option value="$PROJECT_DIR$/app/elements/routing.html" />
         <option value="$PROJECT_DIR$/app/scripts/app.js" />
         <option value="$PROJECT_DIR$/app/elements/group-card/group-card.html" />
         <option value="$PROJECT_DIR$/app/elements/send-box/send-box.html" />
+        <option value="$PROJECT_DIR$/app/elements/post-list/message-list.html" />
         <option value="$PROJECT_DIR$/app/elements/post-message/post-message.html" />
       </list>
     </option>
@@ -1080,14 +1080,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/elements/post-list/message-list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.2916665">
-          <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/index-oversimplified.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-18.125">
@@ -1138,10 +1130,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/elements/post-list/message-list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.208334">
+          <caret line="54" column="10" selection-start-line="54" selection-start-column="10" selection-end-line="54" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/elements/post-message/post-message.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="192" column="45" selection-start-line="192" selection-start-column="45" selection-end-line="192" selection-end-column="45" />
+        <state vertical-scroll-proportion="0.61529934">
+          <caret line="192" column="49" selection-start-line="192" selection-start-column="49" selection-end-line="192" selection-end-column="49" />
           <folding />
         </state>
       </provider>
