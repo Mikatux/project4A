@@ -183,8 +183,9 @@
             </div>
             <div class="separator"></div>
 
-            <img src="{{item.image[0]}}">
-            <span>{{item.image}}</span>
+            <template is="dom-if" if="{{item.image}}">
+                <img src="{{item.image}}">
+            </template>
 
             <div id="content">
                 <span>{{addEmoji(item.content)}}</span>
@@ -217,6 +218,12 @@
                     computed: 'computeDate(date)'
                 },
                 removePossible: {
+                    type: Boolean,
+                    value: function () { return false; },
+                    notify: true,
+                    computed: 'computedCanRemove(item.author._id)'
+                },
+                haveImg: {
                     type: Boolean,
                     value: function () { return false; },
                     notify: true,
