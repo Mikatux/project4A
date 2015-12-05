@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a0b82b3-bd6c-49e8-b00f-1ca000401742" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/elements/post-message/post-message.html" afterPath="$PROJECT_DIR$/app/elements/post-message/post-message.html" />
     </list>
     <ignored path="Polymer4A.iws" />
@@ -88,8 +89,8 @@
       <file leaf-file-name="post-message.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/elements/post-message/post-message.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.48226163">
-              <caret line="250" column="49" selection-start-line="250" selection-start-column="49" selection-end-line="250" selection-end-column="49" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="192" column="45" selection-start-line="192" selection-start-column="45" selection-end-line="192" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -1139,8 +1140,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/elements/post-message/post-message.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48226163">
-          <caret line="250" column="49" selection-start-line="250" selection-start-column="49" selection-end-line="250" selection-end-column="49" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="192" column="45" selection-start-line="192" selection-start-column="45" selection-end-line="192" selection-end-column="45" />
           <folding />
         </state>
       </provider>
