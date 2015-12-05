@@ -191,7 +191,7 @@
             <div class="separator"></div>
 
             <template is="dom-if" if="{{haveImg}}">
-                <img class="coverImg" src="{{item.image}}">
+                <img id="image" class="coverImg" src="{{item.image}}" onerror="this.style.display = 'none'">
                 <div class="separator"></div>
             </template>
 
