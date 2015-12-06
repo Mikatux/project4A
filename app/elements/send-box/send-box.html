@@ -67,6 +67,7 @@
                 width: 100%;
                 margin: 0;
                 display: block;
+                padding: 0;
             }
 
             #addImgDialog {
@@ -79,6 +80,7 @@
                 width: 100%;
                 background-color: var(--primary-background-color);
                 margin: 0;
+                padding: 0;
             }
 
             img[src=""] {
@@ -164,6 +166,7 @@
                     this.$.form.submit();
                     this.sendSound();
                     this.$.messageContent.value = "";
+                    this.img = "";
                 } else {
                     alert("Vous n'êtes pas connecté.");
                 }
