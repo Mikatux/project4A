@@ -22,7 +22,7 @@
             #cardMessage {
                 background-color: #FEFEFE;
                 margin: 0 8px;
-                height: 64px;
+                min-height: 64px;
                 padding: 0;
             }
 
@@ -98,7 +98,7 @@
                       with-backdrop>
 
             <div class="separator"></div>
-            <img class="imgCover" src="{{img}}" onerror="this.style.display = 'none'">
+            <img class="imgCover" src="{{img}}">
             <div class="separator"></div>
 
             <form is="iron-form" id="imgForm" method="post">
@@ -130,7 +130,7 @@
                         <paper-input name="image" value="{{img}}" id="image" hidden></paper-input>
                     </form>
                 </div>
-                <img class="imgCover" src="{{img}}" onerror="this.style.display = 'none'">
+                <img class="imgCover" src="{{img}}">
             </div>
         </paper-material>
 
